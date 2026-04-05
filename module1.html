@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Clinical Parasitology & Mycology | Module 1: Advanced Diagnostic Methods</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#14233b;
+  --navy-2:#20385b;
+  --ink:#1b2d4a;
+  --teal:#0e7c86;
+  --teal-soft:#e9f8f8;
+  --gold:#d2aa4c;
+  --gold-soft:#fff8e8;
+  --wine:#7f3143;
+  --green:#1f6b51;
+  --purple:#53408d;
+  --paper:#f5f7fb;
+  --white:#ffffff;
+  --line:#dfe7f1;
+  --muted:#657891;
+  --ok:#1f8a5a;
+  --warn:#d97706;
+  --bad:#c0392b;
+  --sky:#edf4ff;
+  --sky-line:#d7e5fa;
+  --radius:18px;
+  --shadow:0 4px 20px rgba(20,35,59,.07);
+  --shadow-2:0 14px 44px rgba(20,35,59,.13);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"Playfair Display",Georgia,serif;
+  background:linear-gradient(160deg,#eff4fb 0%,#f8fafc 100%);
+  color:var(--ink);
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+body, .card-b p, .card-b li, .check-item .q, .check-item .a, td, .callout,
+.mini p, .val, .match-item, .opt, .kpi p, .acc-h p, .feedback, .back,
+.resource-card p, footer, .flash-tip {
+  font-family: "DM Sans", "Segoe UI", system-ui, sans-serif;
+}
+a{color:var(--teal);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── HEADER ─────────────────────────────────────────── */
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(20,35,59,.97);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.07);
+  box-shadow:0 6px 28px rgba(0,0,0,.18);
+}
+.h-wrap{
+  max-width:1320px;margin:auto;
+  padding:14px 20px;
+  display:flex;gap:14px;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:14px;flex:1;min-width:0}
+.badge{
+  background:linear-gradient(135deg,var(--gold),#f0cf7f);
+  color:var(--navy);
+  padding:7px 13px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.brand-text{min-width:0}
+.brand h1{
+  color:var(--white);
+  font-family:"Playfair Display",serif;
+  font-size:clamp(16px,2.2vw,22px);
+  line-height:1.15;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.brand h1 span{color:var(--gold)}
+.brand p{color:#b6c3d8;font-size:12px;margin-top:3px;line-height:1.4}
+
+/* ── NAV ─────────────────────────────────────────────── */
+.nav{background:#101c31;border-top:1px solid rgba(255,255,255,.05);border-bottom:2px solid rgba(210,170,76,.35)}
+.nav-inner{
+  max-width:1320px;margin:auto;
+  padding:0 10px;
+  display:flex;gap:2px;
+  overflow-x:auto;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+}
+.nav-inner::-webkit-scrollbar{display:none}
+.tab-btn{
+  border:none;background:none;
+  color:#9eb0ca;
+  padding:13px 14px;
+  cursor:pointer;
+  font-weight:700;font-size:11.5px;
+  text-transform:uppercase;letter-spacing:.06em;
+  border-bottom:3px solid transparent;
+  white-space:nowrap;
+  transition:.18s ease;
+  flex-shrink:0;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+.tab-btn:hover{color:#fff}
+.tab-btn.active{color:var(--gold);border-bottom-color:var(--gold)}
+
+/* ── MAIN LAYOUT ─────────────────────────────────────── */
+main{max-width:1320px;margin:auto;padding:clamp(16px,3vw,28px) clamp(14px,4vw,22px) 70px}
+
+/* ── HERO ─────────────────────────────────────────────── */
+.hero{display:grid;grid-template-columns:1.25fr .95fr;gap:18px;margin-bottom:24px}
+@media (max-width:900px){.hero{grid-template-columns:1fr}}
+.hero-card{
+  background:linear-gradient(140deg,var(--navy) 0%,var(--navy-2) 100%);
+  color:#fff;border-radius:28px;
+  padding:clamp(22px,4vw,36px);
+  box-shadow:var(--shadow-2);
+  position:relative;overflow:hidden;
+}
+.hero-card:before{
+  content:"";position:absolute;inset:auto -60px -60px auto;width:220px;height:220px;border-radius:50%;
+  background:radial-gradient(circle,rgba(210,170,76,.22),transparent 70%);pointer-events:none;
+}
+.hero-card:after{
+  content:"";position:absolute;right:22px;top:18px;width:160px;height:160px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.07);pointer-events:none;
+}
+.hero-card h2{
+  font-family:"Playfair Display",serif;
+  font-size:clamp(26px,4.5vw,44px);
+  line-height:1.08;
+  margin-bottom:14px;
+}
+.hero-card p{color:#d7e2f2;font-size:clamp(13px,1.5vw,15px);line-height:1.78}
+
+/* ── META GRID ────────────────────────────────────────── */
+.meta-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+@media (max-width:480px){.meta-grid{grid-template-columns:1fr}}
+.mini{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--shadow)}
+.mini .label{font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.mini .value{font-size:clamp(14px,1.8vw,17px);font-weight:800;color:var(--navy);line-height:1.35;font-family:"Playfair Display",serif}
+.mini p{font-size:13px;color:var(--muted);line-height:1.55;margin-top:5px}
+
+/* ── SECTION TITLES ──────────────────────────────────── */
+.section-title{margin:6px 0 18px}
+.section-title h3{font-family:"Playfair Display",serif;font-size:clamp(24px,3.5vw,32px);color:var(--navy);margin-bottom:5px;line-height:1.15}
+.section-title p{color:var(--muted);font-size:14px;line-height:1.6}
+.gold-line{width:60px;height:4px;background:linear-gradient(90deg,var(--gold),#f0cf7f);border-radius:999px;margin-top:10px}
+
+/* ── TABS ────────────────────────────────────────────── */
+.tab-pane{display:none}
+.tab-pane.active{display:block;animation:fadeIn .25s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ── CARDS ────────────────────────────────────────────── */
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.card-h{padding:13px 18px;font-size:11.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#fff}
+.navy{background:var(--navy)} .teal{background:var(--teal)} .gold{background:var(--gold);color:var(--navy)!important} .wine{background:var(--wine)} .green{background:var(--green)} .purple{background:var(--purple)}
+.card-b{padding:18px}
+.card-b p,.card-b li{font-size:14px;line-height:1.78;color:#31445f}
+.card-b ul{padding-left:18px}
+.card-b li{margin-bottom:9px}
+
+/* ── GRIDS ────────────────────────────────────────────── */
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:18px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:18px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
+@media (max-width:900px){.grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.grid-2{grid-template-columns:1fr}}
+@media (max-width:560px){.grid-3,.grid-4{grid-template-columns:1fr}}
+
+/* ── CALLOUTS ────────────────────────────────────────── */
+.callout{
+  background:var(--gold-soft);
+  border:1px solid #f0dfb0;border-left:5px solid var(--gold);
+  padding:15px 18px;border-radius:14px;margin:0 0 18px 0;
+  font-size:14px;line-height:1.74;color:#3d495e;
+}
+.callout.teal{background:var(--teal-soft);border-color:#cdeeee;border-left-color:var(--teal);color:#1d4f55}
+.callout.red{background:#fdecec;border-color:#f7caca;border-left-color:var(--bad);color:#6f2631}
+.callout.sky{background:var(--sky);border-color:var(--sky-line);border-left-color:#4f7ecf;color:#26456d}
+
+/* ── KPI TILES ───────────────────────────────────────── */
+.kpi{border-radius:20px;padding:20px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);transition:.2s}
+.kpi:hover{box-shadow:var(--shadow-2);transform:translateY(-2px)}
+.kpi .big{font-size:clamp(28px,4vw,38px);font-weight:800;color:var(--navy);line-height:1;font-family:"Playfair Display",serif}
+.kpi .sub{font-size:11px;color:var(--muted);margin-top:8px;text-transform:uppercase;letter-spacing:.09em;font-weight:700}
+.kpi p{font-size:13px;line-height:1.55;color:var(--muted);margin-top:6px}
+
+/* ── TABLES ──────────────────────────────────────────── */
+.table-wrap{
+  overflow-x:auto;border-radius:16px;
+  box-shadow:var(--shadow);margin-bottom:18px;
+  -webkit-overflow-scrolling:touch;
+}
+.table-wrap::after{
+  content:"";display:none;
+}
+@media (max-width:640px){
+  .table-wrap::before{
+    content:"← scroll →";display:block;
+    text-align:center;font-size:11px;
+    color:var(--muted);padding:6px;
+    background:#f8fbff;border-bottom:1px solid var(--line);
+    font-style:italic;
+  }
+}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);min-width:480px}
+th{background:var(--navy);color:#fff;padding:12px 14px;text-align:left;font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.07em}
+td{padding:12px 14px;border-top:1px solid var(--line);font-size:13.5px;line-height:1.66;color:#34465f;vertical-align:top}
+tr:nth-child(even) td{background:#f8fbff}
+
+/* ── PILL ─────────────────────────────────────────────── */
+.pill{display:inline-block;padding:4px 10px;border-radius:999px;background:#eef4ff;color:var(--navy);font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-right:8px}
+
+/* ── FLOW STEPS ──────────────────────────────────────── */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:18px}
+@media (max-width:900px){.flow{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:560px){.flow{grid-template-columns:1fr 1fr}}
+@media (max-width:380px){.flow{grid-template-columns:1fr}}
+.flow-step{
+  background:#fff;border:1px solid var(--line);border-radius:18px;
+  padding:18px;text-align:center;box-shadow:var(--shadow);
+  transition:.18s;
+}
+.flow-step:hover{box-shadow:var(--shadow-2);transform:translateY(-2px)}
+.flow-step .n{
+  width:36px;height:36px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--navy),var(--navy-2));
+  color:#fff;font-weight:800;font-size:15px;margin:0 auto 10px;
+  box-shadow:0 3px 10px rgba(20,35,59,.25);
+}
+.flow-step h5{font-size:14px;color:var(--navy);margin-bottom:5px;font-family:"Playfair Display",serif}
+.flow-step p{font-size:12.5px;color:var(--muted);line-height:1.55}
+
+/* ── SELF-CHECK ──────────────────────────────────────── */
+.quick-check{
+  background:linear-gradient(135deg,#f8fbff,#fff);
+  border:1px solid var(--line);border-radius:20px;
+  box-shadow:var(--shadow);padding:20px;margin:20px 0;
+}
+.quick-check h4{
+  font-size:15px;color:var(--navy);margin-bottom:14px;
+  font-family:"Playfair Display",serif;
+  display:flex;align-items:center;gap:8px;
+}
+.quick-check h4::before{content:"✦";color:var(--gold);font-size:12px}
+.check-item{
+  border:2px solid var(--line);background:#f8fbff;
+  border-radius:14px;padding:14px 16px;margin-bottom:10px;
+  cursor:pointer;transition:.2s;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+.check-item:hover{border-color:var(--teal);background:#f3fcfc}
+.check-item:active{transform:scale(.99)}
+.check-item .q{font-size:14px;font-weight:700;color:#263854;line-height:1.5}
+.check-item .a{display:none;margin-top:10px;font-size:13.5px;line-height:1.72;color:#4c5d77;border-top:1px dashed var(--line);padding-top:10px}
+.check-item.open{background:#fff;border-color:var(--teal)}
+.check-item.open .a{display:block}
+.check-item .q::after{content:" ▾";color:var(--teal);font-size:11px;opacity:.7}
+.check-item.open .q::after{content:" ▴"}
+
+/* ── ACCORDION ───────────────────────────────────────── */
+.accordion{display:flex;flex-direction:column;gap:12px;margin-bottom:18px}
+.acc{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.acc-h{
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:16px 18px;cursor:pointer;background:#fff;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  transition:.18s;
+}
+.acc-h:hover{background:#f8fbff}
+.acc-h>div:first-child{display:flex;flex-direction:column;gap:4px}
+.acc-h h4{font-size:15px;color:var(--navy);font-family:"Playfair Display",serif}
+.acc-h p{font-size:12px;color:var(--muted);margin-top:2px;line-height:1.5}
+.acc-h .icon{
+  font-size:22px;color:var(--gold);font-weight:800;
+  flex-shrink:0;transition:transform .25s ease;
+  width:28px;text-align:center;
+}
+.acc.open .acc-h .icon{transform:rotate(45deg)}
+.acc-b{display:none;padding:0 18px 18px}
+.acc.open .acc-b{display:block;animation:fadeIn .2s ease}
+
+/* ── FLASHCARDS ──────────────────────────────────────── */
+.flash-tip{text-align:center;color:var(--muted);font-style:italic;margin-bottom:16px;font-size:13px}
+.flash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+@media (max-width:480px){.flash-grid{grid-template-columns:1fr}}
+.flash{height:200px;perspective:1200px;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.flash-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .55s ease}
+.flash.flipped .flash-inner{transform:rotateY(180deg)}
+.face{
+  position:absolute;inset:0;border-radius:18px;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+  padding:20px;box-shadow:var(--shadow);
+}
+.front{background:linear-gradient(140deg,var(--navy),#223a61);color:#fff;border:2px solid rgba(210,170,76,.18)}
+.front .cat{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#b8c5d8;margin-bottom:8px}
+.front .term{font-family:"Playfair Display",serif;font-size:clamp(18px,2.5vw,24px);color:var(--gold);margin-bottom:8px;line-height:1.2}
+.front .hint{font-size:10.5px;color:#c7d3e3;text-transform:uppercase;letter-spacing:.09em}
+.back{background:linear-gradient(140deg,var(--teal),#14939d);color:#fff;transform:rotateY(180deg);font-size:13.5px;line-height:1.72;justify-content:flex-start;padding-top:22px}
+
+/* ── QUIZ ────────────────────────────────────────────── */
+.quiz-shell{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}
+.quiz-top{padding:16px 20px;background:linear-gradient(135deg,var(--navy),#203656);color:#fff}
+.progress{height:7px;background:rgba(255,255,255,.15);border-radius:999px;overflow:hidden;margin-top:10px}
+.progress > div{height:100%;background:linear-gradient(90deg,var(--gold),#f0cf7f);width:0%;transition:.35s ease}
+.quiz-body{padding:clamp(16px,3vw,24px)}
+.q-num{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:800}
+.q-text{font-size:clamp(16px,2.2vw,20px);font-weight:700;color:var(--navy);line-height:1.5;margin:12px 0 18px;font-family:"Playfair Display",serif}
+.opt{
+  display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;
+  border:2px solid var(--line);background:#f8fbff;border-radius:14px;
+  padding:13px 15px;margin-bottom:10px;cursor:pointer;font-size:14px;color:#2f3f59;transition:.2s;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.opt:hover{border-color:var(--teal);background:#f0fafa}
+.opt:active{transform:scale(.99)}
+.opt .ol{width:30px;height:30px;flex:0 0 30px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font-weight:800;font-size:12px}
+.opt.correct{border-color:var(--ok);background:#ecfbf4}.opt.correct .ol{background:var(--ok)}
+.opt.wrong{border-color:var(--bad);background:#fff0ef}.opt.wrong .ol{background:var(--bad)}
+.feedback{display:none;padding:14px 16px;border-radius:14px;margin-top:14px;font-size:14px;line-height:1.68}
+.feedback.show{display:block;animation:fadeIn .2s ease}
+.feedback.good{background:#ecfbf4;border-left:5px solid var(--ok);color:#1d5b41}
+.feedback.bad{background:#fff0ef;border-left:5px solid var(--bad);color:#6d2331}
+.quiz-nav{display:flex;justify-content:space-between;gap:10px;margin-top:18px;flex-wrap:wrap}
+.btn{border:none;border-radius:13px;padding:12px 20px;font-weight:800;cursor:pointer;font-size:14px;transition:.18s;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn:active{transform:scale(.97)}
+.btn.primary{background:var(--navy);color:#fff;box-shadow:0 4px 14px rgba(20,35,59,.2)}
+.btn.primary:hover{background:#1d2f50}
+.btn.secondary{background:#eef4ff;color:var(--navy);border:1px solid var(--sky-line)}
+.btn.secondary:hover{background:#e2ecff}
+.btn:disabled{opacity:.42;cursor:not-allowed;transform:none}
+.result{display:none;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:clamp(20px,4vw,32px);text-align:center}
+.result.show{display:block;animation:fadeIn .3s ease}
+.result .score{font-family:"Playfair Display",serif;font-size:clamp(52px,8vw,72px);color:var(--navy);line-height:1}
+.result .score span{color:var(--gold)}
+
+/* ── MATCH GAME ──────────────────────────────────────── */
+.match-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:640px){.match-wrap{grid-template-columns:1fr}}
+.match-col h4{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.09em;margin-bottom:10px;font-weight:800}
+.match-item{
+  background:#fff;border:2px solid var(--line);border-radius:13px;
+  padding:13px 15px;margin-bottom:10px;cursor:pointer;
+  font-size:13.5px;font-weight:600;color:#2f3f59;transition:.18s;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  min-height:48px;display:flex;align-items:center;
+}
+.match-item:active{transform:scale(.98)}
+.match-item.selected{border-color:var(--gold);background:var(--gold-soft);box-shadow:0 0 0 3px rgba(210,170,76,.15)}
+.match-item.matched{border-color:var(--ok);background:#ecfbf4;color:var(--ok)}
+.match-item.wrong{border-color:var(--bad);background:#fff0ef}
+.match-controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:14px 0 12px}
+.match-feedback{display:none;padding:12px 14px;border-radius:13px;font-size:14px;line-height:1.62;margin-bottom:14px}
+.match-feedback.show{display:block;animation:fadeIn .2s ease}
+.match-feedback.good{background:#ecfbf4;border-left:5px solid var(--ok);color:#1d5b41}
+.match-feedback.bad{background:#fff0ef;border-left:5px solid var(--bad);color:#6d2331}
+
+/* ── CHEAT SHEET ─────────────────────────────────────── */
+.cheat-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:760px){.cheat-grid{grid-template-columns:1fr}}
+.cheat-card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.cheat-h{padding:12px 16px;color:#fff;font-size:11.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.cheat-b{padding:14px 16px}
+.row{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.row:last-child{border-bottom:none}
+.key{min-width:130px;font-size:12px;font-weight:800;color:var(--navy);flex-shrink:0;padding-top:1px}
+.val{font-size:13px;line-height:1.57;color:#46566e}
+
+/* ── RESOURCES ───────────────────────────────────────── */
+.resource-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow);transition:.18s}
+.resource-card:hover{box-shadow:var(--shadow-2);transform:translateY(-2px)}
+.resource-card h4{font-size:15px;color:var(--navy);margin-bottom:6px;font-family:"Playfair Display",serif}
+.resource-card p{font-size:13px;line-height:1.72;color:#50627b}
+code{font-family:"JetBrains Mono",monospace;background:#f1f5fb;padding:2px 6px;border-radius:8px}
+.small{font-size:12px;color:#b7c4d8}
+
+/* ── FOOTER ──────────────────────────────────────────── */
+footer{
+  margin-top:50px;padding:24px 20px;text-align:center;
+  color:var(--muted);font-size:12.5px;
+  border-top:1px solid var(--line);
+  background:rgba(255,255,255,.6);
+}
+footer strong{color:var(--navy)}
+
+/* ── MOBILE-SPECIFIC TOUCH BOOSTS ───────────────────── */
+@media (hover:none){
+  .tab-btn{padding:14px 13px}
+  .check-item{padding:16px}
+  .opt{padding:15px 16px}
+  .match-item{min-height:54px;padding:14px 16px}
+  .flow-step{padding:20px 16px}
+}
+
+/* ── PRINT SAFEGUARD ─────────────────────────────────── */
+@media (max-width:360px){
+  .brand p{display:none}
+  .hero-card h2{font-size:22px}
+}
+
+/* ═══════════════════════════════════════════════════
+   SHARED MODULE NAVIGATION SYSTEM
+   Injected into all modules for unified experience
+═══════════════════════════════════════════════════ */
+
+/* Top breadcrumb bar */
+.mod-topbar{
+  background:#0b1829;
+  padding:8px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  flex-wrap:wrap;
+  border-bottom:1px solid rgba(210,170,76,.2);
+}
+.mod-topbar-left{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.mod-home-link{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--gold);font-size:12px;font-weight:700;
+  text-decoration:none;letter-spacing:.04em;
+  opacity:.85;transition:.15s;
+  -webkit-tap-highlight-color:transparent;
+}
+.mod-home-link:hover{opacity:1;text-decoration:none}
+.mod-home-link svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.mod-sep{color:#2e4060;font-size:13px}
+.mod-crumb{color:#7a93b3;font-size:12px;font-weight:600}
+.mod-indicators{display:flex;align-items:center;gap:6px}
+.mod-dot{
+  width:26px;height:26px;border-radius:50%;
+  display:grid;place-items:center;
+  font-size:11px;font-weight:800;
+  text-decoration:none;
+  transition:.18s;
+  -webkit-tap-highlight-color:transparent;
+  flex-shrink:0;
+}
+.mod-dot.done{background:rgba(210,170,76,.18);color:var(--gold);border:1.5px solid rgba(210,170,76,.4)}
+.mod-dot.active{background:var(--gold);color:var(--navy)}
+.mod-dot.upcoming{background:rgba(255,255,255,.05);color:#4a6080;border:1.5px solid rgba(255,255,255,.08)}
+.mod-dot:hover{transform:scale(1.12)}
+
+/* Bottom prev/next navigation */
+.mod-footnav{
+  background:#fff;
+  border-top:2px solid var(--line);
+  padding:16px 22px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  flex-wrap:wrap;
+  margin-top:0;
+}
+.mod-footnav-center{
+  text-align:center;flex:1;min-width:0;
+}
+.mod-footnav-center span{
+  font-size:11.5px;color:var(--muted);font-weight:700;
+  text-transform:uppercase;letter-spacing:.07em;
+  display:block;
+}
+.mod-footnav-center strong{
+  font-size:13px;color:var(--navy);font-family:"Playfair Display",serif;
+  display:block;margin-top:2px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.mod-nav-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 18px;border-radius:13px;
+  font-size:13px;font-weight:700;
+  text-decoration:none;border:none;cursor:pointer;
+  transition:.18s;white-space:nowrap;flex-shrink:0;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.mod-nav-btn:active{transform:scale(.97);text-decoration:none}
+.mod-nav-btn:hover{text-decoration:none}
+.mod-nav-btn.prev{background:#eef4ff;color:var(--navy);border:1px solid var(--sky-line)}
+.mod-nav-btn.prev:hover{background:#e2ecff}
+.mod-nav-btn.next{background:var(--navy);color:#fff;box-shadow:0 4px 14px rgba(20,35,59,.2)}
+.mod-nav-btn.next:hover{background:#1d2f50}
+.mod-nav-btn.home{background:var(--gold-soft);color:#7a5c1a;border:1px solid #f0dfb0}
+.mod-nav-btn.home:hover{background:#fdf0c8}
+.mod-nav-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* Refined footer for modules */
+footer.mod-footer-bar{
+  margin-top:0;padding:18px 22px;
+  text-align:center;color:var(--muted);font-size:12px;
+  border-top:1px solid var(--line);
+  background:rgba(255,255,255,.6);
+}
+footer.mod-footer-bar strong{color:var(--navy)}
+
+/* Smooth page-load fade */
+body{animation:bodyFade .35s ease}
+@keyframes bodyFade{from{opacity:0}to{opacity:1}}
+
+/* Refined scrollbar */
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(20,35,59,.18);border-radius:999px}
+
+@media(max-width:480px){
+  .mod-topbar{padding:7px 14px}
+  .mod-footnav{padding:13px 14px}
+  .mod-nav-btn{padding:10px 14px;font-size:12px}
+  .mod-footnav-center strong{font-size:12px}
+}
+
+</style>
+
+</head>
+<body>
+<div class="mod-topbar">
+  <div class="mod-topbar-left">
+    <a class="mod-home-link" href="index.html">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      All Modules
+    </a>
+    <span class="mod-sep">·</span>
+    <span class="mod-crumb">Module 1 · Advanced Diagnostic Methods</span>
+  </div>
+  <div class="mod-indicators"><a class="mod-dot active" href="module1.html" title="Module 1">1</a><a class="mod-dot upcoming" href="module2.html" title="Module 2">2</a><a class="mod-dot upcoming" href="module3.html" title="Module 3">3</a><a class="mod-dot upcoming" href="module4.html" title="Module 4">4</a></div>
+</div>
+<header>
+  <div class="h-wrap">
+    <div class="brand">
+      <div class="badge">Dr Salma Elnour</div>
+      <div class="brand-text">
+        <h1>Clinical Parasitology &amp; Mycology <span>Module 1</span></h1>
+        <p>Advanced Diagnostic Methods · interactive laboratory learning guide</p>
+      </div>
+    </div>
+    
+  </div>
+  <div class="nav">
+    <div class="nav-inner">
+      <button class="tab-btn active" data-tab="overview">Overview</button>
+      <button class="tab-btn" data-tab="sectionA">Why advanced?</button>
+      <button class="tab-btn" data-tab="sectionB">Compare methods</button>
+      <button class="tab-btn" data-tab="sectionC">Serology & antigen</button>
+      <button class="tab-btn" data-tab="sectionD">Molecular & frontier</button>
+      <button class="tab-btn" data-tab="sectionE">Mycology lab practice</button>
+      <button class="tab-btn" data-tab="practice">Practice zone</button>
+      <button class="tab-btn" data-tab="flashcards">Flashcards</button>
+      <button class="tab-btn" data-tab="quiz">Master quiz</button>
+      <button class="tab-btn" data-tab="cheat">Cheat sheet</button>
+      <button class="tab-btn" data-tab="sources">Sources</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  
+
+  <div id="overview" class="tab-pane active">
+<section class="hero">
+    <div class="hero-card">
+      <h2>Advanced diagnostics are not just “newer tests.”<br>They are better decisions.</h2>
+      <p>
+        This module is rooted in the course emphasis on <strong>current diagnostic methods for parasitic infections</strong>,
+        <strong>molecular diagnostics and serological assays</strong>, and the mycology block on <strong>microbiological and molecular methods</strong>,
+        <strong>serological tests and antigen detection</strong>, and <strong>advances in diagnostic technologies</strong>. It also aligns with the
+        laboratory sessions on serological and molecular identification in parasitology and mycology. The goal is to train students to think like
+        laboratory professionals: choose the right test, understand what it detects, anticipate limitations, and interpret results responsibly.
+      </p>
+    </div>
+    <div class="meta-grid">
+      <div class="mini">
+        <div class="label">Built for</div>
+        <div class="value">MSc Medical Laboratory Science</div>
+        <p>Postgraduate-level diagnostic reasoning rather than simple recall.</p>
+      </div>
+      <div class="mini">
+        <div class="label">Module coverage</div>
+        <div class="value">Parasitology + mycology</div>
+        <p>Balanced across advanced parasitological and fungal laboratory diagnostics.</p>
+      </div>
+      <div class="mini">
+        <div class="label">Learning logic</div>
+        <div class="value">Why → what → when → limitations</div>
+        <p>Designed to move from diagnostic principles to method selection and interpretation.</p>
+      </div>
+      <div class="mini">
+        <div class="label">Assessment style</div>
+        <div class="value">Section checks + final master quiz</div>
+        <p>Immediate practice throughout, with a more serious end-of-module review.</p>
+      </div>
+    </div>
+  </section>
+
+    <div class="section-title"><h3>Overview</h3><p>This opening page presents the module identity, scope, and learning pathway before the deeper laboratory content.</p><div class="gold-line"></div></div>
+    <div class="callout sky">
+      <strong>Student lens:</strong> microscopy remains foundational in parasitology and mycology, but advanced diagnostics become essential when burden is low,
+      morphology is equivocal, rapid turnaround matters, immunocompromise changes test performance, or laboratory differentiation needs to move beyond what can be seen directly.
+    </div>
+
+    <div class="grid-4">
+      <div class="kpi"><div class="big">5</div><div class="sub">Core knowledge blocks</div><p>Why advanced methods are needed, comparison, serology, molecular tools, and current mycology lab practice.</p></div>
+      <div class="kpi"><div class="big">2</div><div class="sub">Disciplines integrated</div><p>Parasitology and medical mycology are taught side-by-side, not as isolated silos.</p></div>
+      <div class="kpi"><div class="big">1</div><div class="sub">Key professional habit</div><p>Always ask: what exactly does this test detect, and what can still go wrong?</p></div>
+      <div class="kpi"><div class="big">3</div><div class="sub">Result interpretation layers</div><p>Screening, confirmation, and interpretation in clinical context.</p></div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-h navy">Module outcomes</div>
+        <div class="card-b">
+          <ul>
+            <li>Explain why advanced diagnostic strategies are necessary beyond routine microscopy.</li>
+            <li>Compare direct microscopy, antigen detection, serology, targeted molecular assays, multiplex platforms, and emerging technologies.</li>
+            <li>Differentiate antigen detection from antibody detection and interpret each appropriately.</li>
+            <li>Describe current laboratory-oriented mycology practice including direct examination, culture-centered workup, biomarkers, MALDI-TOF, and molecular confirmation.</li>
+            <li>Apply method selection to realistic parasitology and mycology scenarios.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-h teal">How students should use this guide</div>
+        <div class="card-b">
+          <ul>
+            <li>Start with <strong>Overview</strong> and <strong>Why advanced?</strong> before jumping to individual test types.</li>
+            <li>Use <strong>Compare methods</strong> to understand strengths and limitations side-by-side.</li>
+            <li>Work through the short self-checks at the end of each section.</li>
+            <li>Finish with the <strong>Practice zone</strong>, <strong>Flashcards</strong>, and <strong>Master quiz</strong> for consolidation.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sectionA" class="tab-pane">
+    <div class="section-title"><h3>Section A · Why advanced diagnostics are needed</h3><p>Advanced methods should be taught as diagnostic escalation, not as a decorative extra.</p><div class="gold-line"></div></div>
+    <div class="flow">
+      <div class="flow-step"><div class="n">1</div><h5>Clinical suspicion</h5><p>Symptoms, risk factors, travel, immune status, and specimen type shape the laboratory pathway.</p></div>
+      <div class="flow-step"><div class="n">2</div><h5>Routine method</h5><p>Direct microscopy, concentration, staining, or culture remains the starting point in many settings.</p></div>
+      <div class="flow-step"><div class="n">3</div><h5>Limitation detected</h5><p>Low burden, ambiguous morphology, slow growth, or urgent need may make the first method insufficient.</p></div>
+      <div class="flow-step"><div class="n">4</div><h5>Escalation</h5><p>Select antigen, serology, targeted molecular testing, multiplex panels, or advanced identification tools.</p></div>
+      <div class="flow-step"><div class="n">5</div><h5>Integrated interpretation</h5><p>No test stands alone. Results must return to the specimen, the patient, and the question being asked.</p></div>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-h navy">Why microscopy alone may be insufficient</div>
+        <div class="card-b">
+          <ul>
+            <li>Low organism burden can produce false negatives.</li>
+            <li>Morphology may be distorted by poor preservation or specimen age.</li>
+            <li>Some organisms or markers are better detected by non-microscopic methods.</li>
+            <li>Species-level differentiation is not always possible by morphology alone.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-h wine">Why advanced methods matter in immunocompromised patients</div>
+        <div class="card-b">
+          <ul>
+            <li>Organism burden, dissemination, and urgency may be greater.</li>
+            <li>Antibody response may be blunted, changing serology performance.</li>
+            <li>Fungal biomarkers and adjunctive tests may support earlier action.</li>
+            <li>Delayed diagnosis carries a much higher consequence in invasive disease.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-h green">The real postgraduate message</div>
+        <div class="card-b">
+          <ul>
+            <li>Advanced diagnostics do not replace laboratory fundamentals.</li>
+            <li>They refine certainty, shorten time-to-answer, and solve specific diagnostic problems.</li>
+            <li>The “best” test is the one that answers the clinical-laboratory question most appropriately.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Laboratory principle:</strong> a sophisticated assay used on the wrong specimen, at the wrong time, or for the wrong question is still poor diagnostics.
+    </div>
+
+    <div class="quick-check">
+      <h4>Section A self-check</h4>
+      <div class="check-item"><div class="q">1. Why can microscopy underperform in low-burden parasitic infection?</div><div class="a">Because sensitivity depends on the number of organisms present in the examined material. If burden is low or shedding is intermittent, the field examined may not capture the organism.</div></div>
+      <div class="check-item"><div class="q">2. Why might advanced tests be more valuable in immunocompromised patients with suspected invasive fungal disease?</div><div class="a">Because rapid, adjunctive evidence may be needed before culture fully matures, and some host-response tests behave differently in immunocompromised states.</div></div>
+      <div class="check-item"><div class="q">3. What is the mistake in saying that molecular tests are always superior to microscopy?</div><div class="a">It ignores cost, stewardship, specimen suitability, contamination risk, and the fact that microscopy still provides direct visual evidence and remains foundational in many workflows.</div></div>
+      <div class="check-item"><div class="q">4. Why should method selection always return to the specimen type?</div><div class="a">Because test performance, analyte stability, and diagnostic value depend strongly on the specimen collected, how it was transported, and what the method is designed to detect.</div></div>
+    </div>
+  </div>
+
+  <div id="sectionB" class="tab-pane">
+    <div class="section-title"><h3>Section B · Comparative diagnostic framework</h3><p>This section trains students to compare methods as laboratory tools, not memorize them as isolated definitions.</p><div class="gold-line"></div></div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Method</th><th>What it detects</th><th>Core strength</th><th>Main limitation</th><th>Best laboratory use</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Direct microscopy</strong></td><td>Whole organisms or structures</td><td>Immediate visual evidence</td><td>Operator-dependent; lower sensitivity in low burden</td><td>Initial direct assessment and morphology-based reasoning</td></tr>
+          <tr><td><strong>Concentration / permanent stain</strong></td><td>Parasite structures with improved recovery or detail</td><td>Improves sensitivity and morphology</td><td>Time, technique, and expertise required</td><td>Stool parasitology and morphology clarification</td></tr>
+          <tr><td><strong>Antigen detection</strong></td><td>Pathogen component</td><td>Rapid and often more standardized than microscopy</td><td>Limited to specific targets; specimen compatibility matters</td><td>Selected intestinal protozoa and important fungal antigen workflows</td></tr>
+          <tr><td><strong>Antibody serology</strong></td><td>Host immune response</td><td>Useful where direct detection is difficult</td><td>May not distinguish past from current infection; weaker in immunosuppression</td><td>Systemic or tissue-associated infections where host response aids diagnosis</td></tr>
+          <tr><td><strong>Targeted PCR</strong></td><td>Specific nucleic acid target</td><td>High analytical sensitivity and specificity</td><td>Contamination risk; cost; assay scope is limited to intended targets</td><td>Confirmation, differentiation, or detection when microscopy is insufficient</td></tr>
+          <tr><td><strong>Multiplex molecular panels</strong></td><td>Multiple pathogen targets simultaneously</td><td>Fast broad screening from one specimen</td><td>May detect more than the clinically relevant answer; stewardship required</td><td>Syndromic workflows such as gastrointestinal panels</td></tr>
+          <tr><td><strong>Culture</strong></td><td>Viable organism growth</td><td>Allows isolate recovery and downstream identification</td><td>Slow for many fungi; contamination interpretation matters</td><td>Central to mycology and confirmation of viable organisms</td></tr>
+          <tr><td><strong>MALDI-TOF MS</strong></td><td>Protein fingerprint from isolate</td><td>Very rapid isolate identification</td><td>Usually depends on culture recovery and database quality</td><td>Modern mycology and bacteriology identification workflows</td></tr>
+          <tr><td><strong>mNGS / broad sequencing</strong></td><td>Broad nucleic acid content</td><td>Pathogen-agnostic potential in difficult cases</td><td>High cost, bioinformatics complexity, interpretation challenge</td><td>Selected complex or unresolved diagnostic problems</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-h teal">Comparison habits students should build</div>
+        <div class="card-b">
+          <ul>
+            <li>Always ask whether the method detects the organism itself, a component of it, or the host response to it.</li>
+            <li>Decide whether the method is best used for screening, confirmation, escalation, or characterization.</li>
+            <li>Think about what the method cannot answer, not only what it can answer.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-h purple">High-yield postgraduate distinctions</div>
+        <div class="card-b">
+          <ul>
+            <li><strong>Antigen</strong> is not the same as <strong>antibody</strong>.</li>
+            <li><strong>Detection</strong> is not the same as <strong>disease causation</strong>.</li>
+            <li><strong>Broad panels</strong> do not remove the need for careful interpretation.</li>
+            <li><strong>Rapid ID</strong> does not replace good pre-analytics.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="quick-check">
+      <h4>Section B self-check</h4>
+      <div class="check-item"><div class="q">1. Which category of method is most likely to tell you that the organism is viable?</div><div class="a">Culture, because it demonstrates growth of a living organism and allows isolate recovery.</div></div>
+      <div class="check-item"><div class="q">2. What is the advantage of multiplex testing in syndromic diarrheal disease?</div><div class="a">It can screen multiple likely causes from one specimen quickly, which is useful when several pathogens are plausible and rapid answers are needed.</div></div>
+      <div class="check-item"><div class="q">3. Why can serology be informative but still limited?</div><div class="a">Because it reflects host response, which may persist after prior infection or be weak in immunocompromised patients.</div></div>
+      <div class="check-item"><div class="q">4. What is the key laboratory distinction between MALDI-TOF and PCR?</div><div class="a">MALDI-TOF usually identifies an isolate recovered in culture by protein profile, whereas PCR targets nucleic acid and can be applied as a targeted molecular assay.</div></div>
+      <div class="check-item"><div class="q">5. Why should a broad molecular panel still be interpreted with stewardship?</div><div class="a">Because detecting a target is not always the same as identifying the clinically dominant cause, and unnecessary escalation or over-interpretation can follow.</div></div>
+    </div>
+  </div>
+
+  <div id="sectionC" class="tab-pane">
+    <div class="section-title"><h3>Section C · Serology and antigen detection</h3><p>Students commonly confuse these. This section separates them clearly and shows where each matters in real diagnostics.</p><div class="gold-line"></div></div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-h navy">Antigen detection</div>
+        <div class="card-b">
+          <ul>
+            <li>Detects a pathogen component rather than the host response.</li>
+            <li>Often useful in active infection and may support earlier diagnosis.</li>
+            <li>Performance depends on the target, assay, specimen, and timing.</li>
+            <li>Important examples include stool protozoal antigen testing and fungal antigen assays such as galactomannan and Histoplasma antigen workflows.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-h wine">Antibody serology</div>
+        <div class="card-b">
+          <ul>
+            <li>Detects the host immune response to infection.</li>
+            <li>Can be useful when direct detection is difficult.</li>
+            <li>May remain positive after prior exposure.</li>
+            <li>Can underperform in immunocompromised patients because antibody production may be reduced.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Diagnostic situation</th><th>Why antigen may help</th><th>Why antibody may help</th><th>Interpretation caution</th></tr></thead>
+        <tbody>
+          <tr><td>Acute intestinal protozoal infection</td><td>May detect organism-associated antigen quickly and with good standardization</td><td>Usually less central than direct organism-focused testing</td><td>Target coverage is assay-specific</td></tr>
+          <tr><td>Suspected invasive aspergillosis</td><td>Galactomannan may support diagnosis in selected populations and specimens</td><td>Routine antibody role is less central in the acute invasive setting</td><td>Population and antifungal exposure influence performance</td></tr>
+          <tr><td>Suspected histoplasmosis</td><td>Urine or serum antigen can be highly useful, especially in disseminated disease</td><td>Antibody may add sensitivity in selected settings</td><td>Previous infection and timing can complicate interpretation</td></tr>
+          <tr><td>Immunocompromised host</td><td>Antigen detection may remain highly relevant</td><td>Antibody testing may be less reliable</td><td>Always tie results to the host state</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout red">
+      <strong>Common interpretive pitfalls:</strong> cross-reactivity, window period, persistent antibodies from prior exposure, and the mistaken assumption that one biomarker alone proves invasive disease.
+    </div>
+
+    <div class="quick-check">
+      <h4>Section C self-check</h4>
+      <div class="check-item"><div class="q">1. Why is antigen detection often conceptually stronger than antibody detection for identifying active infection?</div><div class="a">Because it detects a pathogen-associated component rather than the host’s historical or developing immune response.</div></div>
+      <div class="check-item"><div class="q">2. Why can antibody results be misleading in some settings?</div><div class="a">Because antibodies may remain detectable after prior infection and may not reliably indicate current active disease.</div></div>
+      <div class="check-item"><div class="q">3. Why is β-D-glucan helpful but nonspecific?</div><div class="a">Because it is a broad fungal biomarker rather than a species-specific marker, so it can support fungal disease workup without identifying a single fungal cause.</div></div>
+      <div class="check-item"><div class="q">4. Why can serology underperform in immunosuppressed patients?</div><div class="a">Because adequate antibody production may not occur, reducing the sensitivity of antibody-based assays.</div></div>
+      <div class="check-item"><div class="q">5. Why should students learn specimen-dependent interpretation even for antigen tests?</div><div class="a">Because assay validity depends on the specimen for which the test is designed, and performance may differ between matrices such as stool, serum, urine, or BAL.</div></div>
+    </div>
+  </div>
+
+  <div id="sectionD" class="tab-pane">
+    <div class="section-title"><h3>Section D · Molecular diagnostics and state-of-the-art technologies</h3><p>This section moves beyond “PCR exists” and shows how targeted, multiplex, and frontier technologies fit into modern laboratory practice.</p><div class="gold-line"></div></div>
+
+    <div class="accordion">
+      <div class="acc open">
+        <div class="acc-h"><div><span class="pill">D1</span><h4>Core targeted molecular methods</h4><p>Conventional PCR, real-time PCR, multiplex PCR, and downstream sequencing or characterization</p></div><div class="icon">+</div></div>
+        <div class="acc-b">
+          <div class="grid-2">
+            <div class="card"><div class="card-h teal">What they add</div><div class="card-b"><ul><li>Greater sensitivity when morphology is equivocal or burden is low.</li><li>Species differentiation when microscopy cannot resolve look-alikes.</li><li>Targeted confirmation using nucleic acid evidence.</li></ul></div></div>
+            <div class="card"><div class="card-h purple">What can still go wrong</div><div class="card-b"><ul><li>Contamination can create false positives.</li><li>Poor specimen preservation can damage nucleic acid utility.</li><li>A targeted assay only detects what it was designed to detect.</li></ul></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc">
+        <div class="acc-h"><div><span class="pill">D2</span><h4>Syndromic and multiplex platforms</h4><p>Rapid multi-target testing with major workflow advantages and real interpretation responsibilities</p></div><div class="icon">+</div></div>
+        <div class="acc-b">
+          <div class="callout teal"><strong>Why they matter:</strong> in gastrointestinal disease, a single stool specimen may need assessment for bacterial, viral, and parasitic causes. Multiplex panels compress this timeline dramatically.</div>
+          <div class="grid-2">
+            <div class="card"><div class="card-h navy">Advantages</div><div class="card-b"><ul><li>Fast broad answer set from one run.</li><li>Useful when several pathogens are plausible.</li><li>Helpful where turnaround time drives management.</li></ul></div></div>
+            <div class="card"><div class="card-h wine">Cautions</div><div class="card-b"><ul><li>Detection does not automatically equal clinical dominance.</li><li>Over-testing can increase cost and over-interpretation.</li><li>Panels do not remove the need for stewardship.</li></ul></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc">
+        <div class="acc-h"><div><span class="pill">D3</span><h4>Current advanced mycology technologies</h4><p>MALDI-TOF, rapid fungal assays, targeted sequencing, and newer culture-linked identification strategies</p></div><div class="icon">+</div></div>
+        <div class="acc-b">
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Technology</th><th>Primary role</th><th>What students should remember</th></tr></thead>
+              <tbody>
+                <tr><td><strong>MALDI-TOF MS</strong></td><td>Rapid identification from cultured isolate</td><td>Fast, modern, and very useful, but depends heavily on database quality and usually follows culture recovery.</td></tr>
+                <tr><td><strong>Lateral flow fungal assays</strong></td><td>Rapid adjunctive fungal testing</td><td>Helpful in selected workflows; interpret within the validated clinical-laboratory context.</td></tr>
+                <tr><td><strong>T2Candida / rapid direct blood platforms</strong></td><td>Selected nonculture candidemia support</td><td>Represents the push toward faster invasive fungal diagnostics, though availability and workflow adoption vary.</td></tr>
+                <tr><td><strong>Targeted sequencing</strong></td><td>Higher-resolution confirmation or characterization</td><td>Useful when morphology or routine identification is insufficient.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc">
+        <div class="acc-h"><div><span class="pill">D4</span><h4>Frontier technologies</h4><p>Metagenomic next-generation sequencing and pathogen-agnostic approaches</p></div><div class="icon">+</div></div>
+        <div class="acc-b">
+          <div class="grid-2">
+            <div class="card"><div class="card-h gold">Promise</div><div class="card-b"><ul><li>Can search broadly for organisms when the answer is unclear.</li><li>Useful in selected complex, unresolved, or atypical cases.</li><li>Represents a major future direction in advanced infectious disease diagnostics.</li></ul></div></div>
+            <div class="card"><div class="card-h green">Limitations</div><div class="card-b"><ul><li>High cost and technical complexity.</li><li>Bioinformatics and contamination challenges.</li><li>Interpretation must distinguish signal from clinically meaningful signal.</li></ul></div></div>
+          </div>
+          <div class="callout sky"><strong>Key teaching message:</strong> the most advanced test is not automatically the best test. The right test is the one that answers the question with the best balance of relevance, reliability, timeliness, and interpretability.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quick-check">
+      <h4>Section D self-check</h4>
+      <div class="check-item"><div class="q">1. Why is multiplex PCR powerful yet potentially problematic?</div><div class="a">Because it can deliver a rapid broad answer, but it may detect targets whose clinical significance still needs careful interpretation.</div></div>
+      <div class="check-item"><div class="q">2. Why can MALDI-TOF not be described as a replacement for specimen collection quality?</div><div class="a">Because it typically identifies what has already been recovered as an isolate; poor specimen collection can still prevent recovery of the relevant organism.</div></div>
+      <div class="check-item"><div class="q">3. What is the main stewardship question when ordering a molecular assay?</div><div class="a">Is this the right assay for this specimen, clinical scenario, and decision point?</div></div>
+      <div class="check-item"><div class="q">4. Why is mNGS exciting but not automatically routine?</div><div class="a">Because it requires cost, infrastructure, bioinformatics interpretation, and strong control of contamination and background signal.</div></div>
+      <div class="check-item"><div class="q">5. Why should students think beyond “PCR is more sensitive”?</div><div class="a">Because sensitivity alone does not solve issues of specimen quality, target selection, contamination, cost, validation, and clinical interpretation.</div></div>
+    </div>
+  </div>
+
+  <div id="sectionE" class="tab-pane">
+    <div class="section-title"><h3>Section E · Current mycology laboratory practice</h3><p>This section is deliberately bench-oriented. It is not a generic fungal overview.</p><div class="gold-line"></div></div>
+
+    <div class="grid-3">
+      <div class="card"><div class="card-h navy">Specimen quality and rejection logic</div><div class="card-b"><ul><li>Specimen adequacy affects every downstream stage.</li><li>Wrong site, tiny volume, poor transport, or dry-out may destroy diagnostic value.</li><li>Mycology is especially vulnerable to poor pre-analytics because culture may already be slow and direct examination may depend on limited material.</li></ul></div></div>
+      <div class="card"><div class="card-h teal">Direct bench examination</div><div class="card-b"><ul><li>KOH and related direct methods remain important for keratinized and selected clinical materials.</li><li>Direct microscopy can provide fast presumptive evidence before culture finalizes.</li><li>Direct evidence is especially valuable when urgency is high.</li></ul></div></div>
+      <div class="card"><div class="card-h wine">Culture-centered work</div><div class="card-b"><ul><li>Culture remains central for isolate recovery and later ID.</li><li>Media selection, incubation conditions, and read timing influence success.</li><li>Growth still requires interpretation: contamination, colonization, or true significance?</li></ul></div></div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Bench question</th><th>Current lab-oriented answer</th><th>Why it matters</th></tr></thead>
+        <tbody>
+          <tr><td>Is the specimen acceptable?</td><td>Assess site, amount, transport, and suitability before processing.</td><td>Poor pre-analytics can make every later result weaker.</td></tr>
+          <tr><td>Can direct exam help immediately?</td><td>Yes, especially when fungal elements can be visualized quickly.</td><td>Early presumptive evidence can be clinically valuable.</td></tr>
+          <tr><td>Is culture still needed if a biomarker is positive?</td><td>Often yes, because culture or isolate-based work may still be needed for fuller identification and context.</td><td>Biomarkers support diagnosis, but they do not replace the whole lab workflow.</td></tr>
+          <tr><td>How should modern ID tools be integrated?</td><td>As part of a layered workflow: direct exam, culture, biomarkers, MALDI-TOF, and molecular confirmation where indicated.</td><td>Modern tools strengthen the bench when integrated well, not when used as disconnected add-ons.</td></tr>
+          <tr><td>Why is colonization vs infection such a major question?</td><td>Because detection alone may not prove invasive disease, particularly in nonsterile sites.</td><td>Clinical correlation protects against overcalling significance.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-h purple">High-yield current practice cases</div>
+        <div class="card-b">
+          <ul>
+            <li><strong>Suspected invasive aspergillosis:</strong> think specimen, culture, imaging context, and biomarker interpretation together.</li>
+            <li><strong>Disseminated histoplasmosis:</strong> antigen detection may be highly valuable, especially in the appropriate clinical setting.</li>
+            <li><strong>Suspected Candida auris:</strong> modern accurate identification workflows are essential because misidentification risk has major infection-control implications.</li>
+            <li><strong>Mold isolate with unclear morphology:</strong> MALDI-TOF or sequencing support may become necessary.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-h green">What students should sound like in lab discussion</div>
+        <div class="card-b">
+          <ul>
+            <li>“The value of this positive result depends on the specimen and the clinical scenario.”</li>
+            <li>“Direct microscopy is useful, but species-level confirmation may still be needed.”</li>
+            <li>“A biomarker is supportive evidence, not a stand-alone diagnosis.”</li>
+            <li>“Culture remains important because viable isolate recovery still matters.”</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="quick-check">
+      <h4>Section E self-check</h4>
+      <div class="check-item"><div class="q">1. Why is specimen adequacy a core mycology issue rather than a minor technical detail?</div><div class="a">Because fungal workups may already be limited by slow growth or small organism burden, so poor pre-analytics can substantially reduce diagnostic yield.</div></div>
+      <div class="check-item"><div class="q">2. Why can direct examination still be highly valuable in a modern mycology laboratory?</div><div class="a">Because it can provide rapid presumptive evidence and help guide urgency even before culture or advanced tests are finalized.</div></div>
+      <div class="check-item"><div class="q">3. Why does a positive fungal result not always equal invasive disease?</div><div class="a">Because colonization or contamination may be possible, especially in nonsterile specimens, so clinical correlation is mandatory.</div></div>
+      <div class="check-item"><div class="q">4. Why is Candida auris a modern priority in laboratory diagnosis?</div><div class="a">Because accurate identification has clinical and infection-control consequences, and some routine systems may misidentify it if databases or workflows are inadequate.</div></div>
+      <div class="check-item"><div class="q">5. What is the strongest bench-oriented summary of modern mycology practice?</div><div class="a">Layered workflow: specimen quality → direct exam → culture → biomarker and/or rapid ID support → interpretation in clinical context.</div></div>
+    </div>
+  </div>
+
+  <div id="practice" class="tab-pane">
+    <div class="section-title"><h3>Practice zone</h3><p>Use this to consolidate the module before the final quiz.</p><div class="gold-line"></div></div>
+
+    <div class="callout teal"><strong>How to use this zone:</strong> work through the scenarios before opening the Master quiz. The goal is to practice choosing the next diagnostic move, not only recalling definitions.</div>
+
+    <div class="accordion">
+      <div class="acc open">
+        <div class="acc-h"><div><span class="pill">Scenario 1</span><h4>Repeated stool microscopy is negative, but suspicion remains high</h4><p>Think about escalation rather than simple repetition</p></div><div class="icon">+</div></div>
+        <div class="acc-b">
+          <div class="card"><div class="card-b"><p><strong>Student action:</strong> review specimen quality and timing first, then consider antigen detection or molecular testing when the parasite burden may be low or morphology may be difficult to capture reliably.</p></div></div>
+        </div>
+      </div>
+      <div class="acc">
+        <div class="acc-h"><div><span class="pill">Scenario 2</span><h4>Immunocompromised patient with suspected invasive fungal infection</h4><p>Rapid answers matter, but support rarely comes from one method alone</p></div><div class="icon">+</div></div>
+        <div class="acc-b">
+          <div class="card"><div class="card-b"><p><strong>Student action:</strong> integrate direct mycology workup with biomarker interpretation and remember that host status changes the performance and urgency of several tests.</p></div></div>
+        </div>
+      </div>
+      <div class="acc">
+        <div class="acc-h"><div><span class="pill">Scenario 3</span><h4>Morphologically unclear fungal isolate recovered in culture</h4><p>Classic morphology may not be enough for the final answer</p></div><div class="icon">+</div></div>
+        <div class="acc-b">
+          <div class="card"><div class="card-b"><p><strong>Student action:</strong> consider rapid isolate identification such as MALDI-TOF or targeted sequencing support when morphology is insufficient or the identification has major clinical implications.</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="match-controls">
+      <div style="font-weight:800;color:var(--navy)" id="matchScore">Matches: 0 / 6</div>
+      <button class="btn secondary" type="button" onclick="resetMatch()">Reset match</button>
+    </div>
+    <div class="match-feedback" id="matchFeedback"></div>
+    <div class="match-wrap">
+      <div class="match-col"><h4>Method</h4><div id="leftList"></div></div>
+      <div class="match-col"><h4>Best fit</h4><div id="rightList"></div></div>
+    </div>
+  </div>
+
+  <div id="flashcards" class="tab-pane">
+    <div class="section-title"><h3>Flashcards</h3><p>Tap to flip. These are built for rapid postgraduate retrieval.</p><div class="gold-line"></div></div>
+    <div class="flash-tip">Use these after each section, not only at the end.</div>
+    <div class="flash-grid" id="flashGrid"></div>
+  </div>
+
+  <div id="quiz" class="tab-pane">
+    <div class="section-title"><h3>Master quiz</h3><p>Score first, then review. The questions are aligned directly to the module content.</p><div class="gold-line"></div></div>
+    <div class="quiz-shell" id="quizShell">
+      <div class="quiz-top">
+        <div id="quizMeta">Question 1 of 16</div>
+        <div class="progress"><div id="progressFill"></div></div>
+      </div>
+      <div class="quiz-body">
+        <div class="q-num" id="qNum"></div>
+        <div class="q-text" id="qText"></div>
+        <div id="options"></div>
+        <div class="feedback" id="feedback"></div>
+        <div class="quiz-nav">
+          <button class="btn secondary" id="prevBtn">Previous</button>
+          <button class="btn primary" id="nextBtn">Next</button>
+        </div>
+      </div>
+    </div>
+    <div class="result" id="resultBox">
+      <div class="score" id="scoreText">0<span>/16</span></div>
+      <p style="font-size:17px;color:var(--muted);margin:8px 0 18px">Review the explanations after scoring to refine your diagnostic reasoning.</p>
+      <button class="btn primary" onclick="restartQuiz()">Retry quiz</button>
+    </div>
+  </div>
+
+  <div id="cheat" class="tab-pane">
+    <div class="section-title"><h3>Cheat sheet</h3><p>High-yield compression for revision before class discussion, viva, or exam preparation.</p><div class="gold-line"></div></div>
+    <div class="cheat-grid">
+      <div class="cheat-card">
+        <div class="cheat-h navy">Method logic</div>
+        <div class="cheat-b">
+          <div class="row"><div class="key">Microscopy</div><div class="val">Direct evidence, foundational, operator-dependent</div></div>
+          <div class="row"><div class="key">Antigen</div><div class="val">Detects pathogen component, often useful in active infection</div></div>
+          <div class="row"><div class="key">Antibody</div><div class="val">Detects host response, useful but time- and host-dependent</div></div>
+          <div class="row"><div class="key">PCR</div><div class="val">Targeted nucleic acid detection, powerful but assay-limited</div></div>
+          <div class="row"><div class="key">Culture</div><div class="val">Viable organism recovery; still central in mycology</div></div>
+        </div>
+      </div>
+      <div class="cheat-card">
+        <div class="cheat-h teal">Interpretation warnings</div>
+        <div class="cheat-b">
+          <div class="row"><div class="key">False negative</div><div class="val">Think low burden, poor specimen, wrong timing, or analyte instability</div></div>
+          <div class="row"><div class="key">False positive</div><div class="val">Think contamination, cross-reactivity, or clinically irrelevant detection</div></div>
+          <div class="row"><div class="key">Serology caveat</div><div class="val">Past exposure and host immune status matter</div></div>
+          <div class="row"><div class="key">Biomarker caveat</div><div class="val">Supportive evidence is not stand-alone proof of invasive disease</div></div>
+          <div class="row"><div class="key">Pre-analytics</div><div class="val">Specimen quality, timing, and preservative compatibility can determine whether advanced testing succeeds at all</div></div>
+        </div>
+      </div>
+      <div class="cheat-card">
+        <div class="cheat-h gold">Modern mycology must-knows</div>
+        <div class="cheat-b">
+          <div class="row"><div class="key">Galactomannan</div><div class="val">Useful for invasive aspergillosis in selected patient groups and specimens</div></div>
+          <div class="row"><div class="key">β-D-glucan</div><div class="val">Broad fungal marker, not species-specific</div></div>
+          <div class="row"><div class="key">MALDI-TOF</div><div class="val">Rapid isolate identification, database quality matters</div></div>
+          <div class="row"><div class="key">C. auris</div><div class="val">Accurate identification has major infection-control implications</div></div>
+        </div>
+      </div>
+      <div class="cheat-card">
+        <div class="cheat-h wine">Exam-thinking prompts</div>
+        <div class="cheat-b">
+          <div class="row"><div class="key">Ask first</div><div class="val">What exactly does this test detect?</div></div>
+          <div class="row"><div class="key">Ask next</div><div class="val">Is this the best specimen and the best timing?</div></div>
+          <div class="row"><div class="key">Then ask</div><div class="val">What is the main limitation or pitfall?</div></div>
+          <div class="row"><div class="key">Finally</div><div class="val">How will this result be interpreted in clinical context?</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sources" class="tab-pane">
+    <div class="section-title"><h3>Resources and further reading</h3><p>These are credible, student-safe sources used to ground the content and support independent study.</p><div class="gold-line"></div></div>
+    <div class="grid-2">
+      <div class="resource-card">
+        <h4>CDC DPDx · Stool specimen antigen detection</h4>
+        <p>Useful for understanding how and why antigen detection became important in selected parasitic workflows, especially where microscopy alone is limited.</p>
+        <p><a href="https://www.cdc.gov/dpdx/diagnosticprocedures/stool/antigendetection.html" target="_blank" rel="noopener noreferrer">Open CDC DPDx antigen detection page</a></p>
+      </div>
+      <div class="resource-card">
+        <h4>CDC DPDx · Molecular diagnosis of stool specimens</h4>
+        <p>Supports the module’s explanation of PCR-based escalation, targeted identification, and further characterization with sequencing when needed.</p>
+        <p><a href="https://www.cdc.gov/dpdx/diagnosticprocedures/stool/moleculardx.html" target="_blank" rel="noopener noreferrer">Open CDC DPDx molecular diagnosis page</a></p>
+      </div>
+      <div class="resource-card">
+        <h4>IDSA · Aspergillosis guideline</h4>
+        <p>Important for understanding evidence-based use of galactomannan and β-D-glucan in selected populations and specimens.</p>
+        <p><a href="https://www.idsociety.org/practice-guideline/aspergillosis/" target="_blank" rel="noopener noreferrer">Open IDSA aspergillosis guidance</a></p>
+      </div>
+      <div class="resource-card">
+        <h4>CDC · Histoplasmosis clinical overview</h4>
+        <p>Useful for illustrating the laboratory importance of urine and serum antigen detection and how test choice varies with manifestation and severity.</p>
+        <p><a href="https://www.cdc.gov/histoplasmosis/hcp/clinical-overview/index.html" target="_blank" rel="noopener noreferrer">Open CDC histoplasmosis overview</a></p>
+      </div>
+      <div class="resource-card">
+        <h4>CDC · Histoplasmosis testing algorithm</h4>
+        <p>Helpful for showing students an applied, algorithmic approach to antigen and antibody use.</p>
+        <p><a href="https://www.cdc.gov/histoplasmosis/hcp/algorithm/index.html" target="_blank" rel="noopener noreferrer">Open CDC histoplasmosis testing algorithm</a></p>
+      </div>
+      <div class="resource-card">
+        <h4>WHO · Diagnostics report for fungal infections</h4>
+        <p>Provides current global context on diagnostic gaps, especially the need for faster and more accessible fungal diagnostics.</p>
+        <p><a href="https://www.who.int/news/item/01-04-2025-who-issues-its-first-ever-reports-on-tests-and-treatments-for-fungal-infections" target="_blank" rel="noopener noreferrer">Open WHO diagnostics report summary</a></p>
+      </div>
+    </div>
+
+    <div class="callout sky">
+      <strong>Recommended course-linked texts:</strong> Paniker’s Textbook of Medical Parasitology, Larone’s Medically Important Fungi, Fundamentals of Diagnostic Mycology,
+      and current Journal of Fungi / Trends in Parasitology reading, as listed in your course materials and recommended reading set.
+    </div>
+  </div>
+</main>
+<div class="mod-footnav">
+  <a class="mod-nav-btn home" href="index.html">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      All Modules
+    </a>
+  <div class="mod-footnav-center">
+    <span>Module 1</span>
+    <strong>Advanced Diagnostic Methods</strong>
+  </div>
+  <a class="mod-nav-btn next" href="module2.html">
+      Module 2
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+</div>
+
+<footer class="mod-footer-bar">
+  <strong>Dr Salma Elnour</strong> · Clinical Parasitology &amp; Mycology · Module 1 · Advanced Diagnostic Methods<br><span style="font-size:11px;color:#b7c4d8;margin-top:4px;display:inline-block">Gulf Medical University · MSc Medical Laboratory Sciences</span>
+</footer>
+
+<script>
+const tabs = document.querySelectorAll('.tab-btn');
+const panes = document.querySelectorAll('.tab-pane');
+tabs.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    tabs.forEach(b=>b.classList.remove('active'));
+    panes.forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.tab).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+
+document.querySelectorAll('.acc-h').forEach(h=>{
+  h.addEventListener('click', ()=> h.parentElement.classList.toggle('open'));
+});
+
+document.querySelectorAll('.check-item').forEach(item=>{
+  item.addEventListener('click', ()=> item.classList.toggle('open'));
+});
+
+const flashcards = [
+  {cat:'Decision logic',term:'Diagnostic escalation',back:'Move from routine methods to advanced methods when the first-line test cannot answer the question confidently enough.'},
+  {cat:'Parasitology',term:'Antigen detection',back:'Detects pathogen-associated material and can outperform routine microscopy in selected intestinal protozoal workflows.'},
+  {cat:'Serology',term:'Antibody assay',back:'Detects host response, not the organism itself. Useful, but interpretation depends on timing and host immune status.'},
+  {cat:'Molecular',term:'Targeted PCR',back:'Sensitive and specific for intended targets, but only detects what the assay was designed to find.'},
+  {cat:'Multiplex',term:'Syndromic panel',back:'Rapid multi-target answer set from one specimen, but still requires stewardship and clinical interpretation.'},
+  {cat:'Mycology',term:'Galactomannan',back:'A useful Aspergillus-related antigen marker in selected patient groups and validated specimen settings.'},
+  {cat:'Mycology',term:'β-D-glucan',back:'Broad fungal biomarker that supports fungal disease workup but is not species-specific.'},
+  {cat:'Mycology',term:'MALDI-TOF',back:'Rapid isolate identification technology that usually follows culture recovery and depends on database quality.'},
+  {cat:'Practice',term:'Specimen adequacy',back:'One of the most important hidden variables in diagnostic success. Poor samples can make advanced methods underperform too.'},
+  {cat:'Frontier',term:'mNGS',back:'A broad, pathogen-agnostic sequencing approach with major promise but also cost, contamination, and interpretation challenges.'}
+];
+const flashGrid = document.getElementById('flashGrid');
+flashcards.forEach(f=>{
+  const el = document.createElement('div');
+  el.className = 'flash';
+  el.innerHTML = `<div class="flash-inner">
+      <div class="face front"><div class="cat">${f.cat}</div><div class="term">${f.term}</div><div class="hint">tap to reveal</div></div>
+      <div class="face back">${f.back}</div>
+    </div>`;
+  el.addEventListener('click', ()=>el.classList.toggle('flipped'));
+  flashGrid.appendChild(el);
+});
+
+const quiz = [
+  {q:'A stool sample is repeatedly negative by microscopy, but the clinical suspicion for an intestinal protozoal infection remains strong. Which is the best conceptual next move?',opts:['Assume the disease is excluded','Consider antigen detection or targeted molecular testing after reviewing specimen quality','Order antibody serology first in every case','Stop testing because microscopy is the gold standard'],a:1,e:'When suspicion remains high, escalation to antigen detection or molecular testing can be appropriate, especially after checking pre-analytical factors.'},
+  {q:'Which statement best differentiates antigen detection from antibody detection?',opts:['Both detect host response','Antigen detects host response while antibody detects organism','Antigen detects a pathogen-associated target, whereas antibody detects host response','They are interchangeable in interpretation'],a:2,e:'Antigen assays detect a pathogen-associated component; antibody assays detect the host response to infection.'},
+  {q:'Why can antibody-based diagnostics be weaker in immunocompromised patients?',opts:['Because antigens disappear more quickly','Because antibody production may be reduced','Because PCR blocks antibody formation','Because culture becomes invalid'],a:1,e:'Immunocompromised patients may generate weaker humoral responses, which can reduce the sensitivity of antibody-based tests.'},
+  {q:'What is the strongest laboratory advantage of culture in mycology?',opts:['It always gives the final diagnosis alone','It demonstrates a viable organism and permits downstream identification','It is faster than all biomarker tests','It eliminates the need for direct examination'],a:1,e:'Culture remains central because it recovers a viable organism, enabling identification and potentially susceptibility testing.'},
+  {q:'Why should a multiplex syndromic panel still be interpreted cautiously?',opts:['Because it can never detect parasites','Because broad detection may not automatically identify the most clinically relevant cause','Because it only works for fungi','Because it replaces specimen assessment'],a:1,e:'A broad panel can detect multiple targets, but clinical significance still has to be interpreted in context.'},
+  {q:'Which statement about MALDI-TOF is most accurate?',opts:['It usually identifies organisms directly from any specimen without prior workflow','It is a rapid isolate identification tool that often follows culture recovery','It is a host antibody test','It replaces all molecular methods'],a:1,e:'MALDI-TOF is primarily used for rapid identification of recovered isolates, especially in modern culture-linked workflows.'},
+  {q:'What makes β-D-glucan useful but limited?',opts:['It is species-specific but too slow','It is broad and supportive, but not species-specific','It only detects parasites','It only works in urine'],a:1,e:'β-D-glucan is useful as a broad fungal marker but does not identify a single fungal species on its own.'},
+  {q:'Why is specimen adequacy so important even when advanced assays are available?',opts:['Because advanced assays remove all specimen-related problems','Because the wrong specimen can still reduce or invalidate diagnostic yield','Because only microscopy depends on specimen quality','Because adequacy only matters for culture'],a:1,e:'Advanced assays still depend on the right specimen, right handling, and appropriate timing.'},
+  {q:'A laboratory wants to distinguish morphologically similar parasitic organisms that cannot be resolved confidently by microscopy. Which approach is most appropriate?',opts:['Ignore the difference if both are protozoa','Use targeted molecular testing or downstream characterization','Switch to β-D-glucan','Use fungal culture'],a:1,e:'Targeted molecular testing or sequencing-based characterization is appropriate when microscopy cannot provide confident differentiation.'},
+  {q:'Why is the statement “molecular tests are always best” flawed?',opts:['Because molecular tests are never useful','Because test choice also depends on question, specimen, stewardship, and interpretation','Because culture is always superior','Because microscopy never fails'],a:1,e:'The best test is context-dependent. Sensitivity alone does not settle appropriateness, cost, validation, or interpretive value.'},
+  {q:'In current mycology practice, a positive biomarker result should usually be viewed as:',opts:['Complete proof of invasive disease by itself','Supportive evidence that must be interpreted with other laboratory and clinical data','A replacement for culture forever','Evidence that the specimen was contaminated'],a:1,e:'Biomarkers are usually supportive rather than stand-alone diagnostic proof.'},
+  {q:'What is the key diagnostic strength of antigen detection in selected histoplasmosis workflows?',opts:['It is only useful in superficial disease','Urine or serum antigen can be highly informative in appropriate clinical settings','It detects host memory cells directly','It replaces every other method automatically'],a:1,e:'Histoplasma antigen testing in urine or serum is a major example of how antigen detection can be especially informative in the right context.'},
+  {q:'Which of the following is the clearest example of a frontier, pathogen-agnostic diagnostic direction?',opts:['Direct wet mount','MALDI-TOF from culture isolate','Metagenomic next-generation sequencing','Permanent stain'],a:2,e:'mNGS is a broad, pathogen-agnostic sequencing strategy with promise in difficult unresolved cases.'},
+  {q:'Why is Candida auris emphasized in modern mycology practice?',opts:['Because it has no laboratory relevance','Because accurate identification has important clinical and infection-control consequences','Because it is diagnosed only by microscopy','Because it never requires culture'],a:1,e:'C. auris matters because misidentification can have major downstream consequences, especially for infection control.'},
+  {q:'Which statement best captures postgraduate diagnostic reasoning?',opts:['Choose the newest test first','Choose the assay that most appropriately answers the question for the specimen and clinical context','Choose the cheapest test regardless of value','Avoid combining methods'],a:1,e:'Professional laboratory reasoning asks what test best answers the diagnostic question within the real specimen and clinical context.'},
+  {q:'A fungal isolate is recovered in culture, but morphology is not sufficiently decisive. What is the best next laboratory idea?',opts:['Report it as unknown and stop','Use rapid isolate identification support such as MALDI-TOF or sequencing where appropriate','Switch to stool antigen detection','Repeat KOH on the original skin specimen only'],a:1,e:'When culture yields an unclear isolate, rapid isolate ID support such as MALDI-TOF or sequencing can strengthen the final answer.'}
+];
+let qi = 0;
+let answers = Array(quiz.length).fill(null);
+const qNum = document.getElementById('qNum');
+const qText = document.getElementById('qText');
+const options = document.getElementById('options');
+const feedback = document.getElementById('feedback');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const quizMeta = document.getElementById('quizMeta');
+const progressFill = document.getElementById('progressFill');
+const resultBox = document.getElementById('resultBox');
+const quizShell = document.getElementById('quizShell');
+const scoreText = document.getElementById('scoreText');
+function renderQuiz(){
+  const item = quiz[qi];
+  qNum.textContent = `Question ${qi+1}`;
+  qText.textContent = item.q;
+  quizMeta.textContent = `Question ${qi+1} of ${quiz.length}`;
+  progressFill.style.width = `${((qi+1)/quiz.length)*100}%`;
+  options.innerHTML = '';
+  feedback.className = 'feedback';
+  feedback.textContent = '';
+  item.opts.forEach((opt, idx)=>{
+    const b = document.createElement('button');
+    b.className = 'opt';
+    b.innerHTML = `<div class="ol">${String.fromCharCode(65+idx)}</div><div>${opt}</div>`;
+    b.disabled = answers[qi] !== null;
+    if(answers[qi] !== null){
+      if(idx === item.a) b.classList.add('correct');
+      if(idx === answers[qi] && idx !== item.a) b.classList.add('wrong');
+    }
+    b.addEventListener('click', ()=>choose(idx));
+    options.appendChild(b);
+  });
+  if(answers[qi] !== null){
+    const good = answers[qi] === item.a;
+    feedback.className = `feedback show ${good ? 'good' : 'bad'}`;
+    feedback.textContent = (good ? 'Correct. ' : 'Not quite. ') + item.e;
+  }
+  prevBtn.disabled = qi === 0;
+  nextBtn.textContent = qi === quiz.length - 1 ? 'Finish' : 'Next';
+}
+function choose(idx){ if(answers[qi] !== null) return; answers[qi] = idx; renderQuiz(); }
+prevBtn.addEventListener('click', ()=>{ if(qi>0){qi--;renderQuiz();} });
+nextBtn.addEventListener('click', ()=>{ if(qi < quiz.length - 1){ qi++; renderQuiz(); } else finishQuiz(); });
+function finishQuiz(){
+  const unanswered = answers.filter(a=>a===null).length;
+  if(unanswered){ alert('Please answer all questions before finishing.'); return; }
+  const score = answers.reduce((n,a,i)=> n + (a===quiz[i].a ? 1 : 0), 0);
+  scoreText.innerHTML = `${score}<span>/${quiz.length}</span>`;
+  quizShell.style.display = 'none';
+  resultBox.classList.add('show');
+}
+function restartQuiz(){ qi = 0; answers = Array(quiz.length).fill(null); resultBox.classList.remove('show'); quizShell.style.display = 'block'; renderQuiz(); }
+renderQuiz();
+
+const matchPairs = [
+  ['Antigen detection','Detects pathogen-associated target rather than host response'],
+  ['Antibody serology','Detects host response and may reflect past or current exposure'],
+  ['Culture','Best method for recovery of a viable organism'],
+  ['MALDI-TOF','Rapid identification typically linked to isolate-based workflow'],
+  ['Multiplex panel','Rapid broad screening that still requires stewardship'],
+  ['mNGS','Pathogen-agnostic sequencing approach for selected difficult cases']
+];
+let selectedLeft = null, selectedRight = null, matched = 0;
+const leftList = document.getElementById('leftList');
+const rightList = document.getElementById('rightList');
+const matchScore = document.getElementById('matchScore');
+const matchFeedback = document.getElementById('matchFeedback');
+function showMatchFeedback(message, type){
+  matchFeedback.className = `match-feedback show ${type}`;
+  matchFeedback.textContent = message;
+}
+function renderMatchLists(){
+  leftList.innerHTML = '';
+  rightList.innerHTML = '';
+  matchPairs.forEach(p=>{
+    const d = document.createElement('div'); d.className='match-item'; d.dataset.side='left'; d.dataset.key=p[0]; d.textContent=p[0]; d.onclick=()=>selectMatch(d,'left'); leftList.appendChild(d);
+  });
+  [...matchPairs].sort(()=>Math.random()-0.5).forEach(p=>{
+    const d = document.createElement('div'); d.className='match-item'; d.dataset.side='right'; d.dataset.key=p[0]; d.textContent=p[1]; d.onclick=()=>selectMatch(d,'right'); rightList.appendChild(d);
+  });
+}
+function resetMatch(){
+  selectedLeft = null; selectedRight = null; matched = 0;
+  matchScore.textContent = `Matches: ${matched} / ${matchPairs.length}`;
+  matchFeedback.className = 'match-feedback';
+  matchFeedback.textContent = '';
+  renderMatchLists();
+}
+function selectMatch(el, side){
+  if(el.classList.contains('matched')) return;
+  if(side==='left'){ document.querySelectorAll('.match-item[data-side="left"]').forEach(x=>x.classList.remove('selected')); selectedLeft = el; el.classList.add('selected'); }
+  else { document.querySelectorAll('.match-item[data-side="right"]').forEach(x=>x.classList.remove('selected')); selectedRight = el; el.classList.add('selected'); }
+  if(selectedLeft && selectedRight){
+    const ok = selectedLeft.dataset.key === selectedRight.dataset.key;
+    if(ok){
+      selectedLeft.classList.remove('selected'); selectedRight.classList.remove('selected');
+      selectedLeft.classList.add('matched'); selectedRight.classList.add('matched'); matched++;
+      matchScore.textContent = `Matches: ${matched} / ${matchPairs.length}`;
+      showMatchFeedback(`Correct match: ${selectedLeft.dataset.key}.`, 'good');
+      if(matched === matchPairs.length){
+        showMatchFeedback('Excellent — you matched all methods correctly.', 'good');
+      }
+    } else {
+      selectedLeft.classList.add('wrong'); selectedRight.classList.add('wrong');
+      showMatchFeedback('Not quite. Recheck what the method detects or how it is used in the workflow.', 'bad');
+      setTimeout(()=>{ selectedLeft.classList.remove('selected','wrong'); selectedRight.classList.remove('selected','wrong'); },500);
+    }
+    selectedLeft = null; selectedRight = null;
+  }
+}
+resetMatch();
+</script>
+</body>
+</html>

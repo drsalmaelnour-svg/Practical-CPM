@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Clinical Parasitology & Mycology | Module 2: Post-Analytical Interpretation & Case-Based Analysis</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#14233b;
+  --navy-2:#20385b;
+  --ink:#1b2d4a;
+  --teal:#0e7c86;
+  --teal-soft:#e9f8f8;
+  --gold:#d2aa4c;
+  --gold-soft:#fff8e8;
+  --wine:#7f3143;
+  --green:#1f6b51;
+  --purple:#53408d;
+  --paper:#f5f7fb;
+  --white:#ffffff;
+  --line:#dfe7f1;
+  --muted:#657891;
+  --ok:#1f8a5a;
+  --warn:#d97706;
+  --bad:#c0392b;
+  --sky:#edf4ff;
+  --sky-line:#d7e5fa;
+  --radius:18px;
+  --shadow:0 10px 30px rgba(20,35,59,.08);
+  --shadow-2:0 18px 50px rgba(20,35,59,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,system-ui,sans-serif;
+  background:linear-gradient(180deg,#eff4fb 0%,#f8fafc 100%);
+  color:var(--ink);
+  min-height:100vh;
+}
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(20,35,59,.96);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  box-shadow:0 8px 26px rgba(0,0,0,.12);
+}
+.h-wrap{
+  max-width:1280px;margin:auto;padding:18px 22px;
+  display:flex;gap:18px;align-items:center;justify-content:space-between;
+}
+.brand{display:flex;align-items:center;gap:16px}
+.badge{
+  background:linear-gradient(135deg,var(--gold),#f0cf7f);
+  color:var(--navy);
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.brand h1{
+  color:var(--white);
+  font-family:"Playfair Display",serif;
+  font-size:25px;
+  line-height:1.1;
+}
+.brand h1 span{color:var(--gold)}
+.brand p{color:#b6c3d8;font-size:13px;margin-top:4px}
+.nav{
+  background:#101c31;
+  border-top:1px solid rgba(255,255,255,.05);
+  border-bottom:2px solid rgba(210,170,76,.35);
+}
+.nav-inner{
+  max-width:1280px;margin:auto;padding:0 10px;
+  display:flex;gap:4px;flex-wrap:wrap;
+}
+.tab-btn{
+  border:none;background:none;color:#9eb0ca;
+  padding:14px 15px;cursor:pointer;font-weight:700;
+  font-size:12px;text-transform:uppercase;letter-spacing:.06em;
+  border-bottom:3px solid transparent;white-space:nowrap;
+  transition:.2s ease;
+}
+.tab-btn:hover{color:#fff}
+.tab-btn.active{color:var(--gold);border-bottom-color:var(--gold)}
+main{max-width:1280px;margin:auto;padding:28px 22px 70px}
+.hero{
+  display:grid;grid-template-columns:1.25fr .95fr;gap:18px;margin-bottom:24px
+}
+@media (max-width:980px){.hero{grid-template-columns:1fr}}
+.hero-card{
+  background:linear-gradient(135deg,var(--navy),#223a61);
+  color:#fff;border-radius:28px;padding:32px;box-shadow:var(--shadow);position:relative;overflow:hidden;
+}
+.hero-card:before{
+  content:"";position:absolute;inset:auto -70px -70px auto;width:240px;height:240px;border-radius:50%;
+  background:radial-gradient(circle,rgba(210,170,76,.23),transparent 70%);
+}
+.hero-card h2{
+  font-family:"Playfair Display",serif;font-size:42px;line-height:1.04;margin-bottom:12px;max-width:820px
+}
+.hero-card p{max-width:760px;color:#d7e2f2;font-size:15px;line-height:1.7}
+.meta-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:14px
+}
+.mini{
+  background:var(--white);border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:var(--shadow)
+}
+.mini .label{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.mini .value{font-size:17px;font-weight:800;color:var(--navy);line-height:1.35}
+.mini p{font-size:13px;color:var(--muted);line-height:1.55;margin-top:6px}
+.tab-pane{display:none}
+.tab-pane.active{display:block}
+.section-title{margin:6px 0 18px}
+.section-title h3{
+  font-family:"Playfair Display",serif;font-size:31px;color:var(--navy);margin-bottom:5px
+}
+.section-title p{color:var(--muted);font-size:14px}
+.gold-line{width:68px;height:4px;background:var(--gold);border-radius:999px;margin-top:10px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:18px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:18px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
+@media (max-width:980px){.grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:760px){.grid-2,.grid-3,.grid-4,.meta-grid{grid-template-columns:1fr}}
+.card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)
+}
+.card-h{
+  padding:14px 18px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff
+}
+.navy{background:var(--navy)} .teal{background:var(--teal)} .gold{background:var(--gold);color:var(--navy)} .wine{background:var(--wine)} .green{background:var(--green)} .purple{background:var(--purple)}
+.card-b{padding:18px}
+.card-b p,.card-b li{font-size:14px;line-height:1.72;color:#31445f}
+.card-b ul{padding-left:18px}
+.card-b li{margin-bottom:8px}
+.callout{
+  background:var(--gold-soft);border:1px solid #f0dfb0;border-left:6px solid var(--gold);
+  padding:16px 18px;border-radius:16px;margin:0 0 18px 0;font-size:14px;line-height:1.7;color:#3d495e
+}
+.callout.teal{background:var(--teal-soft);border-color:#cdeeee;border-left-color:var(--teal);color:#25545b}
+.callout.red{background:#fdecec;border-color:#f7caca;border-left-color:var(--bad);color:#6f2631}
+.kpi{
+  border-radius:22px;padding:22px;background:linear-gradient(180deg,#fff,#f9fbff);border:1px solid var(--line);box-shadow:var(--shadow)
+}
+.kpi .big{font-size:34px;font-weight:800;color:var(--navy);line-height:1}
+.kpi .sub{font-size:12px;color:var(--muted);margin-top:8px;text-transform:uppercase;letter-spacing:.08em}
+.table-wrap{overflow:auto;border-radius:18px;box-shadow:var(--shadow);margin-bottom:18px}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line)}
+th{
+  background:var(--navy);color:#fff;padding:13px 14px;text-align:left;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.07em
+}
+td{
+  padding:13px 14px;border-top:1px solid var(--line);font-size:14px;line-height:1.6;color:#34465f;vertical-align:top
+}
+tr:nth-child(even) td{background:#f8fbff}
+.flow{
+  display:grid;grid-template-columns:repeat(7,1fr);gap:12px;margin-bottom:18px
+}
+@media (max-width:1080px){.flow{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:700px){.flow{grid-template-columns:repeat(2,1fr)}}
+.flow-step{
+  background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;text-align:center;box-shadow:var(--shadow);position:relative
+}
+.flow-step .n{
+  width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font-weight:800;margin:0 auto 10px
+}
+.flow-step h5{font-size:15px;color:var(--navy);margin-bottom:6px}
+.flow-step p{font-size:13px;color:var(--muted);line-height:1.55}
+.flash-tip{text-align:center;color:var(--muted);font-style:italic;margin-bottom:14px}
+.flash-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px
+}
+.flash{height:190px;perspective:1200px;cursor:pointer}
+.flash-inner{
+  width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .55s ease
+}
+.flash.flipped .flash-inner{transform:rotateY(180deg)}
+.face{
+  position:absolute;inset:0;border-radius:20px;backface-visibility:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:18px;box-shadow:var(--shadow)
+}
+.front{background:linear-gradient(135deg,var(--navy),#223a61);color:#fff;border:2px solid rgba(210,170,76,.18)}
+.front .cat{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#b8c5d8;margin-bottom:7px}
+.front .term{font-family:"Playfair Display",serif;font-size:24px;color:var(--gold);margin-bottom:8px}
+.front .hint{font-size:11px;color:#c7d3e3;text-transform:uppercase;letter-spacing:.08em}
+.back{background:linear-gradient(135deg,var(--teal),#14939d);color:#fff;transform:rotateY(180deg);font-size:14px;line-height:1.65}
+.quiz-shell{
+  background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow:hidden
+}
+.quiz-top{padding:18px 20px;background:linear-gradient(135deg,var(--navy),#203656);color:#fff}
+.progress{height:8px;background:rgba(255,255,255,.15);border-radius:999px;overflow:hidden;margin-top:10px}
+.progress > div{height:100%;background:var(--gold);width:0%;transition:.35s ease}
+.quiz-body{padding:22px}
+.q-num{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:800}
+.q-text{font-size:20px;font-weight:800;color:var(--navy);line-height:1.45;margin:12px 0 18px}
+.opt{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;border:2px solid var(--line);background:#f8fbff;border-radius:16px;padding:14px 16px;margin-bottom:10px;cursor:pointer;font-size:14px;color:#2f3f59;transition:.2s}
+.opt:hover{border-color:var(--teal)}
+.opt .ol{width:30px;height:30px;flex:0 0 30px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font-weight:800;font-size:12px}
+.opt.correct{border-color:var(--ok);background:#ecfbf4}
+.opt.correct .ol{background:var(--ok)}
+.opt.wrong{border-color:var(--bad);background:#fff0ef}
+.opt.wrong .ol{background:var(--bad)}
+.feedback{display:none;padding:14px 16px;border-radius:16px;margin-top:14px;font-size:14px;line-height:1.65}
+.feedback.show{display:block}
+.feedback.good{background:#ecfbf4;border-left:5px solid var(--ok);color:#1d5b41}
+.feedback.bad{background:#fff0ef;border-left:5px solid var(--bad);color:#6d2331}
+.quiz-nav{display:flex;justify-content:space-between;gap:10px;margin-top:18px}
+.btn{
+  border:none;border-radius:14px;padding:12px 18px;font-weight:800;cursor:pointer
+}
+.btn.primary{background:var(--navy);color:#fff}
+.btn.secondary{background:#eef4ff;color:var(--navy)}
+.btn.warn{background:#fff4df;color:#8b5a00}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.result{
+  display:none;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:28px;text-align:center
+}
+.result.show{display:block}
+.result .score{font-family:"Playfair Display",serif;font-size:70px;color:var(--navy)}
+.result .score span{color:var(--gold)}
+.match-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:840px){.match-wrap{grid-template-columns:1fr}}
+.match-col h4{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+.match-item{
+  background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:10px;cursor:pointer;font-size:14px;font-weight:600;color:#2f3f59;transition:.18s
+}
+.match-item.selected{border-color:var(--gold);background:var(--gold-soft)}
+.match-item.matched{border-color:var(--ok);background:#ecfbf4;color:var(--ok)}
+.match-item.wrong{border-color:var(--bad);background:#fff0ef}
+.match-message{
+  display:none;padding:12px 14px;border-radius:14px;margin:10px 0 16px;font-size:14px;font-weight:600
+}
+.match-message.show{display:block}
+.match-message.good{background:#ecfbf4;color:#1d5b41;border-left:5px solid var(--ok)}
+.match-message.bad{background:#fff0ef;color:#6d2331;border-left:5px solid var(--bad)}
+.cheat-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:860px){.cheat-grid{grid-template-columns:1fr}}
+.cheat-card{
+  background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden
+}
+.cheat-h{padding:13px 16px;color:#fff;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.cheat-b{padding:14px 16px}
+.row{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:none}
+.key{min-width:152px;font-size:12px;font-weight:800;color:var(--navy)}
+.val{font-size:13px;line-height:1.55;color:#46566e}
+.report-shell{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+@media (max-width:900px){.report-shell{grid-template-columns:1fr}}
+.report-box{
+  background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:18px
+}
+.report-box h4{font-size:17px;color:var(--navy);margin-bottom:10px}
+.report{
+  background:#f9fbff;border:1px solid var(--sky-line);border-radius:16px;padding:14px;white-space:pre-line;font-size:14px;line-height:1.7;color:#32445e
+}
+.fix-options button{
+  width:100%;text-align:left;border:2px solid var(--line);background:#fff;border-radius:14px;padding:12px 14px;margin-bottom:10px;cursor:pointer;font-size:14px;color:#2f3f59
+}
+.fix-options button:hover{border-color:var(--teal)}
+.fix-options button.correct{border-color:var(--ok);background:#ecfbf4}
+.fix-options button.wrong{border-color:var(--bad);background:#fff0ef}
+.tree-card{
+  background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:18px;margin-bottom:18px
+}
+.tree-head h4{font-size:18px;color:var(--navy);margin-bottom:6px}
+.tree-step{display:none;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+.tree-step.active{display:block}
+.step-actions button{
+  width:100%;text-align:left;border:2px solid var(--line);background:#f8fbff;border-radius:14px;padding:12px 14px;margin-bottom:10px;cursor:pointer;font-size:14px;color:#2f3f59
+}
+.step-actions button:hover{border-color:var(--teal)}
+.tree-feedback{
+  display:none;margin-top:10px;padding:12px 14px;border-radius:14px;font-size:14px;line-height:1.6
+}
+.tree-feedback.show{display:block}
+.tree-feedback.good{background:#ecfbf4;color:#1d5b41;border-left:5px solid var(--ok)}
+.tree-feedback.bad{background:#fff0ef;color:#6d2331;border-left:5px solid var(--bad)}
+.source-list li{margin-bottom:10px}
+.case-flip-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:18px
+}
+@media (max-width:900px){.case-flip-grid{grid-template-columns:1fr}}
+.case-flip{height:360px;perspective:1400px;cursor:pointer}
+.case-flip-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .6s ease}
+.case-flip.flipped .case-flip-inner{transform:rotateY(180deg)}
+.case-face{
+  position:absolute;inset:0;backface-visibility:hidden;border-radius:20px;overflow:auto;
+  background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);padding:20px
+}
+.case-face.back{transform:rotateY(180deg);background:linear-gradient(135deg,#f8fbff,#ffffff)}
+.case-face h4{font-size:18px;color:var(--navy);margin-bottom:8px}
+.case-face h5{font-size:14px;color:var(--teal);margin:12px 0 6px}
+.case-face p,.case-face li{font-size:14px;line-height:1.65;color:#32445e}
+.case-face ul{padding-left:18px}
+.case-badge{display:inline-block;padding:5px 10px;border-radius:999px;background:#eef4ff;color:var(--navy);font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:10px}
+.case-hint{margin-top:12px;font-size:12px;color:var(--muted);font-style:italic}
+footer{margin-top:44px;padding:22px;text-align:center;color:var(--muted);font-size:12px}
+footer strong{color:var(--navy)}
+.small{font-size:12px;color:var(--muted)}
+code{font-family:"JetBrains Mono",monospace;background:#f1f5fb;padding:2px 6px;border-radius:8px}
+
+/* ═══════════════════════════════════════════════════
+   SHARED MODULE NAVIGATION SYSTEM
+   Injected into all modules for unified experience
+═══════════════════════════════════════════════════ */
+
+/* Top breadcrumb bar */
+.mod-topbar{
+  background:#0b1829;
+  padding:8px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  flex-wrap:wrap;
+  border-bottom:1px solid rgba(210,170,76,.2);
+}
+.mod-topbar-left{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.mod-home-link{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--gold);font-size:12px;font-weight:700;
+  text-decoration:none;letter-spacing:.04em;
+  opacity:.85;transition:.15s;
+  -webkit-tap-highlight-color:transparent;
+}
+.mod-home-link:hover{opacity:1;text-decoration:none}
+.mod-home-link svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.mod-sep{color:#2e4060;font-size:13px}
+.mod-crumb{color:#7a93b3;font-size:12px;font-weight:600}
+.mod-indicators{display:flex;align-items:center;gap:6px}
+.mod-dot{
+  width:26px;height:26px;border-radius:50%;
+  display:grid;place-items:center;
+  font-size:11px;font-weight:800;
+  text-decoration:none;
+  transition:.18s;
+  -webkit-tap-highlight-color:transparent;
+  flex-shrink:0;
+}
+.mod-dot.done{background:rgba(210,170,76,.18);color:var(--gold);border:1.5px solid rgba(210,170,76,.4)}
+.mod-dot.active{background:var(--gold);color:var(--navy)}
+.mod-dot.upcoming{background:rgba(255,255,255,.05);color:#4a6080;border:1.5px solid rgba(255,255,255,.08)}
+.mod-dot:hover{transform:scale(1.12)}
+
+/* Bottom prev/next navigation */
+.mod-footnav{
+  background:#fff;
+  border-top:2px solid var(--line);
+  padding:16px 22px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  flex-wrap:wrap;
+  margin-top:0;
+}
+.mod-footnav-center{
+  text-align:center;flex:1;min-width:0;
+}
+.mod-footnav-center span{
+  font-size:11.5px;color:var(--muted);font-weight:700;
+  text-transform:uppercase;letter-spacing:.07em;
+  display:block;
+}
+.mod-footnav-center strong{
+  font-size:13px;color:var(--navy);font-family:"Playfair Display",serif;
+  display:block;margin-top:2px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.mod-nav-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 18px;border-radius:13px;
+  font-size:13px;font-weight:700;
+  text-decoration:none;border:none;cursor:pointer;
+  transition:.18s;white-space:nowrap;flex-shrink:0;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.mod-nav-btn:active{transform:scale(.97);text-decoration:none}
+.mod-nav-btn:hover{text-decoration:none}
+.mod-nav-btn.prev{background:#eef4ff;color:var(--navy);border:1px solid var(--sky-line)}
+.mod-nav-btn.prev:hover{background:#e2ecff}
+.mod-nav-btn.next{background:var(--navy);color:#fff;box-shadow:0 4px 14px rgba(20,35,59,.2)}
+.mod-nav-btn.next:hover{background:#1d2f50}
+.mod-nav-btn.home{background:var(--gold-soft);color:#7a5c1a;border:1px solid #f0dfb0}
+.mod-nav-btn.home:hover{background:#fdf0c8}
+.mod-nav-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* Refined footer for modules */
+footer.mod-footer-bar{
+  margin-top:0;padding:18px 22px;
+  text-align:center;color:var(--muted);font-size:12px;
+  border-top:1px solid var(--line);
+  background:rgba(255,255,255,.6);
+}
+footer.mod-footer-bar strong{color:var(--navy)}
+
+/* Smooth page-load fade */
+body{animation:bodyFade .35s ease}
+@keyframes bodyFade{from{opacity:0}to{opacity:1}}
+
+/* Refined scrollbar */
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(20,35,59,.18);border-radius:999px}
+
+@media(max-width:480px){
+  .mod-topbar{padding:7px 14px}
+  .mod-footnav{padding:13px 14px}
+  .mod-nav-btn{padding:10px 14px;font-size:12px}
+  .mod-footnav-center strong{font-size:12px}
+}
+
+</style>
+</head>
+<body>
+<div class="mod-topbar">
+  <div class="mod-topbar-left">
+    <a class="mod-home-link" href="index.html">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      All Modules
+    </a>
+    <span class="mod-sep">·</span>
+    <span class="mod-crumb">Module 2 · Post-Analytical Interpretation</span>
+  </div>
+  <div class="mod-indicators"><a class="mod-dot done" href="module1.html" title="Module 1">1</a><a class="mod-dot active" href="module2.html" title="Module 2">2</a><a class="mod-dot upcoming" href="module3.html" title="Module 3">3</a><a class="mod-dot upcoming" href="module4.html" title="Module 4">4</a></div>
+</div>
+<header>
+  <div class="h-wrap">
+    <div class="brand">
+      <div class="badge">Dr Salma Elnour</div>
+      <div>
+        <h1>Post-Analytical Interpretation & <span>Case-Based Analysis</span></h1>
+        <p>Clinical Parasitology and Mycology · Module 2 · Master of Science in Medical Laboratory Sciences</p>
+      </div>
+    </div>
+  </div>
+  <div class="nav">
+    <div class="nav-inner">
+      <button class="tab-btn active" data-tab="overview">Overview</button>
+      <button class="tab-btn" data-tab="framework">Framework</button>
+      <button class="tab-btn" data-tab="significance">Significance</button>
+      <button class="tab-btn" data-tab="discrepancy">Discrepancies</button>
+      <button class="tab-btn" data-tab="decisions">Lab Decisions</button>
+      <button class="tab-btn" data-tab="reporting">Fix the Report</button>
+      <button class="tab-btn" data-tab="cases">Case Zone</button>
+      <button class="tab-btn" data-tab="practice">Practice Zone</button>
+      <button class="tab-btn" data-tab="flashcards">Flashcards</button>
+      <button class="tab-btn" data-tab="quiz">Master Quiz</button>
+      <button class="tab-btn" data-tab="cheat">Cheat Sheet</button>
+      <button class="tab-btn" data-tab="sources">Sources</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<div id="overview" class="tab-pane active">
+    <section class="hero">
+      <div class="hero-card">
+        <h2>A laboratory result becomes valuable only when it is interpreted correctly.</h2>
+        <p>
+          This module develops the post-analytical reasoning expected of postgraduate medical laboratory scientists.
+          The focus is not how tests work—that belongs to Module 1. Here, the focus is what a finding represents,
+          how reliable it is, what may explain discordant results, what the laboratory should do next, and how to
+          communicate the result clearly and responsibly.
+        </p>
+      </div>
+      <div class="meta-grid">
+        <div class="mini">
+          <div class="label">Built for</div>
+          <div class="value">MSc Medical Laboratory Science</div>
+          <p>Advanced laboratory interpretation, discrepancy recognition, and professional reporting.</p>
+        </div>
+        <div class="mini">
+          <div class="label">Module focus</div>
+          <div class="value">Post-analytical reasoning</div>
+          <p>Centered on significance, reliability, limitations, and next laboratory step.</p>
+        </div>
+        <div class="mini">
+          <div class="label">Learning logic</div>
+          <div class="value">Result → meaning → action</div>
+          <p>Moves from result presence to result significance, then to reporting and follow-up.</p>
+        </div>
+        <div class="mini">
+          <div class="label">Interactive features</div>
+          <div class="value">Report repair, matching, and decision trees</div>
+          <p>Practice what the laboratory should conclude, clarify, repeat, or escalate.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-title">
+      <h3>Overview</h3>
+      <p>What the post-analytical phase adds to professional laboratory judgment.</p>
+      <div class="gold-line"></div>
+    </div>
+
+    <div class="callout">
+      <strong>Anchor idea:</strong> a detected target, a visible organism, or a positive biomarker does not automatically equal a significant laboratory finding.
+      In post-analytical work, the key question is not only <em>what was detected</em>, but also <em>what this detection actually represents</em> in relation to
+      specimen quality, method limitations, source significance, and the language used in the final report.
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-h navy">Why this module matters</div>
+        <div class="card-b">
+          <p>Modern parasitology and mycology laboratories generate increasingly sensitive and diverse results. Molecular assays may detect low-level targets,
+          biomarkers may support but not fully define significance, and culture may recover organisms whose importance depends heavily on specimen source.
+          This means the post-analytical phase is where technical knowledge is translated into professional laboratory judgment.</p>
+          <ul>
+            <li>A positive result may still have limited significance.</li>
+            <li>A negative result may still require caution if the specimen is weak or shedding is intermittent.</li>
+            <li>Different methods can disagree without either result being “wrong.”</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-h teal">What you are strengthening</div>
+        <div class="card-b">
+          <p>This module strengthens the reasoning expected of a medical laboratory scientist at postgraduate level:</p>
+          <ul>
+            <li>judging whether a finding is analytically believable and professionally meaningful,</li>
+            <li>recognizing when contamination, colonization, or method limitation is more likely than a clearly significant finding,</li>
+            <li>choosing an appropriate next laboratory step such as repeat testing, confirmation, or interpretive commenting,</li>
+            <li>writing reports that are precise, cautious, and aligned with laboratory scope.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-h gold">How this differs from Module 1</div>
+        <div class="card-b">
+          <p>Module 1 focused on advanced diagnostic methods: what they detect, where they are useful, and what their main limitations are.
+          Module 2 begins after the result is generated. The emphasis now is on:</p>
+          <ul>
+            <li>what the result means,</li>
+            <li>what it does <strong>not</strong> prove,</li>
+            <li>how to resolve discordance,</li>
+            <li>and how to communicate the finding responsibly.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-4">
+      <div class="kpi"><div class="big">1</div><div class="sub">Interpretation mindset</div><p>Ask what the finding represents before deciding what it means.</p></div>
+      <div class="kpi"><div class="big">2</div><div class="sub">Major post-analytical risks</div><p>Contamination, colonization, and over-interpretation.</p></div>
+      <div class="kpi"><div class="big">3</div><div class="sub">Case scenarios</div><p>Parasitology and mycology cases with ambiguity built in.</p></div>
+      <div class="kpi"><div class="big">4</div><div class="sub">Reporting duties</div><p>State result, express limits, clarify significance, and recommend next laboratory step where needed.</p></div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-h purple">Course Learning Outcomes (CLOs)</div>
+        <div class="card-b">
+          <ul>
+            <li><strong>CLO 4:</strong> Identify the clinical manifestations of human parasitic and mycotic diseases and correlate them with clinical diagnostic findings.</li>
+            <li><strong>CLO 5:</strong> Integrate knowledge about different parasitic and fungal organisms and infections and compare strategies used within and across these groups.</li>
+            <li><strong>CLO 7:</strong> Apply modern trends in the diagnosis of parasitic and fungal infections.</li>
+          </ul>
+          <p>Within this module, those CLOs are expressed through post-analytical interpretation, discrepancy recognition, and responsible result reporting.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-h wine">Competencies, thinking frame, and focus</div>
+        <div class="card-b">
+          <ul>
+            <li><strong>Analytical reasoning:</strong> judge whether a result is reliable enough to stand as reported.</li>
+            <li><strong>Critical interpretation:</strong> distinguish detection from significance.</li>
+            <li><strong>Laboratory decision-making:</strong> decide whether the laboratory should repeat, confirm, comment, or release.</li>
+            <li><strong>Professional communication:</strong> use wording that is accurate, careful, and useful.</li>
+          </ul>
+          <p><strong>Thinking frame:</strong> Result → significance → limitation → next laboratory step → reporting language.</p>
+          <p><strong>What to focus on:</strong> source quality, method scope, discordance, overcalling risk, and report phrasing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<div id="framework" class="tab-pane">
+    <div class="section-title">
+      <h3>Interpretation Framework</h3>
+      <p>A structured sequence for deciding what a laboratory finding really means.</p>
+      <div class="gold-line"></div>
+    </div>
+
+    <div class="flow">
+      <div class="flow-step"><div class="n">1</div><h5>Specimen</h5><p>Is the sample adequate, appropriate, and processed under suitable conditions?</p></div>
+      <div class="flow-step"><div class="n">2</div><h5>Method</h5><p>What does the method detect, and what are its important limits?</p></div>
+      <div class="flow-step"><div class="n">3</div><h5>Result</h5><p>Positive, negative, equivocal, mixed, or discordant?</p></div>
+      <div class="flow-step"><div class="n">4</div><h5>Reliability</h5><p>Could sampling, preservation, timing, or technical issues affect trust?</p></div>
+      <div class="flow-step"><div class="n">5</div><h5>Context</h5><p>Does the result fit the specimen type, body site, and available information?</p></div>
+      <div class="flow-step"><div class="n">6</div><h5>Action</h5><p>Repeat, confirm, add a comment, or release with limitation noted?</p></div>
+      <div class="flow-step"><div class="n">7</div><h5>Report</h5><p>How should the laboratory express the result clearly and safely?</p></div>
+    </div>
+
+    <div class="callout teal"><strong>Use the framework in order.</strong> Many reporting errors happen because students jump from a positive signal directly to a final statement without checking source quality, method scope, or alternative explanations.</div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-h navy">Specimen-first thinking</div>
+        <div class="card-b">
+          <ul>
+            <li>A poor specimen can weaken a strong assay.</li>
+            <li>Intermittent shedding can make stool microscopy falsely reassuring.</li>
+            <li>Mixed respiratory material lowers confidence in clean mycology interpretation.</li>
+            <li>Non-sterile sources almost always demand more caution than sterile-site material.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-h teal">Method-aware thinking</div>
+        <div class="card-b">
+          <ul>
+            <li>Microscopy demonstrates visible elements, but a negative exam does not exclude low-burden infection.</li>
+            <li>Molecular assays detect nucleic acid, not necessarily viability.</li>
+            <li>Antigen assays can be very helpful, but performance depends on organism, specimen, and timing.</li>
+            <li>Biomarkers should strengthen interpretation, not replace it.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-h gold">Reporting-aware thinking</div>
+        <div class="card-b">
+          <ul>
+            <li>State what was detected.</li>
+            <li>State what remains uncertain.</li>
+            <li>Use comments where significance is source-limited or method-limited.</li>
+            <li>Choose wording proportional to what the method can truly support.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-h purple">Questions to ask every time</div>
+        <div class="card-b">
+          <ul>
+            <li>Could this result be true but not significant?</li>
+            <li>Could this be significant but incompletely captured by the method?</li>
+            <li>Is there a more likely post-analytical explanation than “finding confirmed”?</li>
+            <li>Would a repeat or confirmatory test materially improve confidence?</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-h wine">Common interpretation errors</div>
+        <div class="card-b">
+          <ul>
+            <li>Treating target detection as proof of a significant finding.</li>
+            <li>Ignoring specimen site when judging significance.</li>
+            <li>Over-trusting a highly sensitive method in a poor-quality specimen.</li>
+            <li>Using absolute language when the method has known limitations.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="significance" class="tab-pane">
+    <div class="section-title">
+      <h3>Result Presence vs Result Significance</h3>
+      <p>Detection is biological. Significance is laboratory interpretation.</p>
+      <div class="gold-line"></div>
+    </div>
+
+    <div class="callout">
+      <strong>Real example logic:</strong> CDC DPDx notes that microscopy may show cysts morphologically consistent with the <em>Entamoeba histolytica</em> complex, but morphology alone does not distinguish <em>E. histolytica</em> from morphologically identical nonpathogenic or less clearly pathogenic look-alikes. That is why report language must reflect method limitation rather than overstate species certainty.
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Finding type</th><th>What is present?</th><th>What it does not automatically prove</th><th>Interpretive concern</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>PCR positive</strong></td><td>Target nucleic acid detected</td><td>Active infection or organism viability</td><td>Residual DNA, colonization, contamination, or low-level carriage may explain positivity.</td></tr>
+          <tr><td><strong>Antigen positive</strong></td><td>Microbial component detected</td><td>High clinical significance by itself</td><td>False positives and context-limited performance still matter.</td></tr>
+          <tr><td><strong>Culture growth</strong></td><td>Viable organism recovered</td><td>Clinical significance by itself</td><td>Specimen source, quantity, and purity influence meaning.</td></tr>
+          <tr><td><strong>Microscopy negative</strong></td><td>No visible elements seen in examined material</td><td>Absence of organism</td><td>Sampling, organism burden, intermittent shedding, and observer factors remain relevant.</td></tr>
+          <tr><td><strong>Mixed growth</strong></td><td>Multiple organisms recovered</td><td>Each recovered organism is significant</td><td>Mixed culture may reflect contamination or colonized material.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-h navy">Parasitology example</div>
+        <div class="card-b">
+          <p>Target DNA detected in stool by PCR may be meaningful, but the laboratory still has to judge specimen quality, compatibility with the request information, and whether report wording should avoid implying an unqualified significant finding.</p>
+          <h5>Practical wording</h5>
+          <p><code>Target DNA detected.</code> This is often stronger and safer than converting the result into a conclusion the method cannot fully support.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-h teal">Mycology example</div>
+        <div class="card-b">
+          <p>CDC notes that Histoplasma antigen detection in urine or serum is widely used and sensitive, but the most appropriate test depends on manifestation and severity. A laboratory report should therefore present the finding clearly without pretending that one result answers every interpretive question.</p>
+          <h5>Practical wording</h5>
+          <p><code>Antigen detected; interpretation should consider specimen type and testing context.</code></p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-h gold">Biomarker example</div>
+        <div class="card-b">
+          <p>IDSA guidance supports serum and BAL galactomannan in selected high-risk settings, while also cautioning that interpretation depends on population and prior antifungal exposure. That makes report comments especially important.</p>
+          <h5>Practical wording</h5>
+          <p><code>Result supports possible Aspergillus-related disease in appropriate settings, but should not be interpreted in isolation.</code></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout teal">
+      <strong>High-yield rule:</strong> positive means “detected,” not automatically “significant.” Negative means “not demonstrated by this specimen and method,” not necessarily “absent.”
+    </div>
+  </div>
+
+  <div id="discrepancy" class="tab-pane">
+    <div class="section-title">
+      <h3>Discrepancy Recognition & Resolution</h3>
+      <p>When findings do not align, the laboratory investigates the reason before over-committing the report.</p>
+      <div class="gold-line"></div>
+    </div>
+
+    <div class="callout red">
+      <strong>Do not flatten discordance into “one result must be wrong.”</strong> Discordance often reflects different biological targets, different sensitivities, different specimen quality, or different timing in the same testing sequence.
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-h wine">Major discrepancy patterns</div>
+        <div class="card-b">
+          <ul>
+            <li><strong>Strong suspicion, negative result:</strong> consider specimen adequacy, timing, burden, or method sensitivity.</li>
+            <li><strong>Positive result, weak significance:</strong> consider contamination, colonization, residual target, or poor specimen source.</li>
+            <li><strong>Method disagreement:</strong> one method may be more sensitive, more specific, or more vulnerable to artifact.</li>
+            <li><strong>Unexpected mixed growth:</strong> reconsider collection, transport, and source quality.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-h purple">Resolution options</div>
+        <div class="card-b">
+          <ul>
+            <li>Repeat the same test on a better or repeat specimen.</li>
+            <li>Add a confirmatory or orthogonal method.</li>
+            <li>Review processing conditions and specimen history.</li>
+            <li>Release with a limitation comment rather than a definitive claim.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Scenario</th><th>Likely issue</th><th>MLS interpretation task</th><th>Possible next lab step</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>PCR positive, microscopy negative</td><td>Higher molecular sensitivity, low burden, or non-viable target</td><td>Decide whether positivity should be framed as detection rather than a fully significant conclusion</td><td>Repeat specimen, correlate with source and context, comment on limitation</td></tr>
+          <tr><td>Biomarker positive, culture negative</td><td>Nonculture marker performance, timing, prior therapy, or limited culture yield</td><td>Avoid dismissing the result but avoid over-confirming significance</td><td>Review specimen type, consider additional laboratory evidence</td></tr>
+          <tr><td>Mold from sputum, low-confidence specimen</td><td>Colonization or environmental contamination</td><td>Judge significance conservatively and consider source quality</td><td>Comment carefully; avoid definitive invasive wording from source alone</td></tr>
+          <tr><td>Urine culture with Candida spp.</td><td>Colonization or contamination common</td><td>Recognize source-specific significance problem</td><td>Report isolation and add interpretive caution as appropriate</td></tr>
+          <tr><td>Entamoeba-like cysts on stool microscopy</td><td>Morphologic overlap in the E. histolytica complex</td><td>Avoid species overstatement when morphology cannot resolve the complex</td><td>Use species-complex wording or suggest further discriminatory testing where available</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-h navy">Example 1</div>
+        <div class="card-b">
+          <p><strong>Single negative microscopy on diarrheal stool</strong> should not be turned into a definitive absence statement if shedding may be intermittent or burden low.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-h teal">Example 2</div>
+        <div class="card-b">
+          <p><strong>Positive fungal biomarker with negative culture</strong> is not “contradiction” by default; it may reflect lower culture yield, timing, or prior therapy.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-h gold">Example 3</div>
+        <div class="card-b">
+          <p><strong>Respiratory mold isolation</strong> becomes much less convincing if the specimen itself is poor-quality or mixed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="decisions" class="tab-pane">
+    <div class="section-title">
+      <h3>Laboratory Decision-Making</h3>
+      <p>Post-analytical action is part of laboratory professionalism.</p>
+      <div class="gold-line"></div>
+    </div>
+
+    <div class="callout red">
+      <strong>Important:</strong> not every unexpected result needs escalation, but some results require verification before they are released in strong language.
+    </div>
+
+    <div class="grid-4">
+      <div class="kpi"><div class="big">Repeat</div><div class="sub">When source quality is weak</div></div>
+      <div class="kpi"><div class="big">Confirm</div><div class="sub">When impact is high but certainty is limited</div></div>
+      <div class="kpi"><div class="big">Comment</div><div class="sub">When significance is limited by source or method</div></div>
+      <div class="kpi"><div class="big">Release</div><div class="sub">When wording can be safely proportional to support</div></div>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-h navy">Repeat</div>
+        <div class="card-b">
+          <p>Use when specimen quality is questionable, organism shedding may be intermittent, or a result is not dependable enough to stand alone.</p>
+          <ul>
+            <li>Examples: serial stool examination, repeat respiratory specimen, repeat screening swab.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-h teal">Confirm</div>
+        <div class="card-b">
+          <p>Use when a result is plausible but high-impact, or when the laboratory needs a stronger basis to distinguish artifact from significance.</p>
+          <ul>
+            <li>Examples: species-complex clarification, orthogonal method, public-health relevant identification workflow.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-h gold">Comment</div>
+        <div class="card-b">
+          <p>Use when the result can be released, but the laboratory should add wording about limitations, colonization, contamination, or the need for cautious interpretation.</p>
+          <ul>
+            <li>Examples: Candida isolated from urine; sputum mold growth; positive biomarker with source-limited significance.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-h green">Colonization vs contamination vs significant finding</div>
+        <div class="card-b">
+          <ul>
+            <li><strong>Contamination:</strong> introduced artifact that does not represent the sampled site.</li>
+            <li><strong>Colonization:</strong> organism present without enough evidence for a clearly significant finding at that site.</li>
+            <li><strong>Significant finding:</strong> organism or marker judged meaningful in that specimen and context.</li>
+          </ul>
+          <p>These are reporting categories as much as biological ideas; the language should change when the category changes.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-h wine">Real examples from current guidance</div>
+        <div class="card-b">
+          <ul>
+            <li>CDC states the most reliable way to identify <em>Candida auris</em> is MALDI-TOF MS, while also noting that not all databases can detect it. That means the laboratory may need further work-up before using definitive identification wording.</li>
+            <li>CDC also notes real-time PCR is preferred for detecting <em>C. auris</em> colonization. The correct report focus in that setting is colonization detection, not over-interpretation as a clearly significant invasive finding.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="reporting" class="tab-pane">
+    <div class="section-title">
+      <h3>Fix the Report</h3>
+      <p>Repair overconfident, vague, or professionally unsafe wording.</p>
+      <div class="gold-line"></div>
+    </div>
+
+    <div class="callout teal">
+      <strong>What good laboratory wording does:</strong> states what was found, expresses what the method can support, avoids overclaiming, and uses comments when significance is uncertain.
+    </div>
+
+    <div class="report-shell">
+      <div class="report-box">
+        <h4>Report 1</h4>
+        <div class="report">Specimen: Stool
+Microscopy (direct + concentration)
+
+Poor report:
+“Parasite detected. Infection confirmed.”</div>
+      </div>
+      <div class="report-box">
+        <h4>Choose the best correction</h4>
+        <div class="fix-options" data-fix="0">
+          <button data-correct="false">Parasite seen. Disease proven.</button>
+          <button data-correct="true">Cysts morphologically consistent with Entamoeba spp. observed. Morphology does not differentiate pathogenic from morphologically similar nonpathogenic species; further testing may be required where relevant.</button>
+          <button data-correct="false">Entamoeba histolytica confirmed by microscopy.</button>
+        </div>
+        <div class="feedback" id="fix-feedback-0"></div>
+      </div>
+    </div>
+
+    <div class="report-shell">
+      <div class="report-box">
+        <h4>Report 2</h4>
+        <div class="report">Test: Stool antigen assay
+
+Poor report:
+“Giardia positive. Patient infected.”</div>
+      </div>
+      <div class="report-box">
+        <h4>Choose the best correction</h4>
+        <div class="fix-options" data-fix="1">
+          <button data-correct="false">Giardia infection confirmed and severe.</button>
+          <button data-correct="true">Giardia antigen detected. Results should be interpreted with specimen quality and available clinical information.</button>
+          <button data-correct="false">Giardia disease proven. No correlation needed.</button>
+        </div>
+        <div class="feedback" id="fix-feedback-1"></div>
+      </div>
+    </div>
+
+    <div class="report-shell">
+      <div class="report-box">
+        <h4>Report 3</h4>
+        <div class="report">Specimen: Urine
+Fungal culture
+
+Poor report:
+“Candida detected. Infection present.”</div>
+      </div>
+      <div class="report-box">
+        <h4>Choose the best correction</h4>
+        <div class="fix-options" data-fix="2">
+          <button data-correct="true">Candida spp. isolated. In this specimen type, isolation may represent colonization or contamination; significance should be interpreted cautiously.</button>
+          <button data-correct="false">Candida infection confirmed from urine culture.</button>
+          <button data-correct="false">Candida present, therefore antifungal resistance likely.</button>
+        </div>
+        <div class="feedback" id="fix-feedback-2"></div>
+      </div>
+    </div>
+
+    <div class="report-shell">
+      <div class="report-box">
+        <h4>Report 4</h4>
+        <div class="report">Test: Serum galactomannan
+
+Poor report:
+“Aspergillosis confirmed.”</div>
+      </div>
+      <div class="report-box">
+        <h4>Choose the best correction</h4>
+        <div class="fix-options" data-fix="3">
+          <button data-correct="false">Aspergillus definitely identified in the bloodstream.</button>
+          <button data-correct="true">Galactomannan detected. This result can support possible invasive Aspergillus-related disease in appropriate settings, but should not be interpreted in isolation.</button>
+          <button data-correct="false">Culture unnecessary because biomarker positivity confirms disease.</button>
+        </div>
+        <div class="feedback" id="fix-feedback-3"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="cases" class="tab-pane">
+    <div class="section-title">
+      <h3>Case Zone</h3>
+      <p>Flip each card to reveal interpretation, next laboratory step, and reporting logic.</p>
+      <div class="gold-line"></div>
+    </div>
+
+    <div class="callout teal">
+      <strong>How to use the case zone:</strong> read the front first and decide what the finding represents before you flip. The back of each card gives the post-analytical reasoning, not just the “answer.”
+    </div>
+
+    <div class="case-flip-grid" id="caseFlipGrid"></div>
+  </div>
+
+  <div id="practice" class="tab-pane"><div class="section-title"><h3>Practice Zone</h3><p>Decision trees and interpretation matching for stepwise post-analytical reasoning.</p><div class="gold-line"></div></div>
+<div class="tree-card" id="tree1"><div class="tree-head"><h4>Decision Tree 1 · Negative microscopy, high concern</h4><p class="small">Start with the result, then decide what the laboratory should conclude and do next.</p></div><div class="tree-step active" data-step="1"><p><strong>Step 1:</strong> Stool microscopy is negative after direct and concentration examination. The request form notes persistent symptoms and repeat sampling.</p><div class="step-actions"><button data-correct="true" data-next="2">The negative result does not exclude the target; specimen series and method limits should be considered.</button><button data-correct="false">The result proves absence of the organism.</button></div><div class="tree-feedback"></div></div><div class="tree-step" data-step="2"><p><strong>Step 2:</strong> A molecular panel on a later specimen detects target DNA.</p><div class="step-actions"><button data-correct="true" data-next="3">Report target DNA detected and avoid wording that automatically implies a significant finding.</button><button data-correct="false">Report finding confirmed by molecular testing with no limitation comment.</button></div><div class="tree-feedback"></div></div><div class="tree-step" data-step="3"><p><strong>Step 3:</strong> Which wording is strongest professionally?</p><div class="step-actions"><button data-correct="true">“Target DNA detected. Interpretation should consider specimen context and method scope.”</button><button data-correct="false">“Disease proven.”</button></div><div class="tree-feedback"></div></div></div>
+
+<div class="tree-card" id="tree2"><div class="tree-head"><h4>Decision Tree 2 · Candida isolated from urine</h4><p class="small">Judge significance without overcalling the source.</p></div><div class="tree-step active" data-step="1"><p><strong>Step 1:</strong> Candida spp. is isolated from a urine specimen.</p><div class="step-actions"><button data-correct="true" data-next="2">Isolation should be interpreted cautiously because significance in this specimen type may be limited.</button><button data-correct="false">Any urine isolation confirms a clearly significant finding.</button></div><div class="tree-feedback"></div></div><div class="tree-step" data-step="2"><p><strong>Step 2:</strong> What is the most appropriate laboratory report style?</p><div class="step-actions"><button data-correct="true">“Candida spp. isolated. In this specimen type, isolation may represent colonization or contamination.”</button><button data-correct="false">“Candida infection proven from culture.”</button></div><div class="tree-feedback"></div></div></div>
+
+<div class="tree-card"><div class="tree-head"><h4>Interpretation Match</h4><p class="small">Match the result pattern to the most appropriate laboratory meaning.</p></div><div style="font-weight:800;color:var(--navy);margin:6px 0 12px" id="matchScore">Matches: 0 / 6</div><div class="match-message" id="matchMessage"></div><div class="match-wrap"><div class="match-col"><h4>Result pattern</h4><div id="leftList"></div></div><div class="match-col"><h4>Most appropriate meaning</h4><div id="rightList"></div></div></div><div style="margin-top:12px"><button class="btn warn" onclick="resetMatch()">Reset Match</button></div></div></div>
+
+  <div id="flashcards" class="tab-pane">
+    <div class="section-title">
+      <h3>Flashcards</h3>
+      <p>Tap to flip. Focus on interpretation rules, not method mechanics.</p>
+      <div class="gold-line"></div>
+    </div>
+    <div class="flash-tip">Active recall helps you internalize safe laboratory wording and post-analytical judgment.</div>
+    <div class="flash-grid" id="flashGrid"></div>
+  </div>
+
+  <div id="quiz" class="tab-pane">
+    <div class="section-title">
+      <h3>Master Quiz</h3>
+      <p>Fifteen postgraduate-style interpretation questions with answer review after scoring.</p>
+      <div class="gold-line"></div>
+    </div>
+
+    <div class="quiz-shell" id="quizShell">
+      <div class="quiz-top">
+        <div id="quizMeta">Question 1 of 15</div>
+        <div class="progress"><div id="progressFill"></div></div>
+      </div>
+      <div class="quiz-body">
+        <div class="q-num" id="qNum"></div>
+        <div class="q-text" id="qText"></div>
+        <div id="options"></div>
+        <div class="feedback" id="feedback"></div>
+        <div class="quiz-nav">
+          <button class="btn secondary" id="prevBtn">Previous</button>
+          <button class="btn primary" id="nextBtn">Next</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="result" id="resultBox">
+      <div class="score" id="scoreText">0<span>/15</span></div>
+      <p style="font-size:17px;color:var(--muted);margin:8px 0 18px">Review the questions afterward to strengthen professional judgment.</p>
+      <button class="btn primary" onclick="reviewQuiz()">Review answers</button>
+      <button class="btn secondary" onclick="restartQuiz()" style="margin-left:8px">Try again</button>
+    </div>
+  </div>
+
+  <div id="cheat" class="tab-pane">
+    <div class="section-title">
+      <h3>Cheat Sheet</h3>
+      <p>High-yield rules for post-analytical interpretation and reporting.</p>
+      <div class="gold-line"></div>
+    </div>
+
+    <div class="cheat-grid">
+      <div class="cheat-card">
+        <div class="cheat-h navy">Interpretation rules</div>
+        <div class="cheat-b">
+          <div class="row"><div class="key">Positive result</div><div class="val">Start with “detected” or “isolated,” then decide whether significance is established or still limited.</div></div>
+          <div class="row"><div class="key">Negative result</div><div class="val">Means “not demonstrated by this specimen and method,” not automatically “absent.”</div></div>
+          <div class="row"><div class="key">Discordance</div><div class="val">Check specimen quality, burden, timing, and different method sensitivities before declaring error.</div></div>
+          <div class="row"><div class="key">Comments</div><div class="val">Use interpretive comments when source quality or significance is uncertain.</div></div>
+        </div>
+      </div>
+
+      <div class="cheat-card">
+        <div class="cheat-h teal">Common traps</div>
+        <div class="cheat-b">
+          <div class="row"><div class="key">PCR trap</div><div class="val">DNA detected does not automatically equal a significant finding.</div></div>
+          <div class="row"><div class="key">Culture trap</div><div class="val">Growth does not automatically equal a significant finding, especially in non-sterile sources.</div></div>
+          <div class="row"><div class="key">Biomarker trap</div><div class="val">A supportive marker should not be reported as a standalone definitive conclusion.</div></div>
+          <div class="row"><div class="key">Source trap</div><div class="val">Urine and respiratory samples often demand cautious wording.</div></div>
+        </div>
+      </div>
+
+      <div class="cheat-card">
+        <div class="cheat-h gold">Decision triggers</div>
+        <div class="cheat-b">
+          <div class="row"><div class="key">Repeat</div><div class="val">Poor-quality specimen, intermittent shedding, or weak confidence.</div></div>
+          <div class="row"><div class="key">Confirm</div><div class="val">High-impact positivity with uncertain significance or strong discordance.</div></div>
+          <div class="row"><div class="key">Comment</div><div class="val">Colonization, contamination, or source-limited significance should be acknowledged in the report.</div></div>
+          <div class="row"><div class="key">Release carefully</div><div class="val">Use wording proportional to what the method can truly support.</div></div>
+        </div>
+      </div>
+
+      <div class="cheat-card">
+        <div class="cheat-h wine">Useful phrases</div>
+        <div class="cheat-b">
+          <div class="row"><div class="key">Microscopy</div><div class="val">“No parasitic elements detected in the examined specimen.”</div></div>
+          <div class="row"><div class="key">DNA detection</div><div class="val">“Target DNA detected.”</div></div>
+          <div class="row"><div class="key">Limited significance</div><div class="val">“Isolation may represent colonization or contamination.”</div></div>
+          <div class="row"><div class="key">Context note</div><div class="val">“Result should be interpreted with specimen and method limitations in mind.”</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sources" class="tab-pane">
+    <div class="section-title">
+      <h3>Sources</h3>
+      <p>Primary references used to keep the reporting language and interpretive cautions realistic.</p>
+      <div class="gold-line"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-h navy">Reference backbone</div>
+      <div class="card-b">
+        <ul class="source-list">
+          <li><strong>CDC DPDx:</strong> organism pages and diagnostic procedure pages were used to ground parasitology wording, especially where morphology does not differentiate pathogenic from morphologically similar nonpathogenic species.</li>
+          <li><strong>CDC Histoplasmosis resources:</strong> antigen detection in urine or serum was used as a realistic example of supportive but context-dependent fungal reporting.</li>
+          <li><strong>IDSA Aspergillosis guidance:</strong> used to reflect that galactomannan supports possible invasive Aspergillus-related disease in selected contexts and should not be reported as a standalone absolute conclusion.</li>
+          <li><strong>CLSI M54 context:</strong> informed source-quality, culture-significance, and interpretation caution language in mycology.</li>
+          <li><strong>WHO and ASM-aligned diagnostic themes:</strong> informed the emphasis on diagnostic gaps, source quality, and responsible interpretation in modern mycology.</li>
+        </ul>
+        <p style="margin-top:14px">
+          This module uses realistic report-style language for teaching purposes. It is intentionally student-facing: careful, credible, and aligned with laboratory scope.
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="mod-footnav">
+  <a class="mod-nav-btn prev" href="module1.html">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      Module 1
+    </a>
+  <div class="mod-footnav-center">
+    <span>Module 2</span>
+    <strong>Post-Analytical Interpretation</strong>
+  </div>
+  <a class="mod-nav-btn next" href="module3.html">
+      Module 3
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+</div>
+<footer class="mod-footer-bar">
+  <strong>Dr Salma Elnour</strong> · Clinical Parasitology &amp; Mycology · Module 2 · Post-Analytical Interpretation<br><span style="font-size:11px;color:#b7c4d8;margin-top:4px;display:inline-block">Gulf Medical University · MSc Medical Laboratory Sciences</span>
+</footer>
+
+<script>
+const tabs=document.querySelectorAll('.tab-btn');const panes=document.querySelectorAll('.tab-pane');tabs.forEach(btn=>{btn.addEventListener('click',()=>{tabs.forEach(b=>b.classList.remove('active'));panes.forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById(btn.dataset.tab).classList.add('active');window.scrollTo({top:0,behavior:'smooth'})})});
+document.querySelectorAll('.fix-options').forEach((group,idx)=>{const buttons=group.querySelectorAll('button');const fb=document.getElementById(`fix-feedback-${idx}`);buttons.forEach(btn=>{btn.addEventListener('click',()=>{buttons.forEach(b=>b.disabled=true);const correct=btn.dataset.correct==='true';btn.classList.add(correct?'correct':'wrong');if(!correct){group.querySelector('button[data-correct="true"]').classList.add('correct')}fb.className=`feedback show ${correct?'good':'bad'}`;const messages=["Best choice. This wording states what was seen and openly acknowledges the limitation of morphology.","Best choice. This reports antigen detection without overclaiming significance.","Best choice. This is the safest source-specific wording for Candida isolated from urine.","Best choice. Biomarker positivity can support significance in the right setting, but should not be phrased as an isolated definitive conclusion."];const badMessages=["Not quite. The safer report avoids claiming disease or species-level certainty beyond what microscopy supports.","Not quite. The report should not escalate from antigen detection to an unqualified significant statement.","Not quite. Isolation from this source does not automatically justify definitive wording.","Not quite. A biomarker result should not be converted into a culture-equivalent definitive statement."];fb.textContent=correct?messages[idx]:badMessages[idx]})})});
+document.querySelectorAll('.tree-card').forEach(card=>{card.querySelectorAll('.tree-step').forEach(step=>{step.querySelectorAll('.step-actions button').forEach(btn=>{btn.addEventListener('click',()=>{if(btn.parentElement.dataset.done==='true')return;btn.parentElement.dataset.done='true';const fb=step.querySelector('.tree-feedback');const correct=btn.dataset.correct==='true';fb.className=`tree-feedback show ${correct?'good':'bad'}`;fb.textContent=correct?"Good. This choice reflects the kind of careful, scope-appropriate interpretation expected in the post-analytical phase.":"Not the strongest choice. Reconsider what the method and specimen can actually support before using stronger wording.";if(correct&&btn.dataset.next){const next=card.querySelector(`.tree-step[data-step="${btn.dataset.next}"]`);if(next){next.classList.add('active')}}})})})});
+const flashcards=[{cat:'Reporting',term:'Detected ≠ significant',back:'A positive result should not be translated directly into an unqualified significant finding without source and method context.'},{cat:'Scope',term:'Target DNA detected',back:'Useful wording for molecular positivity when the method detects nucleic acid but not viability.'},{cat:'Urine culture',term:'Candida spp.',back:'Isolation from urine often needs cautious wording because significance may be limited in this specimen type.'},{cat:'Respiratory fungi',term:'Colonization risk',back:'Recovery of fungi from sputum can reflect colonization or contamination rather than a clearly significant finding.'},{cat:'Biomarker',term:'Supportive, not absolute',back:'A fungal biomarker may support significance in the right setting but should not be overreported as a stand-alone definitive conclusion.'},{cat:'Negative microscopy',term:'Not demonstrated',back:'A negative microscopy result means not seen in the examined specimen and method, not automatically absent.'},{cat:'Discordance',term:'Ask why',back:'When two methods disagree, review burden, timing, sensitivity, source quality, and technical limitations before concluding error.'},{cat:'Reporting style',term:'Comment wisely',back:'Interpretive comments are professional tools for communicating limitation, uncertainty, colonization, or contamination risk.'}];
+const caseCards=[{badge:'Parasitology',title:'Case 1 · Repeated negative stool microscopy',front:`<p><strong>Specimen series:</strong> Three stool specimens submitted over separate days.</p><p><strong>Results:</strong> Direct and concentration microscopy remain negative on the first two specimens. The third specimen is tested by a molecular GI panel and target DNA for an intestinal protozoan is detected.</p><h5>Your task</h5><ul><li>What does this result pattern represent?</li><li>How should the laboratory report it?</li><li>What wording should be avoided?</li></ul>`,back:`<h5>Interpretation</h5><p>This is a classic sensitivity discordance pattern. Negative microscopy does not exclude the target when burden is low or shedding intermittent, while molecular testing may still detect nucleic acid.</p><h5>Most appropriate laboratory action</h5><ul><li>Report target DNA detected rather than using unqualified language such as “finding confirmed.”</li><li>Link the result to specimen and method scope.</li><li>Use wording that preserves uncertainty where significance is still context-dependent.</li></ul><h5>Professional wording</h5><p><code>Target DNA detected in stool by molecular assay. Interpretation should consider specimen context and method scope.</code></p>`},{badge:'Parasitology',title:'Case 2 · Entamoeba-like cysts on microscopy',front:`<p><strong>Specimen:</strong> Stool examined by microscopy.</p><p><strong>Result:</strong> Cysts morphologically consistent with the <em>Entamoeba histolytica</em> complex are observed.</p><h5>Your task</h5><ul><li>Can the laboratory report <em>E. histolytica</em> specifically from morphology alone?</li><li>What is the safest reporting language?</li></ul>`,back:`<h5>Interpretation</h5><p>CDC DPDx notes that morphologically identical or very similar species can overlap within the <em>Entamoeba histolytica</em> complex. Morphology alone should not be pushed beyond what it supports.</p><h5>Most appropriate laboratory action</h5><ul><li>Use species-complex wording or <em>Entamoeba spp.</em> wording if resolution is limited.</li><li>Add a limitation comment or suggest discriminatory testing when available.</li></ul><h5>Professional wording</h5><p><code>Cysts morphologically consistent with Entamoeba spp. / the E. histolytica complex observed. Morphology alone does not fully differentiate pathogenic from morphologically similar species.</code></p>`},{badge:'Parasitology',title:'Case 3 · Positive antigen, negative microscopy',front:`<p><strong>Specimen:</strong> Low-volume diarrheal stool specimen.</p><p><strong>Result:</strong> Giardia antigen detected; direct microscopy negative.</p><h5>Your task</h5><ul><li>Is this contradiction or a method-related difference?</li><li>How should the result be phrased?</li></ul>`,back:`<h5>Interpretation</h5><p>This is not automatically a contradiction. Antigen assays may detect a target when microscopy is limited by burden, specimen quality, or observer dependence.</p><h5>Most appropriate laboratory action</h5><ul><li>Report antigen detection clearly.</li><li>Avoid extending the result into unsupported certainty about intensity or broader significance.</li></ul><h5>Professional wording</h5><p><code>Giardia antigen detected. Result should be interpreted with specimen quality and testing context in mind.</code></p>`},{badge:'Mycology',title:'Case 4 · Positive Histoplasma antigen',front:`<p><strong>Specimen:</strong> Urine submitted for fungal antigen testing.</p><p><strong>Result:</strong> Histoplasma antigen detected.</p><h5>Your task</h5><ul><li>How should the laboratory frame a positive antigen result?</li><li>What should not be implied by one positive result alone?</li></ul>`,back:`<h5>Interpretation</h5><p>CDC states urine or serum antigen detection is widely used and sensitive for histoplasmosis, but the most appropriate testing approach depends on manifestation and severity. A positive result is meaningful, yet still needs context-aware wording.</p><h5>Most appropriate laboratory action</h5><ul><li>State antigen detection clearly.</li><li>Avoid wording that implies a complete final explanation from one result alone.</li></ul><h5>Professional wording</h5><p><code>Histoplasma antigen detected. Interpretation should consider specimen type and testing context.</code></p>`},{badge:'Mycology',title:'Case 5 · Mold growth from sputum',front:`<p><strong>Specimen:</strong> Sputum culture.</p><p><strong>Result:</strong> Mold growth recovered; specimen noted to be mixed and low quality.</p><h5>Your task</h5><ul><li>Is this enough to report a clearly significant mold finding?</li><li>What is the post-analytical risk here?</li></ul>`,back:`<h5>Interpretation</h5><p>Poor-quality respiratory material weakens confidence in clean significance. Mold from sputum may reflect colonization or environmental contamination rather than a clearly significant finding.</p><h5>Most appropriate laboratory action</h5><ul><li>Comment cautiously on source quality and significance limits.</li><li>Avoid invasive-language reporting from source alone.</li></ul><h5>Professional wording</h5><p><code>Mold isolated from sputum culture. Significance is limited by specimen quality and may reflect colonization or contamination.</code></p>`},{badge:'Mycology',title:'Case 6 · Candida auris work-up',front:`<p><strong>Specimen:</strong> Yeast isolate referred for identification.</p><p><strong>Result:</strong> Initial phenotypic system gives uncertain Candida identification; MALDI-TOF database capability is not yet confirmed.</p><h5>Your task</h5><ul><li>Can the laboratory issue definitive <em>C. auris</em> wording immediately?</li><li>What is the safest next laboratory step?</li></ul>`,back:`<h5>Interpretation</h5><p>CDC states the most reliable way to identify <em>C. auris</em> is MALDI-TOF MS, but not all databases support detection. Definitive wording should therefore wait until a reliable identification pathway is confirmed.</p><h5>Most appropriate laboratory action</h5><ul><li>Escalate to a reliable identification pathway or reference process.</li><li>Avoid premature definitive naming if the local system cannot support it.</li></ul><h5>Professional wording</h5><p><code>Yeast isolate requires further work-up for definitive species identification; preliminary methods do not yet support final species-level reporting.</code></p>`}];
+const flashGrid=document.getElementById('flashGrid');caseCards.forEach(c=>{const el=document.createElement('div');el.className='case-flip';el.innerHTML=`<div class="case-flip-inner"><div class="case-face front"><div class="case-badge">${c.badge}</div><h4>${c.title}</h4>${c.front}<div class="case-hint">Tap to flip and reveal the interpretation pathway.</div></div><div class="case-face back"><div class="case-badge">Interpretation</div><h4>${c.title}</h4>${c.back}<div class="case-hint">Tap again to return to the scenario.</div></div></div>`;el.addEventListener('click',()=>el.classList.toggle('flipped'));document.getElementById('caseFlipGrid').appendChild(el)});flashcards.forEach(f=>{const el=document.createElement('div');el.className='flash';el.innerHTML=`<div class="flash-inner"><div class="face front"><div class="cat">${f.cat}</div><div class="term">${f.term}</div><div class="hint">tap to reveal</div></div><div class="face back">${f.back}</div></div>`;el.addEventListener('click',()=>el.classList.toggle('flipped'));flashGrid.appendChild(el)});
+const quiz=[{q:'A molecular stool assay reports target DNA detected, while prior microscopy was negative. Which report style is strongest?',opts:['Finding confirmed by PCR','Target DNA detected; interpret with specimen and method context','No organism present because microscopy was negative','PCR always overrides microscopy completely'],a:1,e:'This wording stays within method scope and avoids converting molecular detection into an unqualified significant finding.'},{q:'Why is “no parasitic elements detected” safer than “parasites absent”?',opts:['Because it sounds more technical','Because the result is limited to the examined specimen and method','Because it avoids mentioning the method','Because it guarantees repeat testing'],a:1,e:'Negative findings should be tied to what was actually examined, not generalized beyond the specimen and method.'},{q:'Candida spp. is isolated from urine culture. Which comment is most appropriate?',opts:['Significant finding established','Isolation may represent colonization or contamination','No need for interpretation','Always highly significant'],a:1,e:'This source commonly requires cautious significance wording.'},{q:'A positive galactomannan result should be reported as:',opts:['Definitive proof of Aspergillus growth in blood','Supportive evidence that must be interpreted in context','Equivalent to a pure culture isolate','Evidence that culture is unnecessary'],a:1,e:'Biomarkers are supportive and context-dependent.'},{q:'Which is the best post-analytical response to PCR positive / microscopy negative discordance?',opts:['Assume one test must be wrong','Review burden, sensitivity, specimen factors, and wording','Delete the weaker result','Report significance proven'],a:1,e:'Discordance requires explanation, not reflex overstatement.'},{q:'What is the main reporting risk of a highly sensitive assay?',opts:['It always misses low burden targets','It can detect findings of uncertain significance','It cannot be used in parasitology','It only detects viable organisms'],a:1,e:'High sensitivity can increase detection of residual or low-significance targets.'},{q:'Recovery of mold from poor-quality sputum most strongly requires attention to:',opts:['Automatic invasive wording','Source quality and contamination/colonization risk','Species rarity only','Urgent definitive interpretation'],a:1,e:'Poor-quality respiratory sources reduce confidence in clean significance.'},{q:'Which phrase best fits an uncertain but releasable result?',opts:['Finding confirmed','Findings should be interpreted with method limitations in mind','No correlation needed','Final cause established'],a:1,e:'Interpretive comments are appropriate when uncertainty remains.'},{q:'A mixed fungal culture from a non-sterile site should first raise concern for:',opts:['Guaranteed polymicrobial significance','Collection or source quality issues','Species confirmation','Resistance testing only'],a:1,e:'Mixed growth often lowers confidence in clean significance.'},{q:'What is the most professional way to think about a positive result?',opts:['Positive equals significant','Positive means detected; significance must still be judged','Positive means urgent action','Positive excludes contamination'],a:1,e:'Detection and significance are different post-analytical categories.'},{q:'Why might repeat testing be appropriate after a negative result?',opts:['To make the lab busier','Because sampling, burden, or timing may have limited detection','Because positive results are preferred','Because comments are not allowed'],a:1,e:'Repeat testing can strengthen confidence when the first specimen was limited.'},{q:'Which statement is strongest for a molecular result in asymptomatic screening?',opts:['Significance proven despite absent context','Target detected; significance may be limited','No report should be issued','Microscopy is required for any release'],a:1,e:'In low-context screening, wording should remain proportional to what the assay actually shows.'},{q:'In post-analytical reasoning, colonization differs from contamination because colonization:',opts:['Always indicates a significant finding','Reflects organism presence without clear significance at that site','Means the assay failed','Cannot occur with fungi'],a:1,e:'Colonization means presence without a clearly significant interpretation.'},{q:'Which result wording most clearly exceeds laboratory support?',opts:['Target DNA detected','Candida spp. isolated','Morphologically consistent with Entamoeba spp.','Aspergillosis confirmed from a positive biomarker alone'],a:3,e:'That conclusion goes beyond what a stand-alone biomarker can support.'},{q:'The safest summary of post-analytical professionalism is:',opts:['State only positives','Convert results quickly into conclusions','Align wording with what the specimen, method, and finding truly support','Avoid comments in reports'],a:2,e:'Professional reporting is proportional, clear, and context-aware.'}];let qi=0;let answers=Array(quiz.length).fill(null);const qNum=document.getElementById('qNum');const qText=document.getElementById('qText');const options=document.getElementById('options');const feedback=document.getElementById('feedback');const prevBtn=document.getElementById('prevBtn');const nextBtn=document.getElementById('nextBtn');const quizMeta=document.getElementById('quizMeta');const progressFill=document.getElementById('progressFill');const resultBox=document.getElementById('resultBox');const quizShell=document.getElementById('quizShell');const scoreText=document.getElementById('scoreText');function renderQuiz(){const item=quiz[qi];qNum.textContent=`Question ${qi+1}`;qText.textContent=item.q;quizMeta.textContent=`Question ${qi+1} of ${quiz.length}`;progressFill.style.width=`${((qi+1)/quiz.length)*100}%`;options.innerHTML='';feedback.className='feedback';feedback.textContent='';item.opts.forEach((opt,idx)=>{const b=document.createElement('button');b.className='opt';b.innerHTML=`<div class="ol">${String.fromCharCode(65+idx)}</div><div>${opt}</div>`;b.disabled=answers[qi]!==null;if(answers[qi]!==null){if(idx===item.a)b.classList.add('correct');if(idx===answers[qi]&&idx!==item.a)b.classList.add('wrong')}b.addEventListener('click',()=>choose(idx));options.appendChild(b)});if(answers[qi]!==null){const good=answers[qi]===item.a;feedback.className=`feedback show ${good?'good':'bad'}`;feedback.textContent=(good?'Correct. ':'Not quite. ')+item.e}prevBtn.disabled=qi===0;nextBtn.textContent=qi===quiz.length-1?'Finish':'Next'}function choose(idx){if(answers[qi]!==null)return;answers[qi]=idx;renderQuiz()}prevBtn.addEventListener('click',()=>{if(qi>0){qi--;renderQuiz()}});nextBtn.addEventListener('click',()=>{if(qi<quiz.length-1){qi++;renderQuiz()}else finishQuiz()});function finishQuiz(){if(answers.filter(a=>a===null).length){return}const score=answers.reduce((n,a,i)=>n+(a===quiz[i].a?1:0),0);scoreText.innerHTML=`${score}<span>/${quiz.length}</span>`;quizShell.style.display='none';resultBox.classList.add('show')}function reviewQuiz(){resultBox.classList.remove('show');quizShell.style.display='block';qi=0;renderQuiz()}function restartQuiz(){qi=0;answers=Array(quiz.length).fill(null);resultBox.classList.remove('show');quizShell.style.display='block';renderQuiz()}renderQuiz();
+const baseMatchPairs=[['PCR positive / microscopy negative','Target may be detected even when burden is too low for visual demonstration'],['Candida isolated from urine','Significance may be limited; cautious comment may be needed'],['Mixed mold growth from poor sputum','Source quality and contamination risk should be reviewed'],['Galactomannan positive','Supportive result that should not be reported as a stand-alone definitive conclusion'],['Negative microscopy','Not demonstrated by this specimen and method'],['Target DNA detected','Detection does not automatically prove a significant finding']];let selectedLeft=null;let selectedRight=null;let matched=0;const leftList=document.getElementById('leftList');const rightList=document.getElementById('rightList');const matchScore=document.getElementById('matchScore');const matchMessage=document.getElementById('matchMessage');function shuffle(arr){return arr.map(v=>({v,sort:Math.random()})).sort((a,b)=>a.sort-b.sort).map(x=>x.v)}function buildMatch(){leftList.innerHTML='';rightList.innerHTML='';const shuffledRight=shuffle([...baseMatchPairs]);baseMatchPairs.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.side='left';d.dataset.key=p[0];d.textContent=p[0];d.onclick=()=>selectMatch(d,'left');leftList.appendChild(d)});shuffledRight.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.side='right';d.dataset.key=p[0];d.textContent=p[1];d.onclick=()=>selectMatch(d,'right');rightList.appendChild(d)});selectedLeft=null;selectedRight=null;matched=0;matchScore.textContent=`Matches: 0 / ${baseMatchPairs.length}`;matchMessage.className='match-message';matchMessage.textContent=''}function selectMatch(el,side){if(el.classList.contains('matched'))return;if(side==='left'){document.querySelectorAll('.match-item[data-side="left"]').forEach(x=>x.classList.remove('selected'));selectedLeft=el;el.classList.add('selected')}else{document.querySelectorAll('.match-item[data-side="right"]').forEach(x=>x.classList.remove('selected'));selectedRight=el;el.classList.add('selected')}if(selectedLeft&&selectedRight){const ok=selectedLeft.dataset.key===selectedRight.dataset.key;matchMessage.className=`match-message show ${ok?'good':'bad'}`;matchMessage.textContent=ok?'Correct match. That is the most appropriate laboratory meaning.':'Not the best match. Reconsider significance, source, and method scope.';if(ok){selectedLeft.classList.remove('selected');selectedRight.classList.remove('selected');selectedLeft.classList.add('matched');selectedRight.classList.add('matched');matched++;matchScore.textContent=`Matches: ${matched} / ${baseMatchPairs.length}`;if(matched===baseMatchPairs.length){matchMessage.className='match-message show good';matchMessage.textContent='Excellent. You completed all matches with post-analytical reasoning in mind.'}}else{selectedLeft.classList.add('wrong');selectedRight.classList.add('wrong');setTimeout(()=>{selectedLeft.classList.remove('selected','wrong');selectedRight.classList.remove('selected','wrong')},600)}selectedLeft=null;selectedRight=null}}function resetMatch(){buildMatch()}buildMatch();
+</script>
+</body>
+</html>

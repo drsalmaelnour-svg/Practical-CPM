@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Clinical Parasitology & Mycology | Module 4: Quality Assurance, Quality Control & Diagnostic Reliability</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#14233b; --navy-2:#20385b; --ink:#1b2d4a; --teal:#0e7c86; --teal-soft:#e9f8f8; --gold:#d2aa4c; --gold-soft:#fff8e8; --wine:#7f3143; --green:#1f6b51; --purple:#53408d; --paper:#f5f7fb; --white:#ffffff; --line:#dfe7f1; --muted:#657891; --ok:#1f8a5a; --warn:#d97706; --bad:#c0392b; --sky:#edf4ff; --radius:18px; --shadow:0 10px 30px rgba(20,35,59,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:linear-gradient(180deg,#eff4fb 0%,#f8fafc 100%);color:var(--ink);min-height:100vh}
+header{position:sticky;top:0;z-index:50;background:rgba(20,35,59,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08);box-shadow:0 8px 26px rgba(0,0,0,.12)}
+.h-wrap{max-width:1280px;margin:auto;padding:18px 22px;display:flex;gap:18px;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:16px}.badge{background:linear-gradient(135deg,var(--gold),#f0cf7f);color:var(--navy);padding:8px 12px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.brand h1{color:var(--white);font-family:"Playfair Display",serif;font-size:25px;line-height:1.1}.brand h1 span{color:var(--gold)}.brand p{color:#b6c3d8;font-size:13px;margin-top:4px}
+.nav{background:#101c31;border-top:1px solid rgba(255,255,255,.05);border-bottom:2px solid rgba(210,170,76,.35)}
+.nav-inner{max-width:1280px;margin:auto;padding:0 10px;display:flex;gap:4px;flex-wrap:wrap}.tab-btn{border:none;background:none;color:#9eb0ca;padding:14px 15px;cursor:pointer;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.06em;border-bottom:3px solid transparent;white-space:nowrap;transition:.2s ease}.tab-btn:hover{color:#fff}.tab-btn.active{color:var(--gold);border-bottom-color:var(--gold)}
+main{max-width:1280px;margin:auto;padding:28px 22px 70px}.tab-pane{display:none}.tab-pane.active{display:block}
+.hero{display:grid;grid-template-columns:1.25fr .95fr;gap:18px;margin-bottom:24px}@media (max-width:980px){.hero{grid-template-columns:1fr}}
+.hero-card{background:linear-gradient(135deg,var(--navy),#223a61);color:#fff;border-radius:28px;padding:32px;box-shadow:var(--shadow);position:relative;overflow:hidden}.hero-card:before{content:"";position:absolute;inset:auto -70px -70px auto;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(210,170,76,.23),transparent 70%)}.hero-card h2{font-family:"Playfair Display",serif;font-size:42px;line-height:1.04;margin-bottom:12px;max-width:820px}.hero-card p{max-width:760px;color:#d7e2f2;font-size:15px;line-height:1.7}
+.meta-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.mini{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:var(--shadow)}.mini .label{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}.mini .value{font-size:17px;font-weight:800;color:var(--navy);line-height:1.35}.mini p{font-size:13px;color:var(--muted);line-height:1.55;margin-top:6px}
+.section-title{margin:6px 0 18px}.section-title h3{font-family:"Playfair Display",serif;font-size:31px;color:var(--navy);margin-bottom:5px}.section-title p{color:var(--muted);font-size:14px}.gold-line{width:68px;height:4px;background:var(--gold);border-radius:999px;margin-top:10px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:18px}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:18px}.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}@media (max-width:980px){.grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}}@media (max-width:760px){.grid-2,.grid-3,.grid-4,.meta-grid{grid-template-columns:1fr}}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}.card-h{padding:14px 18px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff}.navy{background:var(--navy)} .teal{background:var(--teal)} .gold{background:var(--gold);color:var(--navy)} .wine{background:var(--wine)} .green{background:var(--green)} .purple{background:var(--purple)}.card-b{padding:18px}.card-b p,.card-b li{font-size:14px;line-height:1.72;color:#31445f}.card-b ul{padding-left:18px}.card-b li{margin-bottom:8px}
+.callout{background:var(--gold-soft);border:1px solid #f0dfb0;border-left:6px solid var(--gold);padding:16px 18px;border-radius:16px;margin:0 0 18px 0;font-size:14px;line-height:1.7;color:#3d495e}.callout.teal{background:var(--teal-soft);border-color:#cdeeee;border-left-color:var(--teal);color:#25545b}.callout.red{background:#fdecec;border-color:#f7caca;border-left-color:var(--bad);color:#6f2631}
+.kpi{border-radius:22px;padding:22px;background:linear-gradient(180deg,#fff,#f9fbff);border:1px solid var(--line);box-shadow:var(--shadow)}.kpi .big{font-size:34px;font-weight:800;color:var(--navy);line-height:1}.kpi .sub{font-size:12px;color:var(--muted);margin-top:8px;text-transform:uppercase;letter-spacing:.08em}
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:18px}@media (max-width:1080px){.flow{grid-template-columns:repeat(3,1fr)}}@media (max-width:700px){.flow{grid-template-columns:repeat(2,1fr)}}.flow-step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;text-align:center;box-shadow:var(--shadow)}.flow-step .n{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font-weight:800;margin:0 auto 10px}.flow-step h5{font-size:15px;color:var(--navy);margin-bottom:6px}.flow-step p{font-size:13px;color:var(--muted);line-height:1.55}
+.table-wrap{overflow:auto;border-radius:18px;box-shadow:var(--shadow);margin-bottom:18px}table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line)}th{background:var(--navy);color:#fff;padding:13px 14px;text-align:left;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.07em}td{padding:13px 14px;border-top:1px solid var(--line);font-size:14px;line-height:1.6;color:#34465f;vertical-align:top}tr:nth-child(even) td{background:#f8fbff}
+.case-flip-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:18px;background:#f7fbff;padding:26px;border-radius:26px;border:1px solid #e3eefc}@media (max-width:900px){.case-flip-grid{grid-template-columns:1fr}}.case-flip{height:430px;perspective:1400px;cursor:pointer}.case-flip-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .6s ease}.case-flip.flipped .case-flip-inner{transform:rotateY(180deg)}.case-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:22px;overflow:auto;background:#ffffff !important;color:#1b2d4a;border:1px solid #e3ecf8;box-shadow:0 10px 24px rgba(20,35,59,0.08);padding:28px}
+.case-face.front{border-top:4px solid var(--gold);}
+.case-face.back{transform:rotateY(180deg);border-top:4px solid var(--teal);background:linear-gradient(180deg,#ffffff,#f8fbff);color:#1b2d4a;border:1px solid rgba(20,35,59,0.08);}.case-face h4{font-size:19px;color:#0f1b2e;margin-bottom:10px;font-weight:800;line-height:1.35}.case-face h5{font-size:14px;color:#0e7c86;margin:12px 0 6px;font-weight:700}.case-face p,.case-face li{font-size:14px;line-height:1.78;color:#2c3e55}.case-face ul{padding-left:18px}.case-badge{display:inline-block;padding:6px 12px;border-radius:999px;background:#ffffff;border:1px solid #d7e5fa;color:#20385b;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px;box-shadow:0 4px 10px rgba(20,35,59,0.06)}.case-hint{margin-top:12px;font-size:12px;color:var(--muted);font-style:italic}
+.tree-card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:18px;margin-bottom:18px}.tree-head h4{font-size:18px;color:var(--navy);margin-bottom:6px}.tree-step{display:none;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}.tree-step.active{display:block}.step-actions button{width:100%;text-align:left;border:2px solid var(--line);background:#f8fbff;border-radius:14px;padding:12px 14px;margin-bottom:10px;cursor:pointer;font-size:14px;color:#2f3f59}.step-actions button:hover{border-color:var(--teal)}.tree-feedback{display:none;margin-top:10px;padding:12px 14px;border-radius:14px;font-size:14px;line-height:1.6}.tree-feedback.show{display:block}.tree-feedback.good{background:#ecfbf4;color:#1d5b41;border-left:5px solid var(--ok)}.tree-feedback.bad{background:#fff0ef;color:#6d2331;border-left:5px solid var(--bad)}
+.match-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media (max-width:840px){.match-wrap{grid-template-columns:1fr}}.match-col h4{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}.match-item{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:10px;cursor:pointer;font-size:14px;font-weight:600;color:#2f3f59;transition:.18s}.match-item.selected{border-color:var(--gold);background:var(--gold-soft)}.match-item.matched{border-color:var(--ok);background:#ecfbf4;color:var(--ok)}.match-item.wrong{border-color:var(--bad);background:#fff0ef}.match-message{display:none;padding:12px 14px;border-radius:14px;margin:10px 0 16px;font-size:14px;font-weight:600}.match-message.show{display:block}.match-message.good{background:#ecfbf4;color:#1d5b41;border-left:5px solid var(--ok)}.match-message.bad{background:#fff0ef;color:#6d2331;border-left:5px solid var(--bad)}
+.flash-tip{text-align:center;color:var(--muted);font-style:italic;margin-bottom:14px}.flash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.flash{height:190px;perspective:1200px;cursor:pointer}.flash-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .55s ease}.flash.flipped .flash-inner{transform:rotateY(180deg)}.face{position:absolute;inset:0;border-radius:20px;backface-visibility:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:18px;box-shadow:var(--shadow)}.front{background:linear-gradient(135deg,var(--navy),#223a61);color:#fff;border:2px solid rgba(210,170,76,.18)}.front .cat{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#b8c5d8;margin-bottom:7px}.front .term{font-family:"Playfair Display",serif;font-size:24px;color:var(--gold);margin-bottom:8px}.front .hint{font-size:11px;color:#c7d3e3;text-transform:uppercase;letter-spacing:.08em}.back{background:linear-gradient(135deg,var(--teal),#14939d);color:#fff;transform:rotateY(180deg);font-size:14px;line-height:1.65}
+.quiz-shell{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}.quiz-top{padding:18px 20px;background:linear-gradient(135deg,var(--navy),#203656);color:#fff}.progress{height:8px;background:rgba(255,255,255,.15);border-radius:999px;overflow:hidden;margin-top:10px}.progress>div{height:100%;background:var(--gold);width:0%;transition:.35s ease}.quiz-body{padding:22px}.q-num{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:800}.q-text{font-size:20px;font-weight:800;color:var(--navy);line-height:1.45;margin:12px 0 18px}.opt{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;border:2px solid var(--line);background:#f8fbff;border-radius:16px;padding:14px 16px;margin-bottom:10px;cursor:pointer;font-size:14px;color:#2f3f59;transition:.2s}.opt:hover{border-color:var(--teal)}.opt .ol{width:30px;height:30px;flex:0 0 30px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font-weight:800;font-size:12px}.opt.correct{border-color:var(--ok);background:#ecfbf4}.opt.correct .ol{background:var(--ok)}.opt.wrong{border-color:var(--bad);background:#fff0ef}.opt.wrong .ol{background:var(--bad)}.feedback{display:none;padding:14px 16px;border-radius:16px;margin-top:14px;font-size:14px;line-height:1.65}.feedback.show{display:block}.feedback.good{background:#ecfbf4;border-left:5px solid var(--ok);color:#1d5b41}.feedback.bad{background:#fff0ef;border-left:5px solid var(--bad);color:#6d2331}.quiz-nav{display:flex;justify-content:space-between;gap:10px;margin-top:18px}.btn{border:none;border-radius:14px;padding:12px 18px;font-weight:800;cursor:pointer}.btn.primary{background:var(--navy);color:#fff}.btn.secondary{background:#eef4ff;color:var(--navy)}.btn.warn{background:#fff4df;color:#8b5a00}.btn:disabled{opacity:.45;cursor:not-allowed}.result{display:none;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:28px;text-align:center}.result.show{display:block}.result .score{font-family:"Playfair Display",serif;font-size:70px;color:var(--navy)}.result .score span{color:var(--gold)}
+.cheat-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media (max-width:860px){.cheat-grid{grid-template-columns:1fr}}.cheat-card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}.cheat-h{padding:13px 16px;color:#fff;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.cheat-b{padding:14px 16px}.row{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}.row:last-child{border-bottom:none}.key{min-width:152px;font-size:12px;font-weight:800;color:var(--navy)}.val{font-size:13px;line-height:1.55;color:#46566e}
+footer{margin-top:44px;padding:22px;text-align:center;color:var(--muted);font-size:12px}footer strong{color:var(--navy)}.small{font-size:12px;color:var(--muted)}code{font-family:"JetBrains Mono",monospace;background:#f1f5fb;padding:2px 6px;border-radius:8px}
+
+/* ═══════════════════════════════════════════════════
+   SHARED MODULE NAVIGATION SYSTEM
+   Injected into all modules for unified experience
+═══════════════════════════════════════════════════ */
+
+/* Top breadcrumb bar */
+.mod-topbar{
+  background:#0b1829;
+  padding:8px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  flex-wrap:wrap;
+  border-bottom:1px solid rgba(210,170,76,.2);
+}
+.mod-topbar-left{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.mod-home-link{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--gold);font-size:12px;font-weight:700;
+  text-decoration:none;letter-spacing:.04em;
+  opacity:.85;transition:.15s;
+  -webkit-tap-highlight-color:transparent;
+}
+.mod-home-link:hover{opacity:1;text-decoration:none}
+.mod-home-link svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.mod-sep{color:#2e4060;font-size:13px}
+.mod-crumb{color:#7a93b3;font-size:12px;font-weight:600}
+.mod-indicators{display:flex;align-items:center;gap:6px}
+.mod-dot{
+  width:26px;height:26px;border-radius:50%;
+  display:grid;place-items:center;
+  font-size:11px;font-weight:800;
+  text-decoration:none;
+  transition:.18s;
+  -webkit-tap-highlight-color:transparent;
+  flex-shrink:0;
+}
+.mod-dot.done{background:rgba(210,170,76,.18);color:var(--gold);border:1.5px solid rgba(210,170,76,.4)}
+.mod-dot.active{background:var(--gold);color:var(--navy)}
+.mod-dot.upcoming{background:rgba(255,255,255,.05);color:#4a6080;border:1.5px solid rgba(255,255,255,.08)}
+.mod-dot:hover{transform:scale(1.12)}
+
+/* Bottom prev/next navigation */
+.mod-footnav{
+  background:#fff;
+  border-top:2px solid var(--line);
+  padding:16px 22px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  flex-wrap:wrap;
+  margin-top:0;
+}
+.mod-footnav-center{
+  text-align:center;flex:1;min-width:0;
+}
+.mod-footnav-center span{
+  font-size:11.5px;color:var(--muted);font-weight:700;
+  text-transform:uppercase;letter-spacing:.07em;
+  display:block;
+}
+.mod-footnav-center strong{
+  font-size:13px;color:var(--navy);font-family:"Playfair Display",serif;
+  display:block;margin-top:2px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.mod-nav-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 18px;border-radius:13px;
+  font-size:13px;font-weight:700;
+  text-decoration:none;border:none;cursor:pointer;
+  transition:.18s;white-space:nowrap;flex-shrink:0;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.mod-nav-btn:active{transform:scale(.97);text-decoration:none}
+.mod-nav-btn:hover{text-decoration:none}
+.mod-nav-btn.prev{background:#eef4ff;color:var(--navy);border:1px solid var(--sky-line)}
+.mod-nav-btn.prev:hover{background:#e2ecff}
+.mod-nav-btn.next{background:var(--navy);color:#fff;box-shadow:0 4px 14px rgba(20,35,59,.2)}
+.mod-nav-btn.next:hover{background:#1d2f50}
+.mod-nav-btn.home{background:var(--gold-soft);color:#7a5c1a;border:1px solid #f0dfb0}
+.mod-nav-btn.home:hover{background:#fdf0c8}
+.mod-nav-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* Refined footer for modules */
+footer.mod-footer-bar{
+  margin-top:0;padding:18px 22px;
+  text-align:center;color:var(--muted);font-size:12px;
+  border-top:1px solid var(--line);
+  background:rgba(255,255,255,.6);
+}
+footer.mod-footer-bar strong{color:var(--navy)}
+
+/* Smooth page-load fade */
+body{animation:bodyFade .35s ease}
+@keyframes bodyFade{from{opacity:0}to{opacity:1}}
+
+/* Refined scrollbar */
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(20,35,59,.18);border-radius:999px}
+
+@media(max-width:480px){
+  .mod-topbar{padding:7px 14px}
+  .mod-footnav{padding:13px 14px}
+  .mod-nav-btn{padding:10px 14px;font-size:12px}
+  .mod-footnav-center strong{font-size:12px}
+}
+
+</style>
+</head>
+<body>
+<div class="mod-topbar">
+  <div class="mod-topbar-left">
+    <a class="mod-home-link" href="index.html">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      All Modules
+    </a>
+    <span class="mod-sep">·</span>
+    <span class="mod-crumb">Module 4 · Quality Assurance & QC</span>
+  </div>
+  <div class="mod-indicators"><a class="mod-dot done" href="module1.html" title="Module 1">1</a><a class="mod-dot done" href="module2.html" title="Module 2">2</a><a class="mod-dot done" href="module3.html" title="Module 3">3</a><a class="mod-dot active" href="module4.html" title="Module 4">4</a></div>
+</div>
+<header>
+  <div class="h-wrap">
+    <div class="brand">
+      <div class="badge">Dr Salma Elnour</div>
+      <div>
+        <h1>Quality Assurance, Quality Control & <span>Diagnostic Reliability</span></h1>
+        <p>Clinical Parasitology and Mycology · Module 4 · Master of Science in Medical Laboratory Sciences</p>
+      </div>
+    </div>
+  </div>
+  <div class="nav"><div class="nav-inner">
+    <button class="tab-btn active" data-tab="overview">Overview</button>
+    <button class="tab-btn" data-tab="qaqc">QA vs QC</button>
+    <button class="tab-btn" data-tab="preanalytical">Pre-Analytical</button>
+    <button class="tab-btn" data-tab="analytical">Analytical</button>
+    <button class="tab-btn" data-tab="postanalytical">Post-Analytical</button>
+    <button class="tab-btn" data-tab="rca">Root Cause Analysis</button>
+    <button class="tab-btn" data-tab="cases">Case Zone</button>
+    <button class="tab-btn" data-tab="practice">Practice Zone</button>
+    <button class="tab-btn" data-tab="flashcards">Flashcards</button>
+    <button class="tab-btn" data-tab="quiz">Master Quiz</button>
+    <button class="tab-btn" data-tab="cheat">Cheat Sheet</button>
+    <button class="tab-btn" data-tab="sources">Sources</button>
+  </div></div>
+</header>
+<main>
+  <div id="overview" class="tab-pane active">
+    <section class="hero">
+      <div class="hero-card">
+        <h2>Quality is how a laboratory proves that its answers deserve to be trusted.</h2>
+        <p>This module is grounded in actual laboratory practice. It focuses on how reliability is built, checked, challenged, and protected across specimen handling, assay performance, run acceptance, result verification, and final release. The goal is not just to produce a result, but to produce a result that is defensible.</p>
+      </div>
+      <div class="meta-grid">
+        <div class="mini"><div class="label">Built for</div><div class="value">MSc Medical Laboratory Science</div><p>System reliability, run validity, root cause thinking, and quality-centered laboratory judgment.</p></div>
+        <div class="mini"><div class="label">Module focus</div><div class="value">Reliability and control</div><p>Centered on QA, QC, run validity, specimen adequacy, occurrence management, and preventive action.</p></div>
+        <div class="mini"><div class="label">Learning logic</div><div class="value">Control → verify → release</div><p>Move from process control to result trustworthiness and laboratory accountability.</p></div>
+        <div class="mini"><div class="label">Interactive features</div><div class="value">Failure cases, RCA decisions, and QC/QA practice</div><p>Practice identifying where the system failed and how to prevent recurrence.</p></div>
+      </div>
+    </section>
+
+    <div class="section-title"><h3>Overview</h3><p>Why quality is a laboratory system, not a final step at the end of testing.</p><div class="gold-line"></div></div>
+    <div class="callout"><strong>Anchor idea:</strong> a result can be analytically generated and still be untrustworthy. Quality in parasitology and mycology depends on the full chain: correct specimen, correct handling, correct controls, correct run acceptance, correct verification, and correct reporting.</div>
+
+    <div class="grid-3">
+      <div class="card"><div class="card-h navy">What this module covers</div><div class="card-b"><ul><li>Daily quality control versus system-level quality assurance.</li><li>Pre-analytical failures such as labeling, timing, and specimen suitability.</li><li>Analytical failures such as contamination, control failure, and weak reproducibility.</li><li>Post-analytical failures such as unsafe release, missing qualifiers, and inconsistent comments.</li><li>Root cause analysis and prevention of recurrence.</li></ul></div></div>
+      <div class="card"><div class="card-h teal">What makes this non-redundant</div><div class="card-b"><p>Module 1 explained methods. Module 2 explained meaning. Module 3 explained strategy. Module 4 explains reliability.</p><ul><li>Not how a PCR works.</li><li>Not how to interpret a PCR result.</li><li>Not when to choose PCR.</li><li>But how to know whether the PCR run was valid, controlled, documented, and safe to release.</li></ul></div></div>
+      <div class="card"><div class="card-h gold">Medical laboratory practice focus</div><div class="card-b"><p>The cases in this module are built as actual bench problems: delayed smear preparation, contaminated PCR controls, weak respiratory specimens, incomplete identification workflows, and reporting inconsistencies across staff.</p></div></div>
+    </div>
+
+    <div class="grid-4">
+      <div class="kpi"><div class="big">3</div><div class="sub">Quality layers</div><p>Pre-analytical, analytical, and post-analytical reliability must all be controlled.</p></div>
+      <div class="kpi"><div class="big">2</div><div class="sub">Core systems</div><p>QC checks today’s work. QA protects the entire process over time.</p></div>
+      <div class="kpi"><div class="big">5</div><div class="sub">RCA questions</div><p>What happened, where did it fail, why did it fail, what fixes today, and what prevents recurrence?</p></div>
+      <div class="kpi"><div class="big">6</div><div class="sub">Failure cases</div><p>Bench-rooted scenarios that turn students into guardians of laboratory quality.</p></div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card"><div class="card-h purple">CLO alignment</div><div class="card-b"><ul><li><strong>CLO4:</strong> connect diagnostic findings with quality-controlled laboratory processes.</li><li><strong>CLO5:</strong> integrate parasitology and mycology knowledge across specimen handling, methods, and reporting quality.</li><li><strong>CLO6:</strong> support ethical laboratory practice through accuracy, documentation, and responsible release.</li><li><strong>CLO7:</strong> apply modern diagnostic trends within validated, quality-assured workflows.</li></ul></div></div>
+      <div class="card"><div class="card-h wine">Competencies and focus</div><div class="card-b"><ul><li><strong>QC competence:</strong> judge whether a run is valid today.</li><li><strong>QA competence:</strong> understand whether the system is reliable over time.</li><li><strong>Release competence:</strong> verify whether results are safe to issue.</li><li><strong>RCA competence:</strong> identify failure points, corrective action, and preventive action.</li></ul><p><strong>Thinking frame:</strong> specimen → process → control → result → verification → release.</p></div></div>
+    </div>
+  </div>
+
+  <div id="qaqc" class="tab-pane">
+    <div class="section-title"><h3>Quality Assurance vs Quality Control</h3><p>QC checks today’s run. QA protects the whole laboratory system.</p><div class="gold-line"></div></div>
+    <div class="flow">
+      <div class="flow-step"><div class="n">1</div><h5>QC</h5><p>Controls, stain checks, reagent checks, run acceptance.</p></div>
+      <div class="flow-step"><div class="n">2</div><h5>QA</h5><p>SOPs, training, documentation, audits, proficiency testing.</p></div>
+      <div class="flow-step"><div class="n">3</div><h5>QC failure</h5><p>Means this run may be invalid now.</p></div>
+      <div class="flow-step"><div class="n">4</div><h5>QA failure</h5><p>Means the system allows the problem to recur.</p></div>
+      <div class="flow-step"><div class="n">5</div><h5>Corrective action</h5><p>Fix today’s failure.</p></div>
+      <div class="flow-step"><div class="n">6</div><h5>Preventive action</h5><p>Protect tomorrow’s process.</p></div>
+    </div>
+    <div class="grid-2">
+      <div class="card"><div class="card-h navy">Quality control in actual practice</div><div class="card-b"><ul><li>Positive and negative controls in serology and molecular runs.</li><li>Stain quality checks before relying on morphology.</li><li>Media and reagent checks before culture or antigen work.</li><li>Run rejection if control performance fails.</li></ul></div></div>
+      <div class="card"><div class="card-h teal">Quality assurance in actual practice</div><div class="card-b"><ul><li>Standardized SOPs for sample receipt, processing, and release.</li><li>Competency assessment and retraining.</li><li>Documentation, audit trail, and occurrence logging.</li><li>External quality assessment and inter-laboratory comparison.</li></ul></div></div>
+    </div>
+    <div class="table-wrap"><table><thead><tr><th>Situation</th><th>QC or QA?</th><th>Why?</th></tr></thead><tbody><tr><td>Negative control is positive in PCR</td><td>QC</td><td>The current run is invalid and cannot be released safely.</td></tr><tr><td>Different staff report the same fungal result in different ways</td><td>QA</td><td>The problem is system consistency, training, and standardization.</td></tr><tr><td>Repeated mislabeled samples from the same workflow</td><td>QA</td><td>The issue is upstream process reliability, not one isolated run.</td></tr><tr><td>Weak stain obscures blood parasite morphology today</td><td>QC</td><td>The immediate analytical process is not performing adequately.</td></tr></tbody></table></div>
+  </div>
+
+  <div id="preanalytical" class="tab-pane">
+    <div class="section-title"><h3>Pre-Analytical Quality</h3><p>The quality of the result begins before the test starts.</p><div class="gold-line"></div></div>
+    <div class="callout red"><strong>Highest-risk zone:</strong> labeling, collection, transport, preservation, and specimen adequacy failures can invalidate the entire pathway before the assay even begins.</div>
+    <div class="grid-3">
+      <div class="card"><div class="card-h navy">Specimen identity and integrity</div><div class="card-b"><ul><li>Correct patient/sample matching.</li><li>Leakage, breakage, or incorrect container problems.</li><li>Specimen rejection criteria must be clear and applied consistently.</li></ul></div></div>
+      <div class="card"><div class="card-h teal">Timing and preservation</div><div class="card-b"><ul><li>Delay can alter morphology and reduce interpretability.</li><li>Serial stool strategy matters when shedding is intermittent.</li><li>Poor transport conditions can compromise organisms and markers.</li></ul></div></div>
+      <div class="card"><div class="card-h gold">Source suitability</div><div class="card-b"><ul><li>Poor respiratory specimens weaken mycology significance.</li><li>Non-sterile source results need source-aware caution.</li><li>A better specimen may add more value than a more complex assay.</li></ul></div></div>
+    </div>
+  </div>
+
+  <div id="analytical" class="tab-pane">
+    <div class="section-title"><h3>Analytical Quality</h3><p>Even a good specimen can produce poor-quality data if the run is not controlled.</p><div class="gold-line"></div></div>
+    <div class="grid-2">
+      <div class="card"><div class="card-h navy">Daily analytical control points</div><div class="card-b"><ul><li>Positive and negative control performance.</li><li>Reagent integrity and lot consistency.</li><li>Contamination control in molecular work.</li><li>Inter-observer consistency in microscopy.</li><li>Instrument/platform suitability for the target organism.</li></ul></div></div>
+      <div class="card"><div class="card-h teal">Typical analytical failures</div><div class="card-b"><ul><li>Positive negative-control in PCR.</li><li>Weak or inconsistent staining causing morphology uncertainty.</li><li>Culture contamination mistaken for genuine growth.</li><li>Premature final identification from an unsupported workflow.</li></ul></div></div>
+    </div>
+    <div class="table-wrap"><table><thead><tr><th>Analytical problem</th><th>Immediate risk</th><th>Required action</th></tr></thead><tbody><tr><td>PCR negative control turns positive</td><td>Run contamination; results unreliable</td><td>Reject the run, investigate contamination source, repeat after correction</td></tr><tr><td>Blood film stain is weak</td><td>Morphology may be missed or distorted</td><td>Do not over-rely on the slide; repeat stain/preparation as needed</td></tr><tr><td>Yeast identification platform lacks reliable database support</td><td>Premature species naming</td><td>Escalate to validated identification pathway before final release</td></tr></tbody></table></div>
+  </div>
+
+  <div id="postanalytical" class="tab-pane">
+    <div class="section-title"><h3>Post-Analytical Quality</h3><p>Results must be verified for accuracy, consistency, and safe communication before release.</p><div class="gold-line"></div></div>
+    <div class="grid-3">
+      <div class="card"><div class="card-h navy">Verification before release</div><div class="card-b"><ul><li>Does the result match what the method can truly support?</li><li>Does the report need a limitation comment?</li><li>Has discordance across methods been flagged?</li></ul></div></div>
+      <div class="card"><div class="card-h teal">Common release failures</div><div class="card-b"><ul><li>Definitive wording from a limited method.</li><li>Missing qualifiers when source quality is weak.</li><li>Inconsistent language across staff for the same finding.</li></ul></div></div>
+      <div class="card"><div class="card-h gold">Professional release rule</div><div class="card-b"><p>A result should be released only when the laboratory can defend the specimen, the run, the wording, and the consistency of its process.</p></div></div>
+    </div>
+  </div>
+
+  <div id="rca" class="tab-pane">
+    <div class="section-title"><h3>Root Cause Analysis</h3><p>System-level reasoning using real laboratory failures. Each cause is expanded through practice-grounded examples.</p><div class="gold-line"></div></div>
+
+    <div class="callout teal"><strong>Key principle:</strong> Root cause analysis is not about identifying what went wrong — it is about identifying why the system allowed it to happen.</div>
+
+    <div class="grid-3">
+      <div class="card"><div class="card-h navy">What RCA asks</div><div class="card-b"><ul><li>What failed first?</li><li>What allowed the failure to continue?</li><li>What part of the system was missing or weak?</li></ul><p>RCA should move from the visible error to the system condition underneath it.</p></div></div>
+      <div class="card"><div class="card-h teal">Corrective vs preventive action</div><div class="card-b"><ul><li><strong>Corrective action</strong> protects the current case or run.</li><li><strong>Preventive action</strong> changes the process so the same weakness is less likely to recur.</li></ul><p>Strong RCA always includes both.</p></div></div>
+      <div class="card"><div class="card-h gold">How to read the cards</div><div class="card-b"><ul><li><strong>Front:</strong> what the bench staff notices first.</li><li><strong>Back:</strong> what the deeper system problem actually is.</li></ul><p>This mirrors real quality review: observation first, root cause second.</p></div></div>
+    </div>
+
+    <div class="case-flip-grid">
+
+      <div class="case-flip" onclick="this.classList.toggle('flipped')">
+        <div class="case-flip-inner">
+          <div class="case-face front">
+            <div class="case-badge">Human factor</div>
+            <h4>Operator-related error</h4>
+            <p><strong>Surface issue:</strong> Incorrect pipetting, misreading microscopy, or premature reporting.</p>
+            <h5>What you observe</h5>
+            <ul><li>Inconsistent results across staff</li><li>Unexpected discrepancy in repeated tests</li></ul>
+            <h5>Hidden risk</h5>
+            <p>The system depends too heavily on individual performance rather than structured reliability.</p>
+            <div class="case-hint">Flip to analyze deeper cause</div>
+          </div>
+          <div class="case-face back">
+            <h5>What actually caused it?</h5>
+            <p>Not simply “human error”. Usually linked to:</p>
+            <ul>
+              <li>Inadequate competency assessment</li>
+              <li>Fatigue or workload pressure</li>
+              <li>Unclear SOPs or inconsistent training</li>
+            </ul>
+            <h5>Real example</h5>
+            <p>WHO LQMS reports show misidentification in microscopy often arises from lack of periodic competency checks rather than individual negligence.</p>
+            <h5>Prevention</h5>
+            <ul>
+              <li>Structured competency programs</li>
+              <li>Standardized reporting templates</li>
+              <li>Double reading in high-risk cases</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-flip" onclick="this.classList.toggle('flipped')">
+        <div class="case-flip-inner">
+          <div class="case-face front">
+            <div class="case-badge">Process failure</div>
+            <h4>Weak or missing SOP</h4>
+            <p><strong>Surface issue:</strong> Different staff performing the same test differently.</p>
+            <h5>What you observe</h5>
+            <ul><li>Variation in reporting language</li><li>Different interpretations for identical findings</li></ul>
+            <h5>Hidden risk</h5>
+            <p>Lack of standardization leads to unreliable laboratory output.</p>
+            <div class="case-hint">Flip to analyze deeper cause</div>
+          </div>
+          <div class="case-face back">
+            <h5>What actually caused it?</h5>
+            <p>Process inconsistency due to:</p>
+            <ul>
+              <li>Outdated or unclear SOP</li>
+              <li>Lack of standardization</li>
+              <li>No audit or enforcement</li>
+            </ul>
+            <h5>Real example</h5>
+            <p>CLSI highlights variability in fungal reporting when laboratories lack standardized interpretive comments.</p>
+            <h5>Prevention</h5>
+            <ul>
+              <li>Clear SOPs with version control</li>
+              <li>Regular audits</li>
+              <li>Mandatory adherence monitoring</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-flip" onclick="this.classList.toggle('flipped')">
+        <div class="case-flip-inner">
+          <div class="case-face front">
+            <div class="case-badge">Equipment</div>
+            <h4>Instrument or reagent issue</h4>
+            <p><strong>Surface issue:</strong> Unexpected control failure or inconsistent results.</p>
+            <h5>What you observe</h5>
+            <ul><li>Control behaving abnormally</li><li>Drift in expected assay performance</li></ul>
+            <h5>Hidden risk</h5>
+            <p>The analytical system may be compromised even if results appear plausible.</p>
+            <div class="case-hint">Flip to analyze deeper cause</div>
+          </div>
+          <div class="case-face back">
+            <h5>What actually caused it?</h5>
+            <p>Often linked to:</p>
+            <ul>
+              <li>Expired or degraded reagents</li>
+              <li>Poor calibration</li>
+              <li>Environmental contamination</li>
+            </ul>
+            <h5>Real example</h5>
+            <p>CDC molecular diagnostics guidance shows PCR contamination events frequently arise from poor workflow separation rather than assay failure.</p>
+            <h5>Prevention</h5>
+            <ul>
+              <li>Routine calibration and maintenance</li>
+              <li>Strict contamination control zones</li>
+              <li>Reagent tracking and validation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-flip" onclick="this.classList.toggle('flipped')">
+        <div class="case-flip-inner">
+          <div class="case-face front">
+            <div class="case-badge">Specimen</div>
+            <h4>Specimen-related issue</h4>
+            <p><strong>Surface issue:</strong> False negatives or misleading results from poor samples.</p>
+            <h5>What you observe</h5>
+            <ul><li>Low organism yield</li><li>Inconsistent findings across samples</li></ul>
+            <h5>Hidden risk</h5>
+            <p>The problem lies in input quality, not analytical performance.</p>
+            <div class="case-hint">Flip to analyze deeper cause</div>
+          </div>
+          <div class="case-face back">
+            <h5>What actually caused it?</h5>
+            <ul>
+              <li>Incorrect collection technique</li>
+              <li>Delayed transport</li>
+              <li>Inappropriate specimen type</li>
+            </ul>
+            <h5>Real example</h5>
+            <p>CDC DPDx emphasizes that single stool samples can miss intermittent parasite shedding, leading to false reassurance.</p>
+            <h5>Prevention</h5>
+            <ul>
+              <li>Clear collection instructions</li>
+              <li>Rejection criteria</li>
+              <li>Serial sampling protocols</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-flip" onclick="this.classList.toggle('flipped')">
+        <div class="case-flip-inner">
+          <div class="case-face front">
+            <div class="case-badge">Communication</div>
+            <h4>Reporting failure</h4>
+            <p><strong>Surface issue:</strong> Results issued without appropriate qualifiers or consistency.</p>
+            <h5>What you observe</h5>
+            <ul><li>Overconfident wording</li><li>Missing limitations or disclaimers</li></ul>
+            <h5>Hidden risk</h5>
+            <p>The laboratory output may misrepresent the strength of evidence.</p>
+            <div class="case-hint">Flip to analyze deeper cause</div>
+          </div>
+          <div class="case-face back">
+            <h5>What actually caused it?</h5>
+            <ul>
+              <li>Lack of reporting standards</li>
+              <li>Inconsistent training</li>
+              <li>Absence of verification step</li>
+            </ul>
+            <h5>Real example</h5>
+            <p>IDSA guidelines emphasize cautious wording in fungal biomarkers to avoid overstatement of significance.</p>
+            <h5>Prevention</h5>
+            <ul>
+              <li>Standardized reporting language</li>
+              <li>Mandatory verification before release</li>
+              <li>Periodic report audits</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="cases" class="tab-pane">
+    <div class="section-title"><h3>Case Zone</h3><p>Flip each card to identify the failure point, root cause, corrective action, and preventive action.</p><div class="gold-line"></div></div>
+    <div class="callout teal"><strong>How to use the case zone:</strong> read the bench scenario first. Decide whether the problem is QC, QA, pre-analytical, analytical, post-analytical, or mixed. Then flip the card and compare your reasoning with the model analysis.</div>
+    <div class="grid-3">
+      <div class="card"><div class="card-h purple">Read the bench context</div><div class="card-b"><p>Start with specimen, timing, method, and wording clues. The case is built to resemble what a laboratory scientist actually sees in workflow.</p></div></div>
+      <div class="card"><div class="card-h wine">Classify the failure</div><div class="card-b"><p>Ask whether the main problem is QC, QA, pre-analytical, analytical, post-analytical, or mixed. Do not jump to blame language too early.</p></div></div>
+      <div class="card"><div class="card-h green">Think like a quality lead</div><div class="card-b"><p>After identifying the error, ask what must be corrected now and what must change in the system to prevent repetition.</p></div></div>
+    </div>
+    <div class="case-flip-grid" id="caseFlipGrid"></div>
+  </div>
+
+  <div id="practice" class="tab-pane">
+    <div class="section-title"><h3>Practice Zone</h3><p>Quality-focused decision training rooted in daily laboratory reality.</p><div class="gold-line"></div></div>
+    <div class="tree-card" id="tree1"><div class="tree-head"><h4>Decision Tree · Invalid molecular run</h4><p class="small">Choose what the laboratory should do when a control failure appears.</p></div><div class="tree-step active" data-step="1"><p><strong>Step 1:</strong> The negative control in a PCR run becomes positive.</p><div class="step-actions"><button data-correct="true" data-next="2">Treat the run as invalid and stop release of results.</button><button data-correct="false">Release the patient positives and ignore the control if they look convincing.</button></div><div class="tree-feedback"></div></div><div class="tree-step" data-step="2"><p><strong>Step 2:</strong> What is the strongest next action?</p><div class="step-actions"><button data-correct="true" data-next="3">Investigate contamination source, document occurrence, correct process, and repeat the run.</button><button data-correct="false">Delete the control and keep the patient results.</button></div><div class="tree-feedback"></div></div><div class="tree-step" data-step="3"><p><strong>Step 3:</strong> What turns this from QC into QA learning?</p><div class="step-actions"><button data-correct="true">Recording the event, reviewing process gaps, and updating prevention steps.</button><button data-correct="false">Only repeating the run without documenting the failure.</button></div><div class="tree-feedback"></div></div></div>
+    <div class="tree-card"><div class="tree-head"><h4>Quality Match</h4><p class="small">Match the failure scenario to the most accurate quality classification.</p></div><div style="font-weight:800;color:var(--navy);margin:6px 0 12px" id="matchScore">Matches: 0 / 6</div><div class="match-message" id="matchMessage"></div><div class="match-wrap"><div class="match-col"><h4>Failure scenario</h4><div id="leftList"></div></div><div class="match-col"><h4>Best classification</h4><div id="rightList"></div></div></div><div style="margin-top:12px"><button class="btn warn" onclick="resetMatch()">Reset Match</button></div></div>
+  </div>
+
+  <div id="flashcards" class="tab-pane">
+    <div class="section-title"><h3>Flashcards</h3><p>Tap to flip. Focus on quality triggers and release safety.</p><div class="gold-line"></div></div>
+    <div class="flash-tip">A strong laboratory does not only find organisms. It proves its own reliability.</div>
+    <div class="flash-grid" id="flashGrid"></div>
+  </div>
+
+  <div id="quiz" class="tab-pane">
+    <div class="section-title"><h3>Master Quiz</h3><p>Scenario-based QA/QC questions with answer review after scoring.</p><div class="gold-line"></div></div>
+    <div class="quiz-shell" id="quizShell"><div class="quiz-top"><div id="quizMeta">Question 1 of 15</div><div class="progress"><div id="progressFill"></div></div></div><div class="quiz-body"><div class="q-num" id="qNum"></div><div class="q-text" id="qText"></div><div id="options"></div><div class="feedback" id="feedback"></div><div class="quiz-nav"><button class="btn secondary" id="prevBtn">Previous</button><button class="btn primary" id="nextBtn">Next</button></div></div></div>
+    <div class="result" id="resultBox"><div class="score" id="scoreText">0<span>/15</span></div><p style="font-size:17px;color:var(--muted);margin:8px 0 18px">Review each failure pattern after scoring to strengthen quality judgment.</p><button class="btn primary" onclick="reviewQuiz()">Review answers</button><button class="btn secondary" onclick="restartQuiz()" style="margin-left:8px">Try again</button></div>
+  </div>
+
+  <div id="cheat" class="tab-pane">
+    <div class="section-title"><h3>Cheat Sheet</h3><p>High-yield reliability rules for bench practice and result release.</p><div class="gold-line"></div></div>
+    <div class="cheat-grid">
+      <div class="cheat-card"><div class="cheat-h navy">QC vs QA</div><div class="cheat-b"><div class="row"><div class="key">QC</div><div class="val">Checks whether today’s run or process is acceptable.</div></div><div class="row"><div class="key">QA</div><div class="val">Protects the whole system through SOPs, documentation, training, and assessment.</div></div><div class="row"><div class="key">Corrective action</div><div class="val">Fixes today’s problem.</div></div><div class="row"><div class="key">Preventive action</div><div class="val">Reduces the chance of recurrence.</div></div></div></div>
+      <div class="cheat-card"><div class="cheat-h teal">Release rules</div><div class="cheat-b"><div class="row"><div class="key">Never release</div><div class="val">Results from an invalid run or failed control.</div></div><div class="row"><div class="key">Pause release</div><div class="val">When discordance, unsupported wording, or specimen quality issues remain unresolved.</div></div><div class="row"><div class="key">Verify</div><div class="val">Specimen, run, wording, and consistency before final issue.</div></div></div></div>
+      <div class="cheat-card"><div class="cheat-h gold">Root cause prompts</div><div class="cheat-b"><div class="row"><div class="key">What happened?</div><div class="val">Describe the event clearly.</div></div><div class="row"><div class="key">Why did it happen?</div><div class="val">Look beyond the visible mistake.</div></div><div class="row"><div class="key">What fixes today?</div><div class="val">Protect current patient results immediately.</div></div><div class="row"><div class="key">What prevents tomorrow?</div><div class="val">Update the system, not just the moment.</div></div></div></div>
+      <div class="cheat-card"><div class="cheat-h wine">Bench mindset</div><div class="cheat-b"><div class="row"><div class="key">Ask</div><div class="val">Is this result trustworthy?</div></div><div class="row"><div class="key">Ask</div><div class="val">What control or system step supports that trust?</div></div><div class="row"><div class="key">Ask</div><div class="val">If this failed, where in the chain did it fail?</div></div><div class="row"><div class="key">Remember</div><div class="val">A result is only as strong as the quality system behind it.</div></div></div></div>
+    </div>
+  </div>
+
+  <div id="sources" class="tab-pane">
+    <div class="section-title"><h3>Sources</h3><p>Reliable references underpinning the quality logic, failure cases, and control principles in this module.</p><div class="gold-line"></div></div>
+    <div class="card"><div class="card-h navy">Reference backbone</div><div class="card-b"><ul><li><strong>WHO Laboratory Quality Management System materials</strong> for QA, QC, occurrence management, assessment, and continual improvement.</li><li><strong>CDC DPDx</strong> for serial stool logic, blood smear preparation timing, and specimen-related parasitology quality issues.</li><li><strong>CDC Candida auris laboratory guidance</strong> for identification workflow reliability and platform limitations.</li><li><strong>IDSA Aspergillosis guidance</strong> for context-appropriate biomarker use and caution against overstatement.</li><li><strong>CLSI quality-oriented laboratory practice themes</strong> for process control, reliability, and result defensibility.</li></ul><p style="margin-top:14px">These sources were used to ground the module in actual laboratory practice rather than generic theory.</p></div></div>
+  </div>
+</main>
+<div class="mod-footnav">
+  <a class="mod-nav-btn prev" href="module3.html">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      Module 3
+    </a>
+  <div class="mod-footnav-center">
+    <span>Module 4</span>
+    <strong>Quality Assurance & QC</strong>
+  </div>
+  <a class="mod-nav-btn home" href="index.html">
+      All Modules
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+</div>
+<footer class="mod-footer-bar">
+  <strong>Dr Salma Elnour</strong> · Clinical Parasitology &amp; Mycology · Module 4 · Quality Assurance &amp; QC<br><span style="font-size:11px;color:#b7c4d8;margin-top:4px;display:inline-block">Gulf Medical University · MSc Medical Laboratory Sciences</span>
+</footer>
+<script>
+const tabs=document.querySelectorAll('.tab-btn');const panes=document.querySelectorAll('.tab-pane');tabs.forEach(btn=>{btn.addEventListener('click',()=>{tabs.forEach(b=>b.classList.remove('active'));panes.forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById(btn.dataset.tab).classList.add('active');window.scrollTo({top:0,behavior:'smooth'})})});
+document.querySelectorAll('.tree-card').forEach(card=>{card.querySelectorAll('.tree-step').forEach(step=>{step.querySelectorAll('.step-actions button').forEach(btn=>{btn.addEventListener('click',()=>{if(btn.parentElement.dataset.done==='true')return;btn.parentElement.dataset.done='true';const fb=step.querySelector('.tree-feedback');const correct=btn.dataset.correct==='true';fb.className=`tree-feedback show ${correct?'good':'bad'}`;fb.textContent=correct?"Good. This protects result integrity and keeps the quality system defensible.":"Not the safest decision. Reconsider run validity, release risk, and system accountability.";if(correct&&btn.dataset.next){const next=card.querySelector(`.tree-step[data-step="${btn.dataset.next}"]`);if(next){next.classList.add('active')}}})})})});
+const caseCards=[{badge:'Pre-Analytical',title:'Case 1 · One stool specimen only',front:`<p><strong>Bench context:</strong> Persistent diarrheal work-up is requested. Only one stool specimen is received and examined. The result is negative and the draft report is ready for release.</p><h5>Your quality task</h5><ul><li>Where is the quality risk?</li><li>Is this a testing failure or a specimen strategy failure?</li><li>What should the laboratory do before treating the pathway as complete?</li></ul>`,back:`<h5>Failure point</h5><p>Pre-analytical quality issue: specimen adequacy for the diagnostic question is weak.</p><h5>Root cause</h5><p>The pathway is relying on a low-yield sampling approach for a problem where serial sampling may be more informative.</p><h5>Corrective action</h5><ul><li>Do not overstate the reassurance of one negative examination.</li><li>Strengthen specimen strategy before closing the pathway.</li></ul><h5>Preventive action</h5><p>Standardize specimen adequacy guidance for stool parasitology requests.</p>`},{badge:'Pre-Analytical',title:'Case 2 · Delayed blood smear preparation',front:`<p><strong>Bench context:</strong> A blood sample for malaria work-up arrives, but smear preparation is delayed. When finally stained, morphology is weak and species-level confidence is poor.</p><h5>Your quality task</h5><ul><li>Where did the failure occur?</li><li>What kind of quality issue is this?</li><li>Should the poor morphology be treated as a species problem or a process problem?</li></ul>`,back:`<h5>Failure point</h5><p>Pre-analytical timing failure affecting downstream analytical quality.</p><h5>Root cause</h5><p>Delay in smear preparation compromised morphology.</p><h5>Corrective action</h5><ul><li>Avoid overcommitting species identification from compromised material.</li><li>Repeat preparation where possible under appropriate timing conditions.</li></ul><h5>Preventive action</h5><p>Strengthen time-to-smear SOP and escalation rules when delays occur.</p>`},{badge:'Analytical',title:'Case 3 · PCR negative control turns positive',front:`<p><strong>Bench context:</strong> A parasitology PCR run appears successful for several patient samples, but the negative control is positive.</p><h5>Your quality task</h5><ul><li>Can the patient positives still be released?</li><li>Is this QC or QA?</li><li>What is the safest immediate action?</li></ul>`,back:`<h5>Failure point</h5><p>Analytical QC failure.</p><h5>Root cause</h5><p>Likely contamination or process breach during the molecular run.</p><h5>Corrective action</h5><ul><li>Reject the run.</li><li>Investigate contamination source.</li><li>Repeat after corrective action.</li></ul><h5>Preventive action</h5><p>Review separation of workflow areas, pipetting practice, and contamination controls; document the occurrence for QA learning.</p>`},{badge:'Analytical',title:'Case 4 · Unsupported Candida auris naming',front:`<p><strong>Bench context:</strong> A yeast isolate is worked up on a local platform. Staff are concerned about <em>Candida auris</em>, but database capability for reliable identification has not been verified. A final report is drafted anyway.</p><h5>Your quality task</h5><ul><li>Is this mainly a method problem, a wording problem, or both?</li><li>What should happen before final naming?</li></ul>`,back:`<h5>Failure point</h5><p>Analytical reliability and post-analytical release risk.</p><h5>Root cause</h5><p>Final wording is being issued beyond verified platform capability.</p><h5>Corrective action</h5><ul><li>Pause final species release.</li><li>Escalate to validated identification pathway.</li></ul><h5>Preventive action</h5><p>Maintain a platform capability matrix and clear SOP for isolates requiring escalation.</p>`},{badge:'Post-Analytical',title:'Case 5 · Biomarker reported too strongly',front:`<p><strong>Bench context:</strong> A positive fungal biomarker result is reported as a definitive invasive fungal diagnosis with no limitation comment.</p><h5>Your quality task</h5><ul><li>What kind of quality failure is this?</li><li>Does the result itself fail, or does the release wording fail?</li></ul>`,back:`<h5>Failure point</h5><p>Post-analytical quality failure in report verification and wording.</p><h5>Root cause</h5><p>The report exceeds what the test can support and omits context-sensitive caution.</p><h5>Corrective action</h5><ul><li>Revise the report to reflect support rather than absolute confirmation.</li><li>Add wording consistent with method limits.</li></ul><h5>Preventive action</h5><p>Standardize report comments for biomarkers and train staff in release rules.</p>`},{badge:'System QA',title:'Case 6 · Staff inconsistency in mycology reporting',front:`<p><strong>Bench context:</strong> Two staff members issue different levels of caution for similar sputum fungal findings. One uses conservative wording; the other reports as clearly significant.</p><h5>Your quality task</h5><ul><li>Is this one person’s mistake or a system problem?</li><li>What would quality assurance require?</li></ul>`,back:`<h5>Failure point</h5><p>QA system consistency failure.</p><h5>Root cause</h5><p>Inadequate harmonization of reporting standards, training, or comment templates.</p><h5>Corrective action</h5><ul><li>Review current report outputs and align wording immediately.</li><li>Escalate inconsistent findings for supervisory verification.</li></ul><h5>Preventive action</h5><p>Introduce standardized templates, competency checks, and periodic audit of reporting consistency.</p>`}];
+const caseFlipGrid=document.getElementById('caseFlipGrid');if(caseFlipGrid){caseCards.forEach(c=>{const el=document.createElement('div');el.className='case-flip';el.innerHTML=`<div class="case-flip-inner"><div class="case-face front"><div class="case-badge">${c.badge}</div><h4>${c.title}</h4>${c.front}<div class="case-hint">Tap to flip and reveal the quality analysis.</div></div><div class="case-face back"><div class="case-badge">Quality analysis</div><h4>${c.title}</h4>${c.back}<div class="case-hint">Tap again to return to the scenario.</div></div></div>`;el.addEventListener('click',()=>el.classList.toggle('flipped'));caseFlipGrid.appendChild(el);});}
+const flashcards=[{cat:'QC',term:'Checks today',back:'Quality control verifies whether the current run or process is functioning acceptably now.'},{cat:'QA',term:'Protects the system',back:'Quality assurance prevents recurrence through SOPs, training, assessment, and documentation.'},{cat:'Release',term:'Do not issue invalid runs',back:'No result should be released from a failed control or unreliable run.'},{cat:'Specimen',term:'Weak source, weak answer',back:'A poor specimen can undermine even an excellent assay.'},{cat:'RCA',term:'Look beyond the symptom',back:'The visible error is often not the root cause.'},{cat:'Corrective action',term:'Fix today',back:'Corrective action protects the current result pathway.'},{cat:'Preventive action',term:'Protect tomorrow',back:'Preventive action changes the system to reduce recurrence.'},{cat:'Verification',term:'Check before release',back:'Verify wording, consistency, specimen quality, and run validity before final issue.'}];
+const flashGrid=document.getElementById('flashGrid');flashcards.forEach(f=>{const el=document.createElement('div');el.className='flash';el.innerHTML=`<div class="flash-inner"><div class="face front"><div class="cat">${f.cat}</div><div class="term">${f.term}</div><div class="hint">tap to reveal</div></div><div class="face back">${f.back}</div></div>`;el.addEventListener('click',()=>el.classList.toggle('flipped'));flashGrid.appendChild(el);});
+const quiz=[{q:'A PCR negative control is positive. What is the strongest immediate action?',opts:['Release only the convincing patient positives','Treat the run as invalid and stop release','Ignore the control if duplicates match','Change the report wording only'],a:1,e:'A failed control invalidates the run and release must stop.'},{q:'Different staff report similar fungal findings with different levels of caution. This is strongest classified as:',opts:['Only a QC issue','A QA consistency failure','A specimen transport problem','A reagent problem only'],a:1,e:'The issue is system standardization, not only one run.'},{q:'A blood smear is prepared too late and morphology is poor. This is primarily:',opts:['A post-analytical failure','A pre-analytical timing failure affecting analysis','A QA audit finding only','A culture contamination issue'],a:1,e:'Delay before preparation is a pre-analytical quality problem with downstream impact.'},{q:'Which statement best distinguishes QC from QA?',opts:['QC protects the system; QA checks today’s run','QC checks today’s run; QA protects the system','They mean the same thing','QA is only about cost'],a:1,e:'QC is immediate control; QA is system reliability.'},{q:'A result is generated from a weak specimen using an excellent assay. What is the strongest conclusion?',opts:['The assay rescues the specimen','Specimen weakness may still limit result trustworthiness','The result is automatically reliable','Only interpretation matters now'],a:1,e:'A strong method does not fully rescue a weak source.'},{q:'What is the purpose of preventive action?',opts:['Repeat the same failed run','Reduce the chance of recurrence by changing the system','Rewrite the report','Delete the occurrence log'],a:1,e:'Preventive action protects the future process.'},{q:'Which is the safest release rule?',opts:['Release if the result looks biologically plausible','Release only when specimen, run, and wording are defensible','Release if the clinician is waiting','Release if one control passed'],a:1,e:'Release should be based on defensible quality, not urgency alone.'},{q:'A biomarker is reported as a definitive diagnosis without qualification. This is strongest classified as:',opts:['Post-analytical quality failure','Only a specimen issue','Only a QC failure','A transport issue'],a:0,e:'The main problem is unsafe wording and release verification.'},{q:'If the root cause is documented as “technician error” only, what is missing?',opts:['The patient name','The system reason that allowed the error','The control result','The assay target'],a:1,e:'RCA should identify the process or system gap, not stop at blame.'},{q:'Which event is most clearly QC?',opts:['Repeated mislabeled specimens across weeks','Positive negative-control in a run','Inconsistent reporting culture across staff','Missing SOP review schedule'],a:1,e:'QC addresses immediate run validity.'},{q:'Which event is most clearly QA?',opts:['Weak stain on one slide today','Positive control failure in one run','Recurring inconsistency in report comments','One specimen delayed in transit'],a:2,e:'That reflects system standardization failure.'},{q:'What is the strongest next step after discovering a contaminated culture process?',opts:['Keep reporting and monitor later','Stop, investigate source, correct process, and document occurrence','Assume the organism is significant anyway','Only change wording'],a:1,e:'Containment, correction, and documentation are essential.'},{q:'Why does Module 4 not repeat Modules 1–3?',opts:['Because it ignores methods and results','Because it focuses on reliability and system control rather than method principle, interpretation, or strategy alone','Because QA and QC are unrelated to diagnosis','Because it avoids laboratory practice'],a:1,e:'Module 4 is about trustworthiness of the process and result.'},{q:'Which question is most aligned with QA/QC thinking?',opts:['What organism is this?','Is this result trustworthy enough to release?','What is the fanciest test available?','Which answer sounds strongest?'],a:1,e:'Quality modules center on defensibility and release safety.'},{q:'Which summary best captures Module 4?',opts:['Testing is enough if the instrument runs','Quality is how the lab proves its answers deserve trust','Interpretation alone guarantees reliability','The report matters more than the process'],a:1,e:'Reliability is built and demonstrated across the full system.'}];let qi=0;let answers=Array(quiz.length).fill(null);const qNum=document.getElementById('qNum');const qText=document.getElementById('qText');const options=document.getElementById('options');const feedback=document.getElementById('feedback');const prevBtn=document.getElementById('prevBtn');const nextBtn=document.getElementById('nextBtn');const quizMeta=document.getElementById('quizMeta');const progressFill=document.getElementById('progressFill');const resultBox=document.getElementById('resultBox');const quizShell=document.getElementById('quizShell');const scoreText=document.getElementById('scoreText');function renderQuiz(){const item=quiz[qi];qNum.textContent=`Question ${qi+1}`;qText.textContent=item.q;quizMeta.textContent=`Question ${qi+1} of ${quiz.length}`;progressFill.style.width=`${((qi+1)/quiz.length)*100}%`;options.innerHTML='';feedback.className='feedback';feedback.textContent='';item.opts.forEach((opt,idx)=>{const b=document.createElement('button');b.className='opt';b.innerHTML=`<div class="ol">${String.fromCharCode(65+idx)}</div><div>${opt}</div>`;b.disabled=answers[qi]!==null;if(answers[qi]!==null){if(idx===item.a)b.classList.add('correct');if(idx===answers[qi]&&idx!==item.a)b.classList.add('wrong')}b.addEventListener('click',()=>choose(idx));options.appendChild(b)});if(answers[qi]!==null){const good=answers[qi]===item.a;feedback.className=`feedback show ${good?'good':'bad'}`;feedback.textContent=(good?'Correct. ':'Not quite. ')+item.e}prevBtn.disabled=qi===0;nextBtn.textContent=qi===quiz.length-1?'Finish':'Next'}function choose(idx){if(answers[qi]!==null)return;answers[qi]=idx;renderQuiz()}prevBtn.addEventListener('click',()=>{if(qi>0){qi--;renderQuiz()}});nextBtn.addEventListener('click',()=>{if(qi<quiz.length-1){qi++;renderQuiz()}else finishQuiz()});function finishQuiz(){if(answers.filter(a=>a===null).length){return}const score=answers.reduce((n,a,i)=>n+(a===quiz[i].a?1:0),0);scoreText.innerHTML=`${score}<span>/${quiz.length}</span>`;quizShell.style.display='none';resultBox.classList.add('show')}function reviewQuiz(){resultBox.classList.remove('show');quizShell.style.display='block';qi=0;renderQuiz()}function restartQuiz(){qi=0;answers=Array(quiz.length).fill(null);resultBox.classList.remove('show');quizShell.style.display='block';renderQuiz()}renderQuiz();
+const baseMatchPairs=[['Negative control positive in PCR','Analytical QC failure'],['Different reporting language across staff','QA system consistency failure'],['Delayed smear preparation','Pre-analytical timing failure'],['Unsupported final species naming','Analytical reliability plus post-analytical release risk'],['Repeated mislabeled specimens','QA process failure'],['Biomarker reported too definitively','Post-analytical release failure']];let selectedLeft=null;let selectedRight=null;let matched=0;const leftList=document.getElementById('leftList');const rightList=document.getElementById('rightList');const matchScore=document.getElementById('matchScore');const matchMessage=document.getElementById('matchMessage');function shuffle(arr){return arr.map(v=>({v,sort:Math.random()})).sort((a,b)=>a.sort-b.sort).map(x=>x.v)}function buildMatch(){leftList.innerHTML='';rightList.innerHTML='';const shuffledRight=shuffle([...baseMatchPairs]);baseMatchPairs.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.side='left';d.dataset.key=p[0];d.textContent=p[0];d.onclick=()=>selectMatch(d,'left');leftList.appendChild(d)});shuffledRight.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.side='right';d.dataset.key=p[0];d.textContent=p[1];d.onclick=()=>selectMatch(d,'right');rightList.appendChild(d)});selectedLeft=null;selectedRight=null;matched=0;matchScore.textContent=`Matches: 0 / ${baseMatchPairs.length}`;matchMessage.className='match-message';matchMessage.textContent=''}function selectMatch(el,side){if(el.classList.contains('matched'))return;if(side==='left'){document.querySelectorAll('.match-item[data-side="left"]').forEach(x=>x.classList.remove('selected'));selectedLeft=el;el.classList.add('selected')}else{document.querySelectorAll('.match-item[data-side="right"]').forEach(x=>x.classList.remove('selected'));selectedRight=el;el.classList.add('selected')}if(selectedLeft&&selectedRight){const ok=selectedLeft.dataset.key===selectedRight.dataset.key;matchMessage.className=`match-message show ${ok?'good':'bad'}`;matchMessage.textContent=ok?'Correct match. That is the strongest quality classification.':'Not the best match. Reconsider where the failure sits in the laboratory chain.';if(ok){selectedLeft.classList.remove('selected');selectedRight.classList.remove('selected');selectedLeft.classList.add('matched');selectedRight.classList.add('matched');matched++;matchScore.textContent=`Matches: ${matched} / ${baseMatchPairs.length}`;if(matched===baseMatchPairs.length){matchMessage.className='match-message show good';matchMessage.textContent='Excellent. You completed all quality classifications with strong RCA thinking.'}}else{selectedLeft.classList.add('wrong');selectedRight.classList.add('wrong');setTimeout(()=>{selectedLeft.classList.remove('selected','wrong');selectedRight.classList.remove('selected','wrong')},600)}selectedLeft=null;selectedRight=null}}function resetMatch(){buildMatch()}buildMatch();
+</script>
+</body>
+</html>

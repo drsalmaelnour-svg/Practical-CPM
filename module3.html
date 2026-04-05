@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Clinical Parasitology & Mycology | Module 3: Diagnostic Strategy, Test Selection & Laboratory Stewardship</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#14233b; --navy-2:#20385b; --ink:#1b2d4a; --teal:#0e7c86; --teal-soft:#e9f8f8; --gold:#d2aa4c; --gold-soft:#fff8e8; --wine:#7f3143; --green:#1f6b51; --purple:#53408d; --paper:#f5f7fb; --white:#ffffff; --line:#dfe7f1; --muted:#657891; --ok:#1f8a5a; --warn:#d97706; --bad:#c0392b; --sky:#edf4ff; --sky-line:#d7e5fa; --radius:18px; --shadow:0 10px 30px rgba(20,35,59,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:linear-gradient(180deg,#eff4fb 0%,#f8fafc 100%);color:var(--ink);min-height:100vh}
+header{position:sticky;top:0;z-index:50;background:rgba(20,35,59,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08);box-shadow:0 8px 26px rgba(0,0,0,.12)}
+.h-wrap{max-width:1280px;margin:auto;padding:18px 22px;display:flex;gap:18px;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:16px}.badge{background:linear-gradient(135deg,var(--gold),#f0cf7f);color:var(--navy);padding:8px 12px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.brand h1{color:var(--white);font-family:"Playfair Display",serif;font-size:25px;line-height:1.1}.brand h1 span{color:var(--gold)}.brand p{color:#b6c3d8;font-size:13px;margin-top:4px}
+.nav{background:#101c31;border-top:1px solid rgba(255,255,255,.05);border-bottom:2px solid rgba(210,170,76,.35)}
+.nav-inner{max-width:1280px;margin:auto;padding:0 10px;display:flex;gap:4px;flex-wrap:wrap}.tab-btn{border:none;background:none;color:#9eb0ca;padding:14px 15px;cursor:pointer;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.06em;border-bottom:3px solid transparent;white-space:nowrap;transition:.2s ease}.tab-btn:hover{color:#fff}.tab-btn.active{color:var(--gold);border-bottom-color:var(--gold)}
+main{max-width:1280px;margin:auto;padding:28px 22px 70px}.tab-pane{display:none}.tab-pane.active{display:block}
+.hero{display:grid;grid-template-columns:1.25fr .95fr;gap:18px;margin-bottom:24px}@media (max-width:980px){.hero{grid-template-columns:1fr}}
+.hero-card{background:linear-gradient(135deg,var(--navy),#223a61);color:#fff;border-radius:28px;padding:32px;box-shadow:var(--shadow);position:relative;overflow:hidden}.hero-card:before{content:"";position:absolute;inset:auto -70px -70px auto;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(210,170,76,.23),transparent 70%)}.hero-card h2{font-family:"Playfair Display",serif;font-size:42px;line-height:1.04;margin-bottom:12px;max-width:820px}.hero-card p{max-width:760px;color:#d7e2f2;font-size:15px;line-height:1.7}
+.meta-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.mini{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:var(--shadow)}.mini .label{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}.mini .value{font-size:17px;font-weight:800;color:var(--navy);line-height:1.35}.mini p{font-size:13px;color:var(--muted);line-height:1.55;margin-top:6px}
+.section-title{margin:6px 0 18px}.section-title h3{font-family:"Playfair Display",serif;font-size:31px;color:var(--navy);margin-bottom:5px}.section-title p{color:var(--muted);font-size:14px}.gold-line{width:68px;height:4px;background:var(--gold);border-radius:999px;margin-top:10px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:18px}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:18px}.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}@media (max-width:980px){.grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}}@media (max-width:760px){.grid-2,.grid-3,.grid-4,.meta-grid{grid-template-columns:1fr}}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}.card-h{padding:14px 18px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff}.navy{background:var(--navy)} .teal{background:var(--teal)} .gold{background:var(--gold);color:var(--navy)} .wine{background:var(--wine)} .green{background:var(--green)} .purple{background:var(--purple)}.card-b{padding:18px}.card-b p,.card-b li{font-size:14px;line-height:1.72;color:#31445f}.card-b ul{padding-left:18px}.card-b li{margin-bottom:8px}
+.callout{background:var(--gold-soft);border:1px solid #f0dfb0;border-left:6px solid var(--gold);padding:16px 18px;border-radius:16px;margin:0 0 18px 0;font-size:14px;line-height:1.7;color:#3d495e}.callout.teal{background:var(--teal-soft);border-color:#cdeeee;border-left-color:var(--teal);color:#25545b}.callout.red{background:#fdecec;border-color:#f7caca;border-left-color:var(--bad);color:#6f2631}
+.kpi{border-radius:22px;padding:22px;background:linear-gradient(180deg,#fff,#f9fbff);border:1px solid var(--line);box-shadow:var(--shadow)}.kpi .big{font-size:34px;font-weight:800;color:var(--navy);line-height:1}.kpi .sub{font-size:12px;color:var(--muted);margin-top:8px;text-transform:uppercase;letter-spacing:.08em}
+.table-wrap{overflow:auto;border-radius:18px;box-shadow:var(--shadow);margin-bottom:18px}table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line)}th{background:var(--navy);color:#fff;padding:13px 14px;text-align:left;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.07em}td{padding:13px 14px;border-top:1px solid var(--line);font-size:14px;line-height:1.6;color:#34465f;vertical-align:top}tr:nth-child(even) td{background:#f8fbff}
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:18px}@media (max-width:1080px){.flow{grid-template-columns:repeat(3,1fr)}}@media (max-width:700px){.flow{grid-template-columns:repeat(2,1fr)}}.flow-step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;text-align:center;box-shadow:var(--shadow)}.flow-step .n{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font-weight:800;margin:0 auto 10px}.flow-step h5{font-size:15px;color:var(--navy);margin-bottom:6px}.flow-step p{font-size:13px;color:var(--muted);line-height:1.55}
+.tree-card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:18px;margin-bottom:18px}.tree-head h4{font-size:18px;color:var(--navy);margin-bottom:6px}.tree-step{display:none;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}.tree-step.active{display:block}.step-actions button{width:100%;text-align:left;border:2px solid var(--line);background:#f8fbff;border-radius:14px;padding:12px 14px;margin-bottom:10px;cursor:pointer;font-size:14px;color:#2f3f59}.step-actions button:hover{border-color:var(--teal)}.tree-feedback{display:none;margin-top:10px;padding:12px 14px;border-radius:14px;font-size:14px;line-height:1.6}.tree-feedback.show{display:block}.tree-feedback.good{background:#ecfbf4;color:#1d5b41;border-left:5px solid var(--ok)}.tree-feedback.bad{background:#fff0ef;color:#6d2331;border-left:5px solid var(--bad)}
+.case-flip-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:18px;background:#14233b;padding:22px;border-radius:24px}@media (max-width:900px){.case-flip-grid{grid-template-columns:1fr}}.case-flip{height:420px;perspective:1400px;cursor:pointer}.case-flip-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .6s ease}.case-flip.flipped .case-flip-inner{transform:rotateY(180deg)}.case-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:20px;overflow:auto;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);padding:20px}.case-face.back{transform:rotateY(180deg);background:#ffffff;color:#1b2d4a;border:1px solid var(--line)}.case-face h4{font-size:18px;color:var(--navy);margin-bottom:8px}.case-face h5{font-size:14px;color:var(--teal);margin:12px 0 6px}.case-face p,.case-face li{font-size:14px;line-height:1.65;color:#32445e}.case-face ul{padding-left:18px}.case-badge{display:inline-block;padding:5px 10px;border-radius:999px;background:#eef4ff;color:var(--navy);font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:10px}.case-hint{margin-top:12px;font-size:12px;color:var(--muted);font-style:italic}
+.match-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media (max-width:840px){.match-wrap{grid-template-columns:1fr}}.match-col h4{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}.match-item{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:10px;cursor:pointer;font-size:14px;font-weight:600;color:#2f3f59;transition:.18s}.match-item.selected{border-color:var(--gold);background:var(--gold-soft)}.match-item.matched{border-color:var(--ok);background:#ecfbf4;color:var(--ok)}.match-item.wrong{border-color:var(--bad);background:#fff0ef}.match-message{display:none;padding:12px 14px;border-radius:14px;margin:10px 0 16px;font-size:14px;font-weight:600}.match-message.show{display:block}.match-message.good{background:#ecfbf4;color:#1d5b41;border-left:5px solid var(--ok)}.match-message.bad{background:#fff0ef;color:#6d2331;border-left:5px solid var(--bad)}
+.flash-tip{text-align:center;color:var(--muted);font-style:italic;margin-bottom:14px}.flash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.flash{height:190px;perspective:1200px;cursor:pointer}.flash-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .55s ease}.flash.flipped .flash-inner{transform:rotateY(180deg)}.face{position:absolute;inset:0;border-radius:20px;backface-visibility:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:18px;box-shadow:var(--shadow)}.front{background:linear-gradient(135deg,var(--navy),#223a61);color:#fff;border:2px solid rgba(210,170,76,.18)}.front .cat{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#b8c5d8;margin-bottom:7px}.front .term{font-family:"Playfair Display",serif;font-size:24px;color:var(--gold);margin-bottom:8px}.front .hint{font-size:11px;color:#c7d3e3;text-transform:uppercase;letter-spacing:.08em}.back{background:linear-gradient(135deg,var(--teal),#14939d);color:#fff;transform:rotateY(180deg);font-size:14px;line-height:1.65}
+.quiz-shell{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}.quiz-top{padding:18px 20px;background:linear-gradient(135deg,var(--navy),#203656);color:#fff}.progress{height:8px;background:rgba(255,255,255,.15);border-radius:999px;overflow:hidden;margin-top:10px}.progress>div{height:100%;background:var(--gold);width:0%;transition:.35s ease}.quiz-body{padding:22px}.q-num{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:800}.q-text{font-size:20px;font-weight:800;color:var(--navy);line-height:1.45;margin:12px 0 18px}.opt{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;border:2px solid var(--line);background:#f8fbff;border-radius:16px;padding:14px 16px;margin-bottom:10px;cursor:pointer;font-size:14px;color:#2f3f59;transition:.2s}.opt:hover{border-color:var(--teal)}.opt .ol{width:30px;height:30px;flex:0 0 30px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font-weight:800;font-size:12px}.opt.correct{border-color:var(--ok);background:#ecfbf4}.opt.correct .ol{background:var(--ok)}.opt.wrong{border-color:var(--bad);background:#fff0ef}.opt.wrong .ol{background:var(--bad)}.feedback{display:none;padding:14px 16px;border-radius:16px;margin-top:14px;font-size:14px;line-height:1.65}.feedback.show{display:block}.feedback.good{background:#ecfbf4;border-left:5px solid var(--ok);color:#1d5b41}.feedback.bad{background:#fff0ef;border-left:5px solid var(--bad);color:#6d2331}.quiz-nav{display:flex;justify-content:space-between;gap:10px;margin-top:18px}
+.btn{border:none;border-radius:14px;padding:12px 18px;font-weight:800;cursor:pointer}.btn.primary{background:var(--navy);color:#fff}.btn.secondary{background:#eef4ff;color:var(--navy)}.btn.warn{background:#fff4df;color:#8b5a00}.btn:disabled{opacity:.45;cursor:not-allowed}.result{display:none;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:28px;text-align:center}.result.show{display:block}.result .score{font-family:"Playfair Display",serif;font-size:70px;color:var(--navy)}.result .score span{color:var(--gold)}
+.cheat-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media (max-width:860px){.cheat-grid{grid-template-columns:1fr}}.cheat-card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}.cheat-h{padding:13px 16px;color:#fff;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.cheat-b{padding:14px 16px}.row{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}.row:last-child{border-bottom:none}.key{min-width:152px;font-size:12px;font-weight:800;color:var(--navy)}.val{font-size:13px;line-height:1.55;color:#46566e}
+footer{margin-top:44px;padding:22px;text-align:center;color:var(--muted);font-size:12px}footer strong{color:var(--navy)}.small{font-size:12px;color:var(--muted)}code{font-family:"JetBrains Mono",monospace;background:#f1f5fb;padding:2px 6px;border-radius:8px}
+/* === FIX: Ensure case cards are LIGHT and readable === */
+.case-face.front{
+  background:#ffffff !important;
+  color:#1b2d4a !important;
+  border:1px solid var(--line);
+}
+.case-face.back{
+  background:#ffffff !important;
+  color:#1b2d4a !important;
+}
+.case-face *{
+  color:#1b2d4a !important;
+}
+
+
+/* ═══════════════════════════════════════════════════
+   SHARED MODULE NAVIGATION SYSTEM
+   Injected into all modules for unified experience
+═══════════════════════════════════════════════════ */
+
+/* Top breadcrumb bar */
+.mod-topbar{
+  background:#0b1829;
+  padding:8px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  flex-wrap:wrap;
+  border-bottom:1px solid rgba(210,170,76,.2);
+}
+.mod-topbar-left{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.mod-home-link{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--gold);font-size:12px;font-weight:700;
+  text-decoration:none;letter-spacing:.04em;
+  opacity:.85;transition:.15s;
+  -webkit-tap-highlight-color:transparent;
+}
+.mod-home-link:hover{opacity:1;text-decoration:none}
+.mod-home-link svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.mod-sep{color:#2e4060;font-size:13px}
+.mod-crumb{color:#7a93b3;font-size:12px;font-weight:600}
+.mod-indicators{display:flex;align-items:center;gap:6px}
+.mod-dot{
+  width:26px;height:26px;border-radius:50%;
+  display:grid;place-items:center;
+  font-size:11px;font-weight:800;
+  text-decoration:none;
+  transition:.18s;
+  -webkit-tap-highlight-color:transparent;
+  flex-shrink:0;
+}
+.mod-dot.done{background:rgba(210,170,76,.18);color:var(--gold);border:1.5px solid rgba(210,170,76,.4)}
+.mod-dot.active{background:var(--gold);color:var(--navy)}
+.mod-dot.upcoming{background:rgba(255,255,255,.05);color:#4a6080;border:1.5px solid rgba(255,255,255,.08)}
+.mod-dot:hover{transform:scale(1.12)}
+
+/* Bottom prev/next navigation */
+.mod-footnav{
+  background:#fff;
+  border-top:2px solid var(--line);
+  padding:16px 22px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  flex-wrap:wrap;
+  margin-top:0;
+}
+.mod-footnav-center{
+  text-align:center;flex:1;min-width:0;
+}
+.mod-footnav-center span{
+  font-size:11.5px;color:var(--muted);font-weight:700;
+  text-transform:uppercase;letter-spacing:.07em;
+  display:block;
+}
+.mod-footnav-center strong{
+  font-size:13px;color:var(--navy);font-family:"Playfair Display",serif;
+  display:block;margin-top:2px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.mod-nav-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 18px;border-radius:13px;
+  font-size:13px;font-weight:700;
+  text-decoration:none;border:none;cursor:pointer;
+  transition:.18s;white-space:nowrap;flex-shrink:0;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.mod-nav-btn:active{transform:scale(.97);text-decoration:none}
+.mod-nav-btn:hover{text-decoration:none}
+.mod-nav-btn.prev{background:#eef4ff;color:var(--navy);border:1px solid var(--sky-line)}
+.mod-nav-btn.prev:hover{background:#e2ecff}
+.mod-nav-btn.next{background:var(--navy);color:#fff;box-shadow:0 4px 14px rgba(20,35,59,.2)}
+.mod-nav-btn.next:hover{background:#1d2f50}
+.mod-nav-btn.home{background:var(--gold-soft);color:#7a5c1a;border:1px solid #f0dfb0}
+.mod-nav-btn.home:hover{background:#fdf0c8}
+.mod-nav-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* Refined footer for modules */
+footer.mod-footer-bar{
+  margin-top:0;padding:18px 22px;
+  text-align:center;color:var(--muted);font-size:12px;
+  border-top:1px solid var(--line);
+  background:rgba(255,255,255,.6);
+}
+footer.mod-footer-bar strong{color:var(--navy)}
+
+/* Smooth page-load fade */
+body{animation:bodyFade .35s ease}
+@keyframes bodyFade{from{opacity:0}to{opacity:1}}
+
+/* Refined scrollbar */
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(20,35,59,.18);border-radius:999px}
+
+@media(max-width:480px){
+  .mod-topbar{padding:7px 14px}
+  .mod-footnav{padding:13px 14px}
+  .mod-nav-btn{padding:10px 14px;font-size:12px}
+  .mod-footnav-center strong{font-size:12px}
+}
+
+</style>
+</head>
+<body>
+<div class="mod-topbar">
+  <div class="mod-topbar-left">
+    <a class="mod-home-link" href="index.html">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      All Modules
+    </a>
+    <span class="mod-sep">·</span>
+    <span class="mod-crumb">Module 3 · Diagnostic Strategy & Stewardship</span>
+  </div>
+  <div class="mod-indicators"><a class="mod-dot done" href="module1.html" title="Module 1">1</a><a class="mod-dot done" href="module2.html" title="Module 2">2</a><a class="mod-dot active" href="module3.html" title="Module 3">3</a><a class="mod-dot upcoming" href="module4.html" title="Module 4">4</a></div>
+</div>
+<header>
+  <div class="h-wrap">
+    <div class="brand">
+      <div class="badge">Dr Salma Elnour</div>
+      <div>
+        <h1>Diagnostic Strategy, Test Selection & <span>Laboratory Stewardship</span></h1>
+        <p>Clinical Parasitology and Mycology · Module 3 · Master of Science in Medical Laboratory Sciences</p>
+      </div>
+    </div>
+  </div>
+  <div class="nav"><div class="nav-inner">
+    <button class="tab-btn active" data-tab="overview">Overview</button>
+    <button class="tab-btn" data-tab="framework">Framework</button>
+    <button class="tab-btn" data-tab="specimen">Specimen & Timing</button>
+    <button class="tab-btn" data-tab="selection">Test Selection</button>
+    <button class="tab-btn" data-tab="stewardship">Stewardship</button>
+    <button class="tab-btn" data-tab="algorithms">Algorithms</button>
+    <button class="tab-btn" data-tab="cases">Case Zone</button>
+    <button class="tab-btn" data-tab="practice">Practice Zone</button>
+    <button class="tab-btn" data-tab="flashcards">Flashcards</button>
+    <button class="tab-btn" data-tab="quiz">Master Quiz</button>
+    <button class="tab-btn" data-tab="cheat">Cheat Sheet</button>
+    <button class="tab-btn" data-tab="sources">Sources</button>
+  </div></div>
+</header>
+<main>
+  <div id="overview" class="tab-pane active">
+    <section class="hero">
+      <div class="hero-card">
+        <h2>A correct diagnostic pathway begins before the first result exists.</h2>
+        <p>This module develops strategic diagnostic reasoning from the laboratory perspective. The focus is not how to perform the test or how to interpret a completed result alone. The focus is how to choose the right specimen, the right first-line test, the right escalation pathway, and the right level of diagnostic complexity for the scenario in front of you.</p>
+      </div>
+      <div class="meta-grid">
+        <div class="mini"><div class="label">Built for</div><div class="value">MSc Medical Laboratory Science</div><p>Strategic test selection, specimen logic, and stewardship-driven pathway design.</p></div>
+        <div class="mini"><div class="label">Module focus</div><div class="value">Before the result</div><p>Centered on specimen choice, test appropriateness, timing, escalation, and resource-aware decisions.</p></div>
+        <div class="mini"><div class="label">Learning logic</div><div class="value">Question → specimen → test → pathway</div><p>Move from diagnostic need to a justified laboratory strategy rather than reactive test ordering.</p></div>
+        <div class="mini"><div class="label">Interactive features</div><div class="value">Decision trees, rich flip cases, and strategy matching</div><p>Practice choosing the next best laboratory step under realistic constraints.</p></div>
+      </div>
+    </section>
+
+    <div class="section-title"><h3>Overview</h3><p>Why diagnostic strategy matters as much as method knowledge and interpretation.</p><div class="gold-line"></div></div>
+    <div class="callout"><strong>Anchor idea:</strong> a sophisticated laboratory is not defined by how many tests it can run, but by how well it knows which test should be run first, when a specimen is unsuitable, when escalation is justified, and when high-sensitivity testing may create more noise than clarity.</div>
+
+    <div class="grid-3">
+      <div class="card"><div class="card-h navy">Why this module matters</div><div class="card-b"><p>Wrong strategy can distort the entire diagnostic process. A poor specimen sent to a high-end assay may still mislead. A broad multiplex panel ordered without a clear diagnostic question may generate results of uncertain significance. A delayed or inappropriate specimen can reduce the value of even a well-chosen method.</p><ul><li>Wrong first test can create false reassurance.</li><li>Over-testing can generate low-significance positives.</li><li>Poor timing can make a biologically real process invisible.</li></ul></div></div>
+      <div class="card"><div class="card-h teal">What you are strengthening</div><div class="card-b"><ul><li>Defining the diagnostic question before ordering a method.</li><li>Choosing specimens that match the biology of the target and the strengths of the assay.</li><li>Balancing turnaround time, yield, cost, and practicality.</li><li>Escalating from routine to advanced testing only when justified.</li><li>Recognizing when a powerful test is the wrong first choice.</li></ul></div></div>
+      <div class="card"><div class="card-h gold">How this differs from Modules 1 and 2</div><div class="card-b"><p><strong>Module 1</strong> focused on methods. <strong>Module 2</strong> focused on result meaning. <strong>Module 3</strong> focuses on strategy.</p><ul><li>Not “How does PCR work?”</li><li>Not “How should this PCR result be reported?”</li><li>But “Should PCR be ordered at this stage, on this specimen, for this question?”</li></ul></div></div>
+    </div>
+
+    <div class="grid-4">
+      <div class="kpi"><div class="big">3</div><div class="sub">Strategy risks</div><p>Inappropriate test choice, poor specimen choice, and unjustified escalation.</p></div>
+      <div class="kpi"><div class="big">6</div><div class="sub">Framework steps</div><p>Define question, judge specimen, choose test, decide sequencing, weigh constraints, justify action.</p></div>
+      <div class="kpi"><div class="big">6</div><div class="sub">Flip cases</div><p>Rich scenario cards that make students justify pathway design, not just answers.</p></div>
+      <div class="kpi"><div class="big">4</div><div class="sub">Stewardship aims</div><p>High yield, low waste, faster clarity, and fewer low-value positives.</p></div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card"><div class="card-h purple">CLO alignment</div><div class="card-b"><ul><li><strong>CLO4:</strong> correlating diagnostic findings with meaningful laboratory pathways.</li><li><strong>CLO5:</strong> integrating parasitology and mycology knowledge across methods and specimen logic.</li><li><strong>CLO7:</strong> applying modern trends in diagnosis through justified selection rather than automatic use.</li></ul><p>In this module, the CLOs are operationalized through test selection, pathway design, and laboratory stewardship decisions.</p></div></div>
+      <div class="card"><div class="card-h wine">Competencies, thinking frame, and focus</div><div class="card-b"><ul><li><strong>Diagnostic strategy:</strong> choose the right test for the right question.</li><li><strong>Pre-analytical judgment:</strong> evaluate source quality, timing, and suitability before escalation.</li><li><strong>Stewardship:</strong> avoid low-value testing and overuse of advanced diagnostics.</li><li><strong>Professional reasoning:</strong> justify why a test should or should not be used now.</li></ul><p><strong>Thinking frame:</strong> Diagnostic question → specimen → first-line test → confirmatory need → stewardship check → final pathway.</p></div></div>
+    </div>
+  </div>
+
+  <div id="framework" class="tab-pane">
+    <div class="section-title"><h3>Diagnostic Strategy Framework</h3><p>A structured laboratory approach to designing the diagnostic pathway before testing begins.</p><div class="gold-line"></div></div>
+    <div class="flow">
+      <div class="flow-step"><div class="n">1</div><h5>Question</h5><p>What exactly are you trying to detect: organism, syndrome, marker, or viability?</p></div>
+      <div class="flow-step"><div class="n">2</div><h5>Specimen</h5><p>Which specimen best matches the biology of the target and the method?</p></div>
+      <div class="flow-step"><div class="n">3</div><h5>First-line test</h5><p>What is the most appropriate initial test at this stage?</p></div>
+      <div class="flow-step"><div class="n">4</div><h5>Escalation</h5><p>When is confirmatory or advanced testing justified?</p></div>
+      <div class="flow-step"><div class="n">5</div><h5>Constraints</h5><p>What do cost, availability, and turnaround time do to the pathway?</p></div>
+      <div class="flow-step"><div class="n">6</div><h5>Stewardship</h5><p>Does this plan maximize diagnostic value without unnecessary testing?</p></div>
+    </div>
+    <div class="grid-3">
+      <div class="card"><div class="card-h navy">Step 1 · Define the question</div><div class="card-b"><ul><li>Do you need broad syndrome screening or targeted confirmation?</li><li>Are you looking for whole organisms, antigens, nucleic acid, or viable recovery?</li><li>Would a negative result from the chosen method genuinely answer the question?</li></ul></div></div>
+      <div class="card"><div class="card-h teal">Step 2 · Match the specimen</div><div class="card-b"><ul><li>Serial stool specimens increase parasitology yield where shedding is intermittent.</li><li>Respiratory source quality changes the meaning of fungal recovery.</li><li>Non-sterile specimens should not be treated like sterile-site evidence.</li></ul></div></div>
+      <div class="card"><div class="card-h gold">Step 3 onward · Sequence wisely</div><div class="card-b"><ul><li>Use a routine, affordable first step when appropriate.</li><li>Escalate to antigen or molecular when the question remains unresolved.</li><li>Reserve broad or high-cost methods for justified scenarios.</li></ul></div></div>
+    </div>
+    <div class="callout teal"><strong>Strategy rule:</strong> the best test is not the newest test; it is the test that best fits the diagnostic question, the specimen, and the context of use.</div>
+  </div>
+
+  <div id="specimen" class="tab-pane">
+    <div class="section-title"><h3>Specimen & Timing</h3><p>Specimen quality and timing are not minor details; they determine whether the pathway has diagnostic value.</p><div class="gold-line"></div></div>
+    <div class="grid-2">
+      <div class="card"><div class="card-h navy">Specimen suitability</div><div class="card-b"><ul><li><strong>Stool parasitology:</strong> one specimen can miss intermittent shedding; serial specimens improve sensitivity.</li><li><strong>Respiratory mycology:</strong> sputum quality strongly influences significance of growth.</li><li><strong>Urine mycology:</strong> contamination and colonization issues make source interpretation difficult.</li><li><strong>Tissue / sterile fluid:</strong> often provides stronger significance than non-sterile sources.</li></ul></div></div>
+      <div class="card"><div class="card-h teal">Timing</div><div class="card-b"><ul><li>Low organism burden early in the process can make microscopy falsely reassuring.</li><li>Timing affects antigen yield and molecular detectability.</li><li>Repeat sampling may be more valuable than immediate blind escalation in some scenarios.</li></ul></div></div>
+    </div>
+    <div class="table-wrap"><table><thead><tr><th>Scenario</th><th>Specimen issue</th><th>Timing issue</th><th>Laboratory implication</th></tr></thead><tbody><tr><td>Single stool examination</td><td>May not capture intermittent shedding</td><td>Organism burden varies over time</td><td>Consider serial specimens before concluding absence</td></tr><tr><td>Poor-quality sputum</td><td>Nonrepresentative respiratory material</td><td>Fungal recovery may be misleading</td><td>Comment on source limits; consider better specimen</td></tr><tr><td>Urine antigen testing</td><td>Specimen choice may be appropriate, but still context-dependent</td><td>Interpretation varies by disease manifestation and stage</td><td>Result should be framed as supportive, not self-sufficient</td></tr></tbody></table></div>
+  </div>
+
+  <div id="selection" class="tab-pane">
+    <div class="section-title"><h3>Test Selection Logic</h3><p>Choose the method that answers the question best, not simply the method with the highest technological appeal.</p><div class="gold-line"></div></div>
+    <div class="table-wrap"><table><thead><tr><th>Approach</th><th>Best use</th><th>Main strength</th><th>Main strategic caution</th></tr></thead><tbody><tr><td>Microscopy</td><td>Low-cost first-line visual detection</td><td>Direct organism demonstration</td><td>May miss low burden; operator dependent</td></tr><tr><td>Antigen detection</td><td>Focused rapid support for selected targets</td><td>Can outperform microscopy in selected scenarios</td><td>Does not answer every significance question by itself</td></tr><tr><td>Targeted PCR</td><td>When sensitivity or species discrimination matters</td><td>High analytical sensitivity</td><td>Can detect low-significance targets or residual DNA</td></tr><tr><td>Multiplex panel</td><td>Broad syndrome-driven screening</td><td>Wide simultaneous coverage</td><td>Can produce results of uncertain significance if used indiscriminately</td></tr><tr><td>Culture</td><td>Recovery of viable organism and downstream work-up</td><td>Viability and further characterization</td><td>Slow and source-dependent in significance</td></tr></tbody></table></div>
+    <div class="grid-3">
+      <div class="card"><div class="card-h purple">Targeted vs broad testing</div><div class="card-b"><p>Broad testing is useful when the syndrome is unclear, but it should not replace a defined diagnostic question when a focused pathway is more efficient and interpretable.</p></div></div>
+      <div class="card"><div class="card-h wine">Screening vs diagnostic use</div><div class="card-b"><p>A method that works well in a symptomatic, high-probability setting may behave very differently in low-context screening.</p></div></div>
+      <div class="card"><div class="card-h green">Sensitivity vs meaning</div><div class="card-b"><p>The most sensitive test may create the most interpretation burden if the specimen and clinical question are poorly aligned.</p></div></div>
+    </div>
+  </div>
+
+  <div id="stewardship" class="tab-pane">
+    <div class="section-title"><h3>Laboratory Stewardship</h3><p>Stewardship in the diagnostic laboratory means choosing a pathway that is justified, proportionate, and high-yield rather than automatically choosing the broadest, most expensive, or most technologically advanced option.</p><div class="gold-line"></div></div>
+
+    <div class="callout red"><strong>Core principle:</strong> more testing does not automatically improve diagnosis. Unfocused escalation can increase cost, generate low-significance positives, complicate reporting, and delay a cleaner answer that might have been reached through better specimen strategy or a more targeted first step.</div>
+
+    <div class="grid-3">
+      <div class="card"><div class="card-h navy">Why stewardship matters</div><div class="card-b"><p>Every diagnostic pathway carries a cost: financial cost, time cost, interpretive cost, and sometimes even credibility cost if the laboratory generates technically correct but poorly directed results.</p><ul><li><strong>Over-testing</strong> increases the chance of low-value positives.</li><li><strong>Poor sequencing</strong> can bypass simpler, higher-yield steps.</li><li><strong>Unfocused escalation</strong> can make reporting more difficult rather than more meaningful.</li></ul><p>Strong stewardship protects the quality of laboratory reasoning, not just the budget.</p></div></div>
+      <div class="card"><div class="card-h teal">Over-testing and overdiagnosis</div><div class="card-b"><p>High-sensitivity methods can identify targets that are real at the analytical level but weak in diagnostic significance.</p><ul><li>Broad multiplex testing may detect organisms of uncertain relevance when the diagnostic question is poorly defined.</li><li>Repeated biomarker testing without a clear purpose can create interpretive noise.</li><li>Molecular escalation on a weak specimen may amplify low-value information rather than solve the problem.</li></ul><p><strong>Stewardship message:</strong> the laboratory should not confuse detectability with usefulness.</p></div></div>
+      <div class="card"><div class="card-h gold">Cost-effectiveness and proportionality</div><div class="card-b"><p>A good pathway is not necessarily the cheapest pathway, but it should be proportionate to the question being asked.</p><ul><li>Use lower-cost, lower-complexity steps when they can answer the question adequately.</li><li>Escalate when the question remains unresolved, not by routine habit.</li><li>Reserve advanced assays for situations where they meaningfully improve yield, speed, or discriminatory power.</li></ul><p><strong>Best practice:</strong> choose the level of testing that fits the level of uncertainty.</p></div></div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card"><div class="card-h purple">Common stewardship failures</div><div class="card-b"><ul><li>Ordering a broad panel before defining the actual diagnostic target.</li><li>Escalating to advanced testing despite poor specimen quality.</li><li>Repeating the same test without asking whether repeat sampling or a better specimen would help more.</li><li>Using biomarkers outside the settings where they add strong value.</li><li>Choosing the most advanced test because it is available rather than because it is appropriate.</li></ul></div></div>
+      <div class="card"><div class="card-h wine">Stewardship mindset for MLS practice</div><div class="card-b"><ul><li><strong>Ask:</strong> What question am I trying to answer?</li><li><strong>Ask:</strong> Is this the best specimen for that question?</li><li><strong>Ask:</strong> Would a better specimen add more value than a more complex assay?</li><li><strong>Ask:</strong> If this test is positive, will it truly clarify the pathway?</li><li><strong>Ask:</strong> If this test is negative, will it meaningfully reduce uncertainty?</li></ul><p><strong>Strategic rule:</strong> stewardship is not about doing less; it is about doing what is justified, timed correctly, and likely to add meaningful diagnostic value.</p></div></div>
+    </div>
+
+    <div class="table-wrap"><table><thead><tr><th>Testing choice</th><th>Potential stewardship problem</th><th>Higher-value alternative</th></tr></thead><tbody><tr><td>Broad molecular panel ordered immediately</td><td>May create low-significance positives when the question is still poorly defined</td><td>Clarify the target question first; use targeted or staged testing where appropriate</td></tr><tr><td>Advanced assay on a poor-quality specimen</td><td>High complexity does not rescue weak source quality</td><td>Improve the specimen before escalating</td></tr><tr><td>Repeated biomarkers without a defined purpose</td><td>Adds cost and may complicate interpretation</td><td>Order when the result changes the pathway meaningfully</td></tr><tr><td>PCR used as default first-line step in all cases</td><td>Reduces proportionality and may ignore useful lower-cost steps</td><td>Use PCR when its sensitivity or discrimination is truly needed</td></tr></tbody></table></div>
+  </div>
+
+  <div id="algorithms" class="tab-pane">
+    <div class="section-title"><h3>Diagnostic Algorithms</h3><p>Structured pathways reduce random ordering and improve consistency.</p><div class="gold-line"></div></div>
+    <div class="grid-2">
+      <div class="tree-card"><div class="tree-head"><h4>Algorithm 1 · Chronic diarrheal work-up</h4><p class="small">A strategy pathway from low-cost first-line testing to escalation.</p></div><div class="tree-step active" data-step="1"><p><strong>Step 1:</strong> Begin with serial stool specimens rather than a single specimen when parasitology yield matters.</p><div class="tree-feedback show good">Rationale: repeated stool sampling improves detection where shedding is intermittent.</div></div><div class="tree-step active" data-step="2"><p><strong>Step 2:</strong> If microscopy remains negative but the diagnostic question persists, move to targeted antigen or molecular testing rather than restating the same low-yield approach.</p><div class="tree-feedback show good">Rationale: escalation should be justified by unresolved question, not by habit.</div></div></div>
+      <div class="tree-card"><div class="tree-head"><h4>Algorithm 2 · Suspected invasive fungal disease</h4><p class="small">A strategy pathway emphasizing specimen strength and context-aware escalation.</p></div><div class="tree-step active" data-step="1"><p><strong>Step 1:</strong> Assess the strongest available specimen and whether a non-sterile respiratory source will produce meaningful information.</p><div class="tree-feedback show good">Rationale: source quality changes the value of fungal recovery.</div></div><div class="tree-step active" data-step="2"><p><strong>Step 2:</strong> Use biomarkers and molecular escalation strategically, not reflexively, and interpret them in their intended context.</p><div class="tree-feedback show good">Rationale: supportive tests are valuable when the scenario justifies them.</div></div></div>
+    </div>
+  </div>
+
+  <div id="cases" class="tab-pane">
+    <div class="section-title"><h3>Case Zone</h3><p>Rich flip cards that require students to design and justify the pathway, not just guess the answer.</p><div class="gold-line"></div></div>
+    <div class="callout teal"><strong>How to use the case zone:</strong> read the scenario first and decide what the best specimen, first-line test, and escalation plan should be. Then flip the card to compare your strategy with the model reasoning.</div><div class="callout" style="background:#14233b;color:#f8fbff;border:1px solid rgba(255,255,255,.12);border-left:6px solid var(--gold)"><strong style="color:#ffffff">Visual focus zone:</strong> the case area uses a dark background to create visual separation, while the cards remain light for comfortable reading and better contrast during longer case analysis.</div>
+    <div class="case-flip-grid" id="caseFlipGrid"></div>
+  </div>
+
+  <div id="practice" class="tab-pane">
+    <div class="section-title"><h3>Practice Zone</h3><p>Decision trees and strategy matching focused on next-best-test thinking.</p><div class="gold-line"></div></div>
+    <div class="tree-card" id="tree1"><div class="tree-head"><h4>Decision Tree 1 · Negative microscopy in persistent diarrhea</h4><p class="small">Choose the strongest laboratory pathway rather than the most technologically attractive option.</p></div><div class="tree-step active" data-step="1"><p><strong>Step 1:</strong> One stool microscopy is negative. What is the strongest next laboratory strategy?</p><div class="step-actions"><button data-correct="true" data-next="2">Review whether serial stool sampling has been completed before concluding absence.</button><button data-correct="false">Immediately conclude parasitic disease is excluded.</button></div><div class="tree-feedback"></div></div><div class="tree-step" data-step="2"><p><strong>Step 2:</strong> Serial stools remain unrevealing, but the diagnostic question remains strong.</p><div class="step-actions"><button data-correct="true" data-next="3">Escalate to targeted antigen or molecular testing rather than repeating the same low-yield step indefinitely.</button><button data-correct="false">Order the broadest available panel without defining the target question.</button></div><div class="tree-feedback"></div></div><div class="tree-step" data-step="3"><p><strong>Step 3:</strong> What makes this pathway good stewardship?</p><div class="step-actions"><button data-correct="true">It moves from lower-cost routine testing to higher-complexity methods only when justified.</button><button data-correct="false">It uses the most expensive method as quickly as possible.</button></div><div class="tree-feedback"></div></div></div>
+    <div class="tree-card"><div class="tree-head"><h4>Strategy Match</h4><p class="small">Match the scenario to the best next laboratory approach.</p></div><div style="font-weight:800;color:var(--navy);margin:6px 0 12px" id="matchScore">Matches: 0 / 6</div><div class="match-message" id="matchMessage"></div><div class="match-wrap"><div class="match-col"><h4>Scenario</h4><div id="leftList"></div></div><div class="match-col"><h4>Best next approach</h4><div id="rightList"></div></div></div><div style="margin-top:12px"><button class="btn warn" onclick="resetMatch()">Reset Match</button></div></div>
+  </div>
+
+  <div id="flashcards" class="tab-pane">
+    <div class="section-title"><h3>Flashcards</h3><p>Tap to flip. Focus on strategy triggers, not method memorization.</p><div class="gold-line"></div></div>
+    <div class="flash-tip">The strongest diagnostician is often the one who knows what not to order first.</div>
+    <div class="flash-grid" id="flashGrid"></div>
+  </div>
+
+  <div id="quiz" class="tab-pane">
+    <div class="section-title"><h3>Master Quiz</h3><p>Scenario-based diagnostic strategy questions with full review after scoring.</p><div class="gold-line"></div></div>
+    <div class="quiz-shell" id="quizShell"><div class="quiz-top"><div id="quizMeta">Question 1 of 15</div><div class="progress"><div id="progressFill"></div></div></div><div class="quiz-body"><div class="q-num" id="qNum"></div><div class="q-text" id="qText"></div><div id="options"></div><div class="feedback" id="feedback"></div><div class="quiz-nav"><button class="btn secondary" id="prevBtn">Previous</button><button class="btn primary" id="nextBtn">Next</button></div></div></div>
+    <div class="result" id="resultBox"><div class="score" id="scoreText">0<span>/15</span></div><p style="font-size:17px;color:var(--muted);margin:8px 0 18px">Review the logic behind each pathway after scoring.</p><button class="btn primary" onclick="reviewQuiz()">Review answers</button><button class="btn secondary" onclick="restartQuiz()" style="margin-left:8px">Try again</button></div>
+  </div>
+
+  <div id="cheat" class="tab-pane">
+    <div class="section-title"><h3>Cheat Sheet</h3><p>High-yield strategy rules for choosing tests and designing pathways.</p><div class="gold-line"></div></div>
+    <div class="cheat-grid">
+      <div class="cheat-card"><div class="cheat-h navy">Core strategy rules</div><div class="cheat-b"><div class="row"><div class="key">First question</div><div class="val">Define what you are trying to detect before choosing the method.</div></div><div class="row"><div class="key">Specimen logic</div><div class="val">A wrong specimen weakens even a strong assay.</div></div><div class="row"><div class="key">Escalation</div><div class="val">Move from routine to advanced testing only when the question remains unresolved.</div></div><div class="row"><div class="key">Stewardship</div><div class="val">The best pathway is high-yield, proportional, and interpretable.</div></div></div></div>
+      <div class="cheat-card"><div class="cheat-h teal">Common traps</div><div class="cheat-b"><div class="row"><div class="key">Trap 1</div><div class="val">Using the newest test as the first test without asking whether it is the right test.</div></div><div class="row"><div class="key">Trap 2</div><div class="val">Ignoring serial sampling when biology makes one specimen low yield.</div></div><div class="row"><div class="key">Trap 3</div><div class="val">Ordering broad panels without a clear diagnostic question.</div></div><div class="row"><div class="key">Trap 4</div><div class="val">Escalating complexity when improving the specimen would be more valuable.</div></div></div></div>
+      <div class="cheat-card"><div class="cheat-h gold">Decision triggers</div><div class="cheat-b"><div class="row"><div class="key">Repeat specimen</div><div class="val">When biology, timing, or source quality limits initial yield.</div></div><div class="row"><div class="key">Targeted antigen</div><div class="val">When a focused rapid question remains after routine steps.</div></div><div class="row"><div class="key">Targeted PCR</div><div class="val">When higher sensitivity or discriminatory power is justified.</div></div><div class="row"><div class="key">Broad panel</div><div class="val">When syndrome coverage adds value and is not likely to create mostly low-value positives.</div></div></div></div>
+      <div class="cheat-card"><div class="cheat-h wine">Best mindset</div><div class="cheat-b"><div class="row"><div class="key">Do not ask</div><div class="val">“What is the most advanced test?”</div></div><div class="row"><div class="key">Ask instead</div><div class="val">“What test best answers the current question with the current specimen?”</div></div><div class="row"><div class="key">Keep in mind</div><div class="val">Cost, speed, specimen strength, and interpretability.</div></div><div class="row"><div class="key">Final goal</div><div class="val">A pathway that is rational, defensible, and high-yield.</div></div></div></div>
+    </div>
+  </div>
+
+  <div id="sources" class="tab-pane">
+    <div class="section-title"><h3>Sources</h3><p>Reference logic used to ground the module in credible, current diagnostic practice.</p><div class="gold-line"></div></div>
+    <div class="card"><div class="card-h navy">Reference backbone</div><div class="card-b"><ul><li><strong>CDC DPDx:</strong> used for stool parasitology strategy, especially serial sampling logic and organism-specific diagnostic pathways.</li><li><strong>IDSA guidance:</strong> used to reflect that fungal biomarkers such as galactomannan are useful in selected high-risk settings rather than indiscriminate use.</li><li><strong>CDC Histoplasmosis resources:</strong> used to reflect context-dependent antigen testing choices.</li><li><strong>CDC Candida auris laboratory resources:</strong> used to ground specimen, colonization, and identification pathway examples.</li><li><strong>CLSI M54 context:</strong> used to support specimen-quality and source-significance logic in mycology.</li></ul><p style="margin-top:14px">This module is strategy-focused and intentionally student-facing: it simplifies some operational detail while preserving the logic of real laboratory pathway design.</p></div></div>
+  </div>
+</main>
+<div class="mod-footnav">
+  <a class="mod-nav-btn prev" href="module2.html">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      Module 2
+    </a>
+  <div class="mod-footnav-center">
+    <span>Module 3</span>
+    <strong>Diagnostic Strategy & Stewardship</strong>
+  </div>
+  <a class="mod-nav-btn next" href="module4.html">
+      Module 4
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+</div>
+<footer class="mod-footer-bar">
+  <strong>Dr Salma Elnour</strong> · Clinical Parasitology &amp; Mycology · Module 3 · Diagnostic Strategy &amp; Stewardship<br><span style="font-size:11px;color:#b7c4d8;margin-top:4px;display:inline-block">Gulf Medical University · MSc Medical Laboratory Sciences</span>
+</footer>
+<script>
+const tabs=document.querySelectorAll('.tab-btn');const panes=document.querySelectorAll('.tab-pane');tabs.forEach(btn=>{btn.addEventListener('click',()=>{tabs.forEach(b=>b.classList.remove('active'));panes.forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById(btn.dataset.tab).classList.add('active');window.scrollTo({top:0,behavior:'smooth'})})});
+document.querySelectorAll('.tree-card').forEach(card=>{card.querySelectorAll('.tree-step').forEach(step=>{step.querySelectorAll('.step-actions button').forEach(btn=>{btn.addEventListener('click',()=>{if(btn.parentElement.dataset.done==='true')return;btn.parentElement.dataset.done='true';const fb=step.querySelector('.tree-feedback');const correct=btn.dataset.correct==='true';fb.className=`tree-feedback show ${correct?'good':'bad'}`;fb.textContent=correct?"Good. This pathway is justified, proportional, and fits the diagnostic question better.":"Not the strongest strategy. Reconsider specimen yield, sequencing, and stewardship before escalating.";if(correct&&btn.dataset.next){const next=card.querySelector(`.tree-step[data-step="${btn.dataset.next}"]`);if(next){next.classList.add('active')}}})})})});
+const caseCards=[{badge:'Parasitology',title:'Case 1 · Persistent diarrhea after one negative stool exam',front:`<p><strong>Scenario:</strong> A student receives a request for parasitology work-up in persistent diarrhea. Only one stool specimen has been examined by microscopy and it is negative.</p><h5>Your strategy task</h5><ul><li>Should the laboratory move directly to broad molecular testing?</li><li>Is there value in serial stool sampling first?</li><li>What would be the most defensible next step in a cost-aware setting?</li></ul>`,back:`<h5>Strategic reasoning</h5><p>One negative stool microscopy does not end the pathway when shedding may be intermittent. Serial stool sampling can meaningfully improve detection before moving immediately to higher-complexity methods.</p><h5>Best pathway</h5><ul><li>Complete serial stool sampling first when parasitology yield remains unresolved.</li><li>Escalate to targeted antigen or molecular testing if the question persists after reasonable routine work-up.</li><li>Avoid skipping directly to the broadest panel without first strengthening the specimen strategy.</li></ul><h5>Why this is strong</h5><p>It respects biology, preserves cost-effectiveness, and avoids reflex overuse of high-complexity testing.</p>`},{badge:'Parasitology',title:'Case 2 · Broad panel temptation in asymptomatic screening',front:`<p><strong>Scenario:</strong> A request asks for a broad stool molecular panel in a low-context screening situation with no clear symptoms recorded.</p><h5>Your strategy task</h5><ul><li>Is a broad panel automatically the best first step?</li><li>What should the laboratory clarify before using a syndrome-wide molecular approach?</li></ul>`,back:`<h5>Strategic reasoning</h5><p>Broad panels can be useful, but when the diagnostic question is weak or poorly defined they can generate low-significance positives that create interpretation burden without strong value.</p><h5>Best pathway</h5><ul><li>Clarify the diagnostic question first.</li><li>Use targeted testing if the clinical request is focused.</li><li>Reserve broad multiplex testing for situations where syndrome-wide coverage will genuinely improve the pathway.</li></ul><h5>Why this is strong</h5><p>It treats advanced testing as purposeful rather than automatic.</p>`},{badge:'Mycology',title:'Case 3 · Sputum vs better respiratory specimen',front:`<p><strong>Scenario:</strong> A poor-quality sputum specimen is submitted in suspected fungal respiratory disease. The team requests fungal culture and molecular work-up immediately.</p><h5>Your strategy task</h5><ul><li>Is the strongest next step more testing on the same source?</li><li>Or is a better specimen the higher-yield move?</li></ul>`,back:`<h5>Strategic reasoning</h5><p>If the specimen is poor, adding high-complexity testing may amplify low-value information rather than improve diagnosis. Better source quality may add more value than more technology.</p><h5>Best pathway</h5><ul><li>Recognize specimen weakness early.</li><li>Consider whether a better respiratory specimen would improve diagnostic meaning more than immediate assay escalation.</li><li>Use caution with source-limited fungal recovery from low-quality sputum.</li></ul><h5>Why this is strong</h5><p>Stewardship includes knowing when specimen improvement should come before assay expansion.</p>`},{badge:'Mycology',title:'Case 4 · Biomarker overuse risk',front:`<p><strong>Scenario:</strong> A fungal biomarker is requested repeatedly in a setting with weak justification and no clear change in specimen or diagnostic question.</p><h5>Your strategy task</h5><ul><li>When does repeated biomarker testing become low-value?</li><li>What makes biomarker use justified rather than reflexive?</li></ul>`,back:`<h5>Strategic reasoning</h5><p>IDSA guidance supports biomarkers such as galactomannan in selected settings, not as universal background testing. Repetition without a clear question can increase noise and cost without strengthening the pathway.</p><h5>Best pathway</h5><ul><li>Use biomarkers where the scenario fits their intended role.</li><li>Avoid repeated testing without defined purpose.</li><li>Pair biomarker use with specimen, source, and pathway logic rather than ordering them as routine decoration.</li></ul><h5>Why this is strong</h5><p>It protects both interpretation quality and resource stewardship.</p>`},{badge:'Parasitology',title:'Case 5 · Direct escalation to PCR or stepwise pathway?',front:`<p><strong>Scenario:</strong> A student wants to use PCR first in every diarrheal parasitology case because it is more sensitive.</p><h5>Your strategy task</h5><ul><li>Is the most sensitive test always the best first-line test?</li><li>How do cost, accessibility, and specimen strategy affect that decision?</li></ul>`,back:`<h5>Strategic reasoning</h5><p>Higher sensitivity does not automatically make a test the best starting point. A sensible first-line method may answer the question sufficiently, especially when paired with good specimen strategy. PCR becomes stronger when it is used to resolve an unanswered question rather than replace strategy entirely.</p><h5>Best pathway</h5><ul><li>Use a justified first-line step.</li><li>Escalate when the result remains unresolved or species discrimination is needed.</li><li>Do not confuse analytical power with universal first-line appropriateness.</li></ul><h5>Why this is strong</h5><p>It balances diagnostic strength with practicality and stewardship.</p>`},{badge:'Mycology',title:'Case 6 · Candida auris identification pathway',front:`<p><strong>Scenario:</strong> A laboratory receives a yeast isolate with uncertain phenotypic identification. The team is concerned about <em>Candida auris</em>.</p><h5>Your strategy task</h5><ul><li>Should the lab issue a final identification immediately?</li><li>What sequence of work-up makes the pathway defensible?</li></ul>`,back:`<h5>Strategic reasoning</h5><p>CDC notes that <em>Candida auris</em> identification depends on appropriate methods and database support. Strategy here is as important as the method itself: premature final naming can be riskier than a staged, well-supported work-up.</p><h5>Best pathway</h5><ul><li>Confirm whether the local platform can reliably identify <em>C. auris</em>.</li><li>Escalate to the correct identification pathway if support is limited.</li><li>Use final wording only when method reliability justifies it.</li></ul><h5>Why this is strong</h5><p>It shows that stewardship includes staged certainty, not speed alone.</p>`}];
+const caseFlipGrid=document.getElementById('caseFlipGrid');if(caseFlipGrid){caseCards.forEach(c=>{const el=document.createElement('div');el.className='case-flip';el.innerHTML=`<div class="case-flip-inner"><div class="case-face front"><div class="case-badge">${c.badge}</div><h4>${c.title}</h4>${c.front}<div class="case-hint">Tap to flip and reveal the strategy reasoning.</div></div><div class="case-face back"><div class="case-badge">Strategy reasoning</div><h4>${c.title}</h4>${c.back}<div class="case-hint">Tap again to return to the scenario.</div></div></div>`;el.addEventListener('click',()=>el.classList.toggle('flipped'));caseFlipGrid.appendChild(el);});}
+const flashcards=[{cat:'Specimen',term:'Better sample > more test',back:'Improving specimen quality may add more value than escalating immediately to a more complex assay.'},{cat:'Strategy',term:'Define the question first',back:'The best test is the one that answers the current diagnostic question, not the most advanced assay in the lab.'},{cat:'Parasitology',term:'Serial stool sampling',back:'One negative stool examination may be low yield where shedding is intermittent.'},{cat:'Stewardship',term:'Broad panel caution',back:'Multiplex testing can generate low-significance positives if used without a clear syndrome-level reason.'},{cat:'Mycology',term:'Source matters',back:'Poor-quality sputum can weaken the value of fungal culture and molecular escalation.'},{cat:'Escalation',term:'Routine before advanced',back:'Move to higher-complexity testing when the routine pathway leaves an unresolved diagnostic question.'},{cat:'Biomarker',term:'Use with purpose',back:'A biomarker should be ordered because it adds pathway value, not because it exists.'},{cat:'Cost',term:'High yield matters',back:'Stewardship means maximizing meaningful information while minimizing low-value testing.'}];
+const flashGrid=document.getElementById('flashGrid');flashcards.forEach(f=>{const el=document.createElement('div');el.className='flash';el.innerHTML=`<div class="flash-inner"><div class="face front"><div class="cat">${f.cat}</div><div class="term">${f.term}</div><div class="hint">tap to reveal</div></div><div class="face back">${f.back}</div></div>`;el.addEventListener('click',()=>el.classList.toggle('flipped'));flashGrid.appendChild(el);});
+const quiz=[{q:'A single stool microscopy is negative in persistent diarrhea. What is the strongest next strategic move?',opts:['Exclude parasitic disease immediately','Consider serial stool sampling before concluding absence','Order every available molecular panel at once','Stop testing because microscopy is the gold standard'],a:1,e:'Serial stool sampling can improve yield where shedding is intermittent and may be a better next step than immediate over-escalation.'},{q:'What is the strongest reason to avoid indiscriminate multiplex molecular panel use?',opts:['They are never useful','They can generate low-significance positives when the diagnostic question is poorly defined','They only detect fungi','They always replace microscopy'],a:1,e:'Broad panels are valuable in selected syndrome-based settings, but can add noise when used without a focused question.'},{q:'In suspected fungal respiratory disease, what may add more value than immediate molecular escalation on poor sputum?',opts:['A better-quality respiratory specimen','More biomarkers on the same source','Ignoring source quality','Reporting whatever grows as significant'],a:0,e:'Specimen quality can matter more than assay complexity.'},{q:'Which statement best reflects stewardship?',opts:['Use the most advanced test first whenever possible','Choose the pathway that best balances yield, cost, and interpretability','Avoid confirmatory testing completely','Never use molecular methods'],a:1,e:'Stewardship is about proportionate, justified diagnostic value.'},{q:'Why might PCR not be the best first-line step in every diarrheal parasitology case?',opts:['Because PCR is inaccurate','Because higher sensitivity does not automatically make it the best first-line strategy','Because PCR cannot detect parasites','Because microscopy is always sufficient'],a:1,e:'Analytical strength and strategic appropriateness are different decisions.'},{q:'What is the first question in a strong diagnostic strategy framework?',opts:['What is the cheapest test?','What exactly are we trying to detect?','What does the result mean?','Which confirmatory test is available?'],a:1,e:'The diagnostic question should define the pathway.'},{q:'A urine specimen is sent for fungal work-up. What should influence the pathway most strongly?',opts:['Assume all positives are significant','Recognize source-related interpretation limits before escalating','Use the broadest possible panel','Skip specimen review'],a:1,e:'Urine often raises colonization and contamination issues; strategy should reflect that.'},{q:'What makes biomarker ordering strategically strong?',opts:['Ordering it repeatedly in all scenarios','Using it where its intended role matches the diagnostic setting','Using it instead of every other test','Treating it as definitive proof'],a:1,e:'Biomarkers add value when used in the right context, not as reflex tests.'},{q:'Which pathway is strongest in terms of stewardship?',opts:['Poor specimen + expensive assay','Good specimen + justified escalation','No question + broad testing','Repeat expensive testing without purpose'],a:1,e:'The best pathway is proportional and justifiable.'},{q:'Why is source quality central in mycology strategy?',opts:['Because fungi do not grow in good specimens','Because source quality affects whether recovery is meaningful or misleading','Because source quality only matters for bacteria','Because molecular methods eliminate source concerns'],a:1,e:'Respiratory and non-sterile sources can distort significance if source quality is poor.'},{q:'When is confirmatory testing most justified?',opts:['Whenever any test exists','When the result is high-impact and stronger support is needed','Never','Only after reporting final conclusions'],a:1,e:'Confirmation adds value when the result matters and certainty is limited.'},{q:'What is the main risk of starting with the broadest test by default?',opts:['Lower sensitivity','Potential over-testing and reduced clarity','Faster turnaround time','Less information'],a:1,e:'Broad testing without a clear question can increase ambiguous findings and cost.'},{q:'Which statement best fits Module 3 thinking?',opts:['Interpret first, strategy later','Choose the pathway before the result exists','The best assay is always the newest assay','Specimen choice is secondary to technology'],a:1,e:'Module 3 centers on strategic pathway design before the result is generated.'},{q:'What is the strongest next step when a local platform may not reliably identify Candida auris?',opts:['Issue definitive identification anyway','Escalate to a reliable identification pathway','Ignore the possibility','Assume any Candida is C. auris'],a:1,e:'Staged certainty is better than premature final identification.'},{q:'Which summary best captures robust test selection?',opts:['Order more tests','Match the test to the question, specimen, and context','Always favor molecular methods','Avoid low-cost methods'],a:1,e:'Good strategy is about fit, not maximal complexity.'}];let qi=0;let answers=Array(quiz.length).fill(null);const qNum=document.getElementById('qNum');const qText=document.getElementById('qText');const options=document.getElementById('options');const feedback=document.getElementById('feedback');const prevBtn=document.getElementById('prevBtn');const nextBtn=document.getElementById('nextBtn');const quizMeta=document.getElementById('quizMeta');const progressFill=document.getElementById('progressFill');const resultBox=document.getElementById('resultBox');const quizShell=document.getElementById('quizShell');const scoreText=document.getElementById('scoreText');function renderQuiz(){const item=quiz[qi];qNum.textContent=`Question ${qi+1}`;qText.textContent=item.q;quizMeta.textContent=`Question ${qi+1} of ${quiz.length}`;progressFill.style.width=`${((qi+1)/quiz.length)*100}%`;options.innerHTML='';feedback.className='feedback';feedback.textContent='';item.opts.forEach((opt,idx)=>{const b=document.createElement('button');b.className='opt';b.innerHTML=`<div class="ol">${String.fromCharCode(65+idx)}</div><div>${opt}</div>`;b.disabled=answers[qi]!==null;if(answers[qi]!==null){if(idx===item.a)b.classList.add('correct');if(idx===answers[qi]&&idx!==item.a)b.classList.add('wrong')}b.addEventListener('click',()=>choose(idx));options.appendChild(b)});if(answers[qi]!==null){const good=answers[qi]===item.a;feedback.className=`feedback show ${good?'good':'bad'}`;feedback.textContent=(good?'Correct. ':'Not quite. ')+item.e}prevBtn.disabled=qi===0;nextBtn.textContent=qi===quiz.length-1?'Finish':'Next'}function choose(idx){if(answers[qi]!==null)return;answers[qi]=idx;renderQuiz()}prevBtn.addEventListener('click',()=>{if(qi>0){qi--;renderQuiz()}});nextBtn.addEventListener('click',()=>{if(qi<quiz.length-1){qi++;renderQuiz()}else finishQuiz()});function finishQuiz(){if(answers.filter(a=>a===null).length){return}const score=answers.reduce((n,a,i)=>n+(a===quiz[i].a?1:0),0);scoreText.innerHTML=`${score}<span>/${quiz.length}</span>`;quizShell.style.display='none';resultBox.classList.add('show')}function reviewQuiz(){resultBox.classList.remove('show');quizShell.style.display='block';qi=0;renderQuiz()}function restartQuiz(){qi=0;answers=Array(quiz.length).fill(null);resultBox.classList.remove('show');quizShell.style.display='block';renderQuiz()}renderQuiz();
+const baseMatchPairs=[['One negative stool microscopy in persistent diarrhea','Strengthen stool sampling strategy before concluding absence'],['Poor-quality sputum for fungal work-up','A better specimen may add more value than immediate assay escalation'],['Low-context request for broad multiplex panel','Clarify diagnostic question before broad testing'],['Suspected Candida auris with uncertain local ID support','Escalate to a reliable identification pathway'],['Repeated biomarker ordering without defined purpose','Low-value use that weakens stewardship'],['Highly sensitive assay available','Use when it adds real pathway value, not automatically as first line']];let selectedLeft=null;let selectedRight=null;let matched=0;const leftList=document.getElementById('leftList');const rightList=document.getElementById('rightList');const matchScore=document.getElementById('matchScore');const matchMessage=document.getElementById('matchMessage');function shuffle(arr){return arr.map(v=>({v,sort:Math.random()})).sort((a,b)=>a.sort-b.sort).map(x=>x.v)}function buildMatch(){leftList.innerHTML='';rightList.innerHTML='';const shuffledRight=shuffle([...baseMatchPairs]);baseMatchPairs.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.side='left';d.dataset.key=p[0];d.textContent=p[0];d.onclick=()=>selectMatch(d,'left');leftList.appendChild(d)});shuffledRight.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.side='right';d.dataset.key=p[0];d.textContent=p[1];d.onclick=()=>selectMatch(d,'right');rightList.appendChild(d)});selectedLeft=null;selectedRight=null;matched=0;matchScore.textContent=`Matches: 0 / ${baseMatchPairs.length}`;matchMessage.className='match-message';matchMessage.textContent=''}function selectMatch(el,side){if(el.classList.contains('matched'))return;if(side==='left'){document.querySelectorAll('.match-item[data-side="left"]').forEach(x=>x.classList.remove('selected'));selectedLeft=el;el.classList.add('selected')}else{document.querySelectorAll('.match-item[data-side="right"]').forEach(x=>x.classList.remove('selected'));selectedRight=el;el.classList.add('selected')}if(selectedLeft&&selectedRight){const ok=selectedLeft.dataset.key===selectedRight.dataset.key;matchMessage.className=`match-message show ${ok?'good':'bad'}`;matchMessage.textContent=ok?'Correct match. That is the strongest next laboratory approach.':'Not the best match. Reconsider specimen logic, stewardship, and pathway design.';if(ok){selectedLeft.classList.remove('selected');selectedRight.classList.remove('selected');selectedLeft.classList.add('matched');selectedRight.classList.add('matched');matched++;matchScore.textContent=`Matches: ${matched} / ${baseMatchPairs.length}`;if(matched===baseMatchPairs.length){matchMessage.className='match-message show good';matchMessage.textContent='Excellent. You completed all strategy matches with strong diagnostic reasoning.'}}else{selectedLeft.classList.add('wrong');selectedRight.classList.add('wrong');setTimeout(()=>{selectedLeft.classList.remove('selected','wrong');selectedRight.classList.remove('selected','wrong')},600)}selectedLeft=null;selectedRight=null}}function resetMatch(){buildMatch()}buildMatch();
+</script>
+</body>
+</html>
