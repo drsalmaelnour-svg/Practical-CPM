@@ -157,6 +157,187 @@ body{animation:bodyFade .35s ease}
   .mod-footnav-center strong{font-size:12px}
 }
 
+
+/* ═══════════════════════════════════════════════
+   PRINT / EXPORT SYSTEM
+═══════════════════════════════════════════════ */
+.print-tab-pane { display: none; }
+.print-tab-pane.active { display: block; }
+
+/* Print panel UI */
+.print-panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.print-panel-header {
+  background: linear-gradient(135deg, var(--navy), var(--navy-2));
+  padding: 22px 26px;
+  color: #fff;
+}
+.print-panel-header h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+.print-panel-header p { font-size: 13px; color: #b6c3d8; line-height: 1.6; }
+.print-panel-body { padding: 24px 26px; }
+.print-section-label {
+  font-size: 11px; font-weight: 800; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--muted);
+  margin-bottom: 14px; margin-top: 6px;
+}
+.print-checks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+  margin-bottom: 22px;
+}
+.print-check-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 11px 14px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: .18s;
+  background: #f8fbff;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.print-check-item:hover { border-color: var(--teal); background: #f0fafa; }
+.print-check-item.selected {
+  border-color: var(--teal);
+  background: var(--teal-soft);
+}
+.print-check-item input[type=checkbox] {
+  width: 17px; height: 17px;
+  accent-color: var(--teal);
+  flex-shrink: 0; cursor: pointer;
+}
+.print-check-item span {
+  font-size: 13.5px; font-weight: 600; color: var(--navy); line-height: 1.3;
+}
+.print-actions {
+  display: flex; gap: 12px; flex-wrap: wrap; align-items: center;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.print-select-all {
+  font-size: 12px; font-weight: 700; color: var(--teal);
+  cursor: pointer; text-decoration: underline;
+  background: none; border: none; padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.print-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 24px; border-radius: 13px;
+  font-size: 14px; font-weight: 800;
+  cursor: pointer; border: none;
+  transition: .18s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.print-btn:active { transform: scale(.97); }
+.print-btn.primary {
+  background: var(--navy); color: #fff;
+  box-shadow: 0 4px 14px rgba(20,35,59,.2);
+}
+.print-btn.primary:hover { background: #1d2f50; }
+.print-btn svg {
+  width: 16px; height: 16px;
+  stroke: currentColor; fill: none;
+  stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round;
+}
+.print-tip {
+  font-size: 12.5px; color: var(--muted); line-height: 1.6;
+  background: var(--sky); border: 1px solid var(--sky-line);
+  border-radius: 12px; padding: 12px 16px; margin-top: 16px;
+}
+.print-tip strong { color: var(--navy); }
+
+/* ── PRINT STYLESHEET ─────────────────────────────── */
+@media print {
+  /* Hide everything by default */
+  body > *:not(#printRoot) { display: none !important; }
+  #printRoot { display: block !important; }
+
+  #printRoot { 
+    font-family: "Georgia", serif;
+    color: #000;
+    font-size: 11pt;
+    line-height: 1.7;
+  }
+  .print-cover {
+    text-align: center;
+    padding: 40px 0 30px;
+    border-bottom: 3px solid #14233b;
+    margin-bottom: 30px;
+    page-break-after: avoid;
+  }
+  .print-cover .pc-badge {
+    display: inline-block;
+    background: #14233b;
+    color: #d2aa4c;
+    padding: 5px 16px;
+    border-radius: 999px;
+    font-size: 10pt;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .print-cover h1 {
+    font-size: 22pt;
+    color: #14233b;
+    margin-bottom: 6px;
+    font-family: "Georgia", serif;
+  }
+  .print-cover h2 {
+    font-size: 14pt;
+    color: #0e7c86;
+    font-weight: normal;
+    margin-bottom: 12px;
+  }
+  .print-cover .pc-meta {
+    font-size: 10pt;
+    color: #657891;
+  }
+  .print-section-block {
+    page-break-before: always;
+    margin-bottom: 28px;
+  }
+  .print-section-block:first-of-type {
+    page-break-before: avoid;
+  }
+  .print-section-block h2 {
+    font-size: 14pt;
+    color: #14233b;
+    border-bottom: 2px solid #d2aa4c;
+    padding-bottom: 6px;
+    margin-bottom: 14px;
+    font-family: "Georgia", serif;
+  }
+  /* Show hidden tab content for printing */
+  .print-section-block .tab-pane,
+  .print-section-block .acc-b,
+  .print-section-block .check-item .a {
+    display: block !important;
+  }
+  .print-section-block .card-h { color: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .print-section-block .navy { background: #14233b !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .print-section-block .teal { background: #0e7c86 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .print-section-block th { background: #14233b !important; color: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  /* Page numbers */
+  @page {
+    margin: 18mm 16mm 20mm;
+  }
+  @page :left { margin-left: 20mm; }
+  @page :right { margin-right: 20mm; }
+}
+
 </style>
 </head>
 <body>
@@ -194,6 +375,7 @@ body{animation:bodyFade .35s ease}
     <button class="tab-btn" data-tab="quiz">Master Quiz</button>
     <button class="tab-btn" data-tab="cheat">Cheat Sheet</button>
     <button class="tab-btn" data-tab="sources">Sources</button>
+      <button class="tab-btn" data-tab="print">📄 Notes &amp; Print</button>
   </div></div>
 </header>
 <main>
@@ -335,6 +517,151 @@ body{animation:bodyFade .35s ease}
     <div class="section-title"><h3>Sources</h3><p>Reference logic used to ground the module in credible, current diagnostic practice.</p><div class="gold-line"></div></div>
     <div class="card"><div class="card-h navy">Reference backbone</div><div class="card-b"><ul><li><strong>CDC DPDx:</strong> used for stool parasitology strategy, especially serial sampling logic and organism-specific diagnostic pathways.</li><li><strong>IDSA guidance:</strong> used to reflect that fungal biomarkers such as galactomannan are useful in selected high-risk settings rather than indiscriminate use.</li><li><strong>CDC Histoplasmosis resources:</strong> used to reflect context-dependent antigen testing choices.</li><li><strong>CDC Candida auris laboratory resources:</strong> used to ground specimen, colonization, and identification pathway examples.</li><li><strong>CLSI M54 context:</strong> used to support specimen-quality and source-significance logic in mycology.</li></ul><p style="margin-top:14px">This module is strategy-focused and intentionally student-facing: it simplifies some operational detail while preserving the logic of real laboratory pathway design.</p></div></div>
   </div>
+
+  <div id="print" class="tab-pane">
+    <div class="section-title">
+      <h3>Notes &amp; Print</h3>
+      <p>Select the sections you want, then print to paper or save as PDF.</p>
+      <div class="gold-line"></div>
+    </div>
+
+    <div class="print-panel">
+      <div class="print-panel-header">
+        <h3>📄 Build your study notes</h3>
+        <p>Choose which sections to include. Your selection will be formatted as a clean, branded document — ready to print or save as PDF from your browser.</p>
+      </div>
+      <div class="print-panel-body">
+        <div class="print-section-label">Select sections to include</div>
+        <div class="print-checks" id="printChecks">
+          
+        <label class="print-check-item selected" onclick="togglePrintCheck(this)">
+          <input type="checkbox" checked data-section="overview">
+          <span>Overview</span>
+        </label>
+        <label class="print-check-item selected" onclick="togglePrintCheck(this)">
+          <input type="checkbox" checked data-section="framework">
+          <span>Framework</span>
+        </label>
+        <label class="print-check-item selected" onclick="togglePrintCheck(this)">
+          <input type="checkbox" checked data-section="specimen">
+          <span>Specimen & Timing</span>
+        </label>
+        <label class="print-check-item selected" onclick="togglePrintCheck(this)">
+          <input type="checkbox" checked data-section="selection">
+          <span>Test Selection</span>
+        </label>
+        <label class="print-check-item selected" onclick="togglePrintCheck(this)">
+          <input type="checkbox" checked data-section="stewardship">
+          <span>Stewardship</span>
+        </label>
+        <label class="print-check-item selected" onclick="togglePrintCheck(this)">
+          <input type="checkbox" checked data-section="algorithms">
+          <span>Algorithms</span>
+        </label>
+        <label class="print-check-item selected" onclick="togglePrintCheck(this)">
+          <input type="checkbox" checked data-section="cases">
+          <span>Case Zone</span>
+        </label>
+        <label class="print-check-item selected" onclick="togglePrintCheck(this)">
+          <input type="checkbox" checked data-section="practice">
+          <span>Practice Zone</span>
+        </label>
+        <label class="print-check-item selected" onclick="togglePrintCheck(this)">
+          <input type="checkbox" checked data-section="cheat">
+          <span>Cheat Sheet</span>
+        </label>
+        <label class="print-check-item selected" onclick="togglePrintCheck(this)">
+          <input type="checkbox" checked data-section="sources">
+          <span>Sources</span>
+        </label>
+        </div>
+        <div class="print-actions">
+          <button class="print-select-all" onclick="selectAllPrint(true)">Select all</button>
+          <button class="print-select-all" style="color:var(--muted)" onclick="selectAllPrint(false)">Clear all</button>
+          <button class="print-btn primary" onclick="triggerPrint()">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            Print / Save as PDF
+          </button>
+        </div>
+        <div class="print-tip">
+          <strong>To save as PDF:</strong> when the print dialog opens, choose <strong>"Save as PDF"</strong> (or "Microsoft Print to PDF") as your printer. On iPhone/iPad use <strong>Share → Print → Pinch to zoom → Share</strong> to get a PDF. On Android use <strong>Chrome → Print → Save as PDF</strong>.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hidden print root — rendered off-screen, shown only on print -->
+  <div id="printRoot" style="display:none"></div>
+
+  <script>
+  // ── Print tab check toggles ─────────────────────────────────────────────
+  function togglePrintCheck(label) {
+    const cb = label.querySelector('input');
+    cb.checked = !cb.checked;
+    label.classList.toggle('selected', cb.checked);
+  }
+  function selectAllPrint(state) {
+    document.querySelectorAll('#printChecks .print-check-item').forEach(label => {
+      const cb = label.querySelector('input');
+      cb.checked = state;
+      label.classList.toggle('selected', state);
+    });
+  }
+
+  // ── Build & trigger print ───────────────────────────────────────────────
+  function triggerPrint() {
+    const selected = [...document.querySelectorAll('#printChecks input:checked')]
+      .map(cb => cb.dataset.section);
+
+    if (selected.length === 0) {
+      alert('Please select at least one section to print.');
+      return;
+    }
+
+    const root = document.getElementById('printRoot');
+    root.innerHTML = '';
+
+    // Cover page
+    const today = new Date().toLocaleDateString('en-GB',{year:'numeric',month:'long',day:'numeric'});
+    const cover = document.createElement('div');
+    cover.className = 'print-cover';
+    cover.innerHTML = `
+      <div class="pc-badge">Dr Salma Elnour</div>
+      <h1>Clinical Parasitology & Mycology</h1>
+      <h2>Module 3 · Diagnostic Strategy, Test Selection & Laboratory Stewardship</h2>
+      <div class="pc-meta">MSc Medical Laboratory Sciences · Gulf Medical University<br>Printed on ${today}</div>
+    `;
+    root.appendChild(cover);
+
+    // Section blocks
+    selected.forEach(sid => {
+      const pane = document.getElementById(sid);
+      if (!pane) return;
+
+      const block = document.createElement('div');
+      block.className = 'print-section-block';
+
+      // Clone pane content deeply
+      const cloned = pane.cloneNode(true);
+      // Remove interactive-only elements
+      cloned.querySelectorAll('.quiz-shell, .result, #quizShell, #resultBox, .flash-grid, .match-wrap, .match-controls').forEach(el => el.remove());
+      // Show all hidden elements
+      cloned.querySelectorAll('.acc-b, .check-item .a').forEach(el => {
+        el.style.display = 'block';
+      });
+
+      block.appendChild(cloned);
+      root.appendChild(block);
+    });
+
+    // Trigger print
+    root.style.display = 'block';
+    window.print();
+    // Hide again after print dialog closes
+    setTimeout(() => { root.style.display = 'none'; }, 1000);
+  }
+  </script>
+
 </main>
 <div class="mod-footnav">
   <a class="mod-nav-btn prev" href="module2.html">
