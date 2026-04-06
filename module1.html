@@ -618,8 +618,8 @@ body{animation:bodyFade .35s ease}
 
 /* ── PRINT STYLESHEET ─────────────────────────────── */
 @media print {
-  /* Hide everything by default */
-  body > *:not(#printRoot) { display: none !important; }
+  /* Hide everything when printing */
+  header, main, .mod-topbar, .mod-footnav, footer { display: none !important; }
   #printRoot { display: block !important; }
 
   #printRoot { 
@@ -1329,7 +1329,7 @@ body{animation:bodyFade .35s ease}
   </div>
 
   <!-- Hidden print root — rendered off-screen, shown only on print -->
-  <div id="printRoot" style="display:none"></div>
+
 
   <script>
   // ── Print tab check toggles ─────────────────────────────────────────────
@@ -1392,11 +1392,20 @@ body{animation:bodyFade .35s ease}
       root.appendChild(block);
     });
 
-    // Trigger print
+    // Move printRoot to body level for correct CSS scoping
+    document.body.appendChild(root);
+
+    // Show, print, then hide
     root.style.display = 'block';
+    
+    // Use afterprint to hide cleanly
+    const afterPrint = () => {
+      root.style.display = 'none';
+      window.removeEventListener('afterprint', afterPrint);
+    };
+    window.addEventListener('afterprint', afterPrint);
+    
     window.print();
-    // Hide again after print dialog closes
-    setTimeout(() => { root.style.display = 'none'; }, 1000);
   }
   </script>
 
@@ -1597,5 +1606,6 @@ function selectMatch(el, side){
 }
 resetMatch();
 </script>
+<div id="printRoot" style="display:none;position:absolute;top:0;left:0;width:100%"></div>
 </body>
 </html>
